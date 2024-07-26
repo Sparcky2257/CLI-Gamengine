@@ -1,10 +1,10 @@
-public class CLISpecieList : CLIGamePrep
+public class CLISpecieList //: CLIGamePrep
 {
     // ClIPlayer player = new ClIPlayer();
     // CLISettings settings = new CLISettings(); // I didn't touch the settings vars commented out
     ClIMiscellaneous miscellaneous = new ClIMiscellaneous();
 
-    public void Human()
+    public static void Human()
     {
         CLIPlayer.Species = "Human";
         CLIPlayer.Health = 20;
@@ -22,7 +22,7 @@ public class CLISpecieList : CLIGamePrep
     }
     /**/
 
-    public void CatBoyGirl()
+    public static void CatBoyGirl()
     {
         CLIPlayer.Species = "Cat Boy/girl";
         CLIPlayer.Health = 18;
@@ -39,7 +39,7 @@ public class CLISpecieList : CLIGamePrep
         CLIPlayer.Caneditname = true;
     }
 
-    public void Wolf()
+    public static void Wolf()
     {
         CLIPlayer.Species = "Wolf";
         CLIPlayer.Health = 22;
@@ -56,7 +56,7 @@ public class CLISpecieList : CLIGamePrep
         CLIPlayer.Caneditname = true;
     }
 
-    public void Cat()
+    public static void Cat()
     {
         CLIPlayer.Species = "Cat";
         CLIPlayer.Health = 20;
@@ -73,7 +73,7 @@ public class CLISpecieList : CLIGamePrep
         CLIPlayer.Caneditname = true;
     }
 
-    public void Avali()
+    public static void Avali()
     {
         CLIPlayer.Species = "Avali";
         CLIPlayer.Health = 30;
@@ -90,7 +90,23 @@ public class CLISpecieList : CLIGamePrep
         CLIPlayer.Caneditname = true;
     }
 
-    public void a() { }
+    public static void Protogen()
+    {
+        CLIPlayer.Species = "protogen";
+        CLIPlayer.Health = 22;
+        CLIPlayer.Handequipped = 2;
+        CLIPlayer.Smarts = 57;
+        CLIPlayer.Strength = 32;
+        CLIPlayer.Speed = 10;
+        CLIPlayer.Parasite = false;
+        CLIPlayer.Requirehost = false;
+        CLIPlayer.Requirepower = false;
+        CLIPlayer.Requirepowerlev = 0;
+        CLIPlayer.PartTeck = true;
+        CLIPlayer.Damageresistance = 1.3;
+        CLIPlayer.Speciesablaty = "none";
+        CLIPlayer.Caneditname = true;
+    }
 
 
     /*void Furrysel()
