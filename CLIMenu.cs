@@ -30,6 +30,7 @@ public class CLIMenu
                     logo.bootlogo1();
                     break;
                 case 2:
+                    logo.bootlogo2();
                     break;
                 case 3:
                     // Console.Clear();
@@ -85,8 +86,19 @@ public class CLIMenu
         Console.ForegroundColor = CLISettings.Mcolor; ;
         Console.WriteLine("====option====");
         Console.ForegroundColor = CLISettings.Dmcolor;
-        Console.WriteLine("1. Debug");
+        Console.WriteLine("1. Consol");
         Console.Write("2. ");
+        if (CLISettings.Debug == true)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+        }
+        else
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+        }
+        Console.WriteLine("Debug");
+        Console.ForegroundColor = CLISettings.Dmcolor;
+        Console.Write("3. ");
         if (CLISettings.ModingIsOn == true)
         {
             Console.ForegroundColor = ConsoleColor.Green;
@@ -97,7 +109,7 @@ public class CLIMenu
         }
         Console.WriteLine("Moding");
         Console.ForegroundColor = CLISettings.Dmcolor;
-        Console.Write("3. Icons:");
+        Console.Write("4. Icons:");
         if (CLISettings.Icons == 1 || CLISettings.Icons == 2)
         {
             Console.ForegroundColor = ConsoleColor.Green;
@@ -116,8 +128,8 @@ public class CLIMenu
             Console.WriteLine("OFF");
         }
         Console.ForegroundColor = CLISettings.Dmcolor;
-        Console.WriteLine("4. Menu Colour");
-        Console.WriteLine("5. Save");
+        Console.WriteLine("5. Menu Colour");
+        Console.WriteLine("6. Save");
         Console.WriteLine("0. Exit");
         Console.ResetColor();
         Console.WriteLine("");
@@ -131,6 +143,18 @@ public class CLIMenu
                 debugmenu();
                 break;
             case "2":
+                //Console.WriteLine("demo 1");
+                if (CLISettings.Debug == true)
+                {
+                    CLISettings.Debug = false;
+                }
+                else
+                {
+                    CLISettings.Debug = true;
+                }
+                options();
+                break;
+            case "3":
                 //Console.WriteLine("demo 2");
                 if (CLISettings.ModingIsOn == true)
                 {
@@ -142,7 +166,7 @@ public class CLIMenu
                 }
                 options();
                 break;
-            case "3":
+            case "4":
                 if (CLISettings.Icons == 1)
                 {
                     CLISettings.Icons = 2;
@@ -157,11 +181,11 @@ public class CLIMenu
                 }
                 options();
                 break;
-            case "4":
+            case "5":
                 //Console.WriteLine("demo 3");
                 MMAColoursel();
                 break;
-            case "5":
+            case "6":
                 //Console.WriteLine("demo 3");
                 CLIGameBackup.WriteBackup("s");
                 break;
@@ -257,26 +281,14 @@ public class CLIMenu
     {
         Console.Clear();
         Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine("====\\debug====");
-        Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine("0. OFF");
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine("1. ON");
-        Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine("you can also write commands here");
+        Console.WriteLine("====Consol====");
+        Console.WriteLine("you can write commands here 0 to exsit");
         Console.ForegroundColor = ConsoleColor.Blue;
         Console.WriteLine("");
         Console.Write(">");
         switch (Console.ReadLine())
         {
-            case "1":
-                //Console.WriteLine("demo 1");
-                CLISettings.Debug = true;
-                Console.Clear();
-                break;
             case "0":
-                //Console.WriteLine("demo 2");
-                CLISettings.Debug = false;
                 break;
             case "logo=1":
                 //Console.WriteLine("demo 2");
