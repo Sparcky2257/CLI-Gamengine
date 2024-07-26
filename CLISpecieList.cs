@@ -6,88 +6,88 @@ public class CLISpecieList : CLIGamePrep
 
     public void Human()
     {
-        CLIPlayer.Species = "Human";
+        CLIPlayer.species = "Human";
         CLIPlayer.Health = 20;
         CLIPlayer.Handequipped = 2;
         CLIPlayer.Smarts = 45;
         CLIPlayer.Speed = 10;
         CLIPlayer.Strength = 32;
-        CLIPlayer.Parasite = false;
-        CLIPlayer.Requirehost = false;
-        CLIPlayer.Requirepower = false;
-        CLIPlayer.Requirepowerlev = 0;
-        CLIPlayer.PartTeck = false;
-        CLIPlayer.Speciesablaty = "ancientGRool";
-        CLIPlayer.Caneditname = true;
+        CLIPlayer.parasite = false;
+        CLIPlayer.requireHost = false;
+        CLIPlayer.requirePower = false;
+        CLIPlayer.requirePowerLevel = 0;
+        CLIPlayer.partTech = false;
+        CLIPlayer.speciesAbility = "ancientGRool";
+        CLIPlayer.canEditName = true;
     }
     /**/
 
     public void CatBoyGirl()
     {
-        CLIPlayer.Species = "Cat Boy/girl";
+        CLIPlayer.species = "Cat Boy/girl";
         CLIPlayer.Health = 18;
         CLIPlayer.Handequipped = 3;
         CLIPlayer.Smarts = 45;
         CLIPlayer.Speed = 15;
         CLIPlayer.Strength = 32;
-        CLIPlayer.Parasite = false;
-        CLIPlayer.Requirehost = false;
-        CLIPlayer.Requirepower = false;
-        CLIPlayer.Requirepowerlev = 0;
-        CLIPlayer.PartTeck = false;
-        CLIPlayer.Speciesablaty = "ancientGRool";
-        CLIPlayer.Caneditname = true;
+        CLIPlayer.parasite = false;
+        CLIPlayer.requireHost = false;
+        CLIPlayer.requirePower = false;
+        CLIPlayer.requirePowerLevel = 0;
+        CLIPlayer.partTech = false;
+        CLIPlayer.speciesAbility = "ancientGRool";
+        CLIPlayer.canEditName = true;
     }
 
     public void Wolf()
     {
-        CLIPlayer.Species = "Wolf";
+        CLIPlayer.species = "Wolf";
         CLIPlayer.Health = 22;
         CLIPlayer.Handequipped = 2;
         CLIPlayer.Smarts = 47;
         CLIPlayer.Speed = 12;
         CLIPlayer.Strength = 32;
-        CLIPlayer.Parasite = false;
-        CLIPlayer.Requirehost = false;
-        CLIPlayer.Requirepower = false;
-        CLIPlayer.Requirepowerlev = 0;
-        CLIPlayer.PartTeck = false;
-        CLIPlayer.Speciesablaty = "";
-        CLIPlayer.Caneditname = true;
+        CLIPlayer.parasite = false;
+        CLIPlayer.requireHost = false;
+        CLIPlayer.requirePower = false;
+        CLIPlayer.requirePowerLevel = 0;
+        CLIPlayer.partTech = false;
+        CLIPlayer.speciesAbility = "";
+        CLIPlayer.canEditName = true;
     }
 
     public void Cat()
     {
-        CLIPlayer.Species = "Cat";
+        CLIPlayer.species = "Cat";
         CLIPlayer.Health = 20;
         CLIPlayer.Handequipped = 3;
         CLIPlayer.Smarts = 47;
         CLIPlayer.Speed = 12;
         CLIPlayer.Strength = 32;
-        CLIPlayer.Parasite = false;
-        CLIPlayer.Requirehost = false;
-        CLIPlayer.Requirepower = false;
-        CLIPlayer.Requirepowerlev = 0;
-        CLIPlayer.PartTeck = false;
-        CLIPlayer.Speciesablaty = "";
-        CLIPlayer.Caneditname = true;
+        CLIPlayer.parasite = false;
+        CLIPlayer.requireHost = false;
+        CLIPlayer.requirePower = false;
+        CLIPlayer.requirePowerLevel = 0;
+        CLIPlayer.partTech = false;
+        CLIPlayer.speciesAbility = "";
+        CLIPlayer.canEditName = true;
     }
 
     public void Avali()
     {
-        CLIPlayer.Species = "Avali";
+        CLIPlayer.species = "Avali";
         CLIPlayer.Health = 30;
         CLIPlayer.Handequipped = 2;
         CLIPlayer.Smarts = 20;
         CLIPlayer.Speed = 16;
         CLIPlayer.Strength = 36;
-        CLIPlayer.Parasite = false;
-        CLIPlayer.Requirehost = false;
-        CLIPlayer.Requirepower = false;
-        CLIPlayer.Requirepowerlev = 0;
-        CLIPlayer.PartTeck = false;
-        CLIPlayer.Speciesablaty = "Fly";
-        CLIPlayer.Caneditname = true;
+        CLIPlayer.parasite = false;
+        CLIPlayer.requireHost = false;
+        CLIPlayer.requirePower = false;
+        CLIPlayer.requirePowerLevel = 0;
+        CLIPlayer.partTech = false;
+        CLIPlayer.speciesAbility = "Fly";
+        CLIPlayer.canEditName = true;
     }
 
     public void a() { }
@@ -97,7 +97,7 @@ public class CLISpecieList : CLIGamePrep
     {
         Console.Clear();
         Console.ForegroundColor = settings.mcolor;
-        Console.WriteLine("===Species====");
+        Console.WriteLine("===species====");
         Console.ForegroundColor = settings.dmcolor;
         Console.WriteLine("1. K9");
         Console.WriteLine("2. Feline");
@@ -113,7 +113,7 @@ public class CLISpecieList : CLIGamePrep
                 K9sel();
                 break;
             case "2":
-                player.Species = "Goa'uld";
+                player.species = "Goa'uld";
                 player.health = 30;
                 player.handequipped = 2;
                 player.smarts = 55;
@@ -122,7 +122,7 @@ public class CLISpecieList : CLIGamePrep
                 Playerinfo();
                 break;
             case "3":
-                player.Species = "Tok'ra";
+                player.species = "Tok'ra";
                 player.health = 30;
                 player.handequipped = 2;
                 player.smarts = 55;
@@ -134,7 +134,7 @@ public class CLISpecieList : CLIGamePrep
                 FOGsel();
                 break;
             case "0":
-                Speciessel();
+                speciessel();
                 break;
             default:
                 Furrysel();
@@ -147,7 +147,7 @@ public class CLISpecieList : CLIGamePrep
     {
         Console.Clear();
         Console.ForegroundColor = settings.mcolor;
-        Console.WriteLine("===Species====");
+        Console.WriteLine("===species====");
         Console.ForegroundColor = settings.dmcolor;
         Console.WriteLine("1. odhex by sparcky_ancientpack");
         Console.WriteLine("2. Corpse crawler by Frico⚠️");
@@ -166,27 +166,27 @@ public class CLISpecieList : CLIGamePrep
                 Playerinfo();
                 break;
             case "3":
-                player.Species = "protogen";
+                player.species = "protogen";
                 player.health = 22;
                 player.handequipped = 2;
                 player.smarts = 57;
                 player.strength = 32;
                 player.speed = 10;
-                player.Parasite = false;
-                player.Requirehost = false;
-                player.Requirepower = false;
-                player.Requirepowerlev = 0;
-                player.PartTeck = true;
+                player.parasite = false;
+                player.requireHost = false;
+                player.requirePower = false;
+                player.requirePowerLevel = 0;
+                player.partTech = true;
                 player.Damageresistance = 1.3;
-                player.Speciesablaty = "none";
-                player.caneditname = true;
+                player.speciesAbility = "none";
+                player.canEditName = true;
                 Playerinfo();
                 break;
             case "4":
                 Playerinfo();
                 break;
             case "0":
-                Speciessel();
+                speciessel();
                 break;
             default:
                 K9sel();
@@ -209,46 +209,46 @@ public class CLISpecieList : CLIGamePrep
         switch (Console.ReadLine())
         {
             case "1":
-                player.Species = "Odhex";
+                player.species = "Odhex";
                 player.health = 30;
                 player.handequipped = 2;
                 player.smarts = 60;
                 player.strength = 32;
                 player.speed = 10;
-                player.Parasite = false;
-                player.Requirehost = false;
-                player.Requirepower = false;
-                player.Requirepowerlev = 0;
-                player.PartTeck = true;
+                player.parasite = false;
+                player.requireHost = false;
+                player.requirePower = false;
+                player.requirePowerLevel = 0;
+                player.partTech = true;
                 player.Damageresistance = 1.2;
-                player.Speciesablaty = "";
-                player.caneditname = true;
+                player.speciesAbility = "";
+                player.canEditName = true;
                 Playerinfo();
                 break;
             case "2":
-                player.Species = "protohex";
+                player.species = "protohex";
                 player.health = 25;
                 player.handequipped = 2;
                 player.smarts = 55;
                 player.strength = 32;
                 player.speed = 10;
-                player.Parasite = false;
-                player.Requirehost = false;
-                player.Requirepower = true;
-                player.Requirepowerlev = 1700;
-                player.PartTeck = true;
+                player.parasite = false;
+                player.requireHost = false;
+                player.requirePower = true;
+                player.requirePowerLevel = 1700;
+                player.partTech = true;
                 player.Damageresistance = 1.3;
-                player.Speciesablaty = "";
+                player.speciesAbility = "";
                 player.protohexnum = 005;
                 player.name = "Axel Wrenchblade";
                 player.color = ConsoleColor.DarkCyan;
                 settings.dmcolor = ConsoleColor.DarkBlue;
                 settings.mcolor = ConsoleColor.Cyan;
-                player.caneditname = false;
+                player.canEditName = false;
                 Playerinfo();
                 break;
             case "0":
-                Speciessel();
+                speciessel();
                 break;
             default:
                 Odhexsel();

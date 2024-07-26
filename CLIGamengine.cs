@@ -48,7 +48,7 @@ if (CLISettings.Debug == true)
     Console.ResetColor();
     Console.WriteLine("ModingIsOn:");
     Console.ForegroundColor = ConsoleColor.Blue;
-    Console.WriteLine(CLISettings.ModingIsOn);
+    Console.WriteLine(CLISettings.moddingIsOn);
     Console.ResetColor();
     Console.WriteLine("error count: ");
     Console.ForegroundColor = ConsoleColor.Red;
@@ -78,7 +78,7 @@ if (CLISettings.Debug == true)
     logo.bootlogo2();
     Console.WriteLine("default logo:");
     logo.bootlogo1();
-    Console.WriteLine($"{CLIPlayer.Species} HP{CLIPlayer.Health} SM:{CLIPlayer.Smarts} ST:{CLIPlayer.Strength} SP:{CLIPlayer.Speed} DR;{CLIPlayer.Damageresistance} handequipped:{CLIPlayer.Handequipped} Parasite:{CLIPlayer.Parasite} Requirehost:{CLIPlayer.Requirehost} Requirepower:{CLIPlayer.Requirepower} Requirepowerlev:{CLIPlayer.Requirepowerlev} PartTeck:{CLIPlayer.PartTeck} Speciesablaty:{CLIPlayer.Speciesablaty}");
+    Console.WriteLine($"{CLIPlayer.species} HP{CLIPlayer.Health} SM:{CLIPlayer.Smarts} ST:{CLIPlayer.Strength} SP:{CLIPlayer.Speed} DR;{CLIPlayer.damageResistance} handequipped:{CLIPlayer.Handequipped} Parasite:{CLIPlayer.parasite} Requirehost:{CLIPlayer.requireHost} Requirepower:{CLIPlayer.requirePower} Requirepowerlev:{CLIPlayer.requirePowerLevel} PartTeck:{CLIPlayer.partTech} Speciesablaty:{CLIPlayer.speciesAbility}");
     //SharedVariables sharedVars = new SharedVariables();
     //sharedVars.Sharedname = name;
     //Console.WriteLine(sharedVars.Sharedname);

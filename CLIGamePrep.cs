@@ -5,7 +5,7 @@ public class CLIGamePrep
     ClIMiscellaneous miscellaneous = new ClIMiscellaneous();
     public void newgame()
     {
-        CLISettings.MainenuOpen = false;
+        CLISettings.mainMenuOpen = false;
         Console.Clear();
         Console.WriteLine("set a name for your save:");
         miscellaneous.savename = Console.ReadLine();
@@ -21,7 +21,7 @@ public class CLIGamePrep
         Console.WriteLine("===newgame====");
         Console.ForegroundColor = CLISettings.Dmcolor;
         Console.Write("1. Name:");
-        if (CLIPlayer.Caneditname == true)
+        if (CLIPlayer.canEditName == true)
         {
             Console.ForegroundColor = CLIPlayer.Color;
         }
@@ -37,11 +37,11 @@ public class CLIGamePrep
         Console.ForegroundColor = CLISettings.Dmcolor;
         Console.Write("3. Species:");
         Console.ForegroundColor = CLIPlayer.Color;
-        Console.WriteLine(CLIPlayer.Species);
+        Console.WriteLine(CLIPlayer.species);
         Console.ForegroundColor = CLISettings.Dmcolor;
         Console.WriteLine("4. Start");
         Console.ForegroundColor = ConsoleColor.Red;
-        if (CLIPlayer.Caneditname == false)
+        if (CLIPlayer.canEditName == false)
         {
             Console.WriteLine("5. unlock");
         }
@@ -56,7 +56,7 @@ public class CLIGamePrep
             case "1":
                 //Console.WriteLine("demo 1");
                 Console.Clear();
-                if (CLIPlayer.Caneditname == true)
+                if (CLIPlayer.canEditName == true)
                 {
                     Console.WriteLine("name:");
                     CLIPlayer.Name = Console.ReadLine();
@@ -65,7 +65,7 @@ public class CLIGamePrep
                 break;
             case "2":
                 //Console.WriteLine("demo 2");
-                if (CLIPlayer.Caneditname == true)
+                if (CLIPlayer.canEditName == true)
                 {
                     Coloursel();
                 }
@@ -76,7 +76,7 @@ public class CLIGamePrep
                 break;
             case "3":
                 //Console.WriteLine("demo 3");
-                if (CLIPlayer.Caneditname == true)
+                if (CLIPlayer.canEditName == true)
                 {
                     Speciessel();
                 }
@@ -93,24 +93,24 @@ public class CLIGamePrep
                 else { }
                 break;
             case "5":
-                if (CLIPlayer.Caneditname == false)
+                if (CLIPlayer.canEditName == false)
                 {
                     CLIPlayer.Name = "none";
-                    CLIPlayer.Caneditname = true;
+                    CLIPlayer.canEditName = true;
                     CLIPlayer.Color = ConsoleColor.Gray;
-                    CLIPlayer.Species = "Human";
+                    CLIPlayer.species = "Human";
                     CLIPlayer.Health = 20;
                     CLIPlayer.Handequipped = 2;
                     CLIPlayer.Smarts = 45;
                     CLIPlayer.Speed = 10;
                     CLIPlayer.Strength = 32;
-                    CLIPlayer.Parasite = false;
-                    CLIPlayer.Requirehost = false;
-                    CLIPlayer.Requirepower = false;
-                    CLIPlayer.Requirepowerlev = 0;
-                    CLIPlayer.PartTeck = false;
+                    CLIPlayer.parasite = false;
+                    CLIPlayer.requireHost = false;
+                    CLIPlayer.requirePower = false;
+                    CLIPlayer.requirePowerLevel = 0;
+                    CLIPlayer.partTech = false;
                     CLIPlayer.Protohexnum = -1;
-                    CLIPlayer.Speciesablaty = "ancientGRool";
+                    CLIPlayer.speciesAbility = "ancientGRool";
                     Playerinfo();
                 }
                 else
@@ -181,67 +181,67 @@ public class CLIGamePrep
         switch (Console.ReadLine())
         {
             case "1":
-                CLIPlayer.Species = "Human";
+                CLIPlayer.species = "Human";
                 CLIPlayer.Health = 20;
                 CLIPlayer.Handequipped = 2;
                 CLIPlayer.Smarts = 45;
                 CLIPlayer.Speed = 10;
                 CLIPlayer.Strength = 32;
-                CLIPlayer.Parasite = false;
-                CLIPlayer.Requirehost = false;
-                CLIPlayer.Requirepower = false;
-                CLIPlayer.Requirepowerlev = 0;
-                CLIPlayer.PartTeck = false;
-                CLIPlayer.Speciesablaty = "ancientGRool";
-                CLIPlayer.Caneditname = true;
+                CLIPlayer.parasite = false;
+                CLIPlayer.requireHost = false;
+                CLIPlayer.requirePower = false;
+                CLIPlayer.requirePowerLevel = 0;
+                CLIPlayer.partTech = false;
+                CLIPlayer.speciesAbility = "ancientGRool";
+                CLIPlayer.canEditName = true;
                 this.Playerinfo();
                 break;
             case "2":
-                CLIPlayer.Species = "Goa'uld";
+                CLIPlayer.species = "Goa'uld";
                 CLIPlayer.Health = 30;
                 CLIPlayer.Handequipped = 2;
                 CLIPlayer.Smarts = 55;
                 CLIPlayer.Speed = 12;
                 CLIPlayer.Strength = 40;
-                CLIPlayer.Parasite = true;
-                CLIPlayer.Requirehost = true;
-                CLIPlayer.Requirepower = false;
-                CLIPlayer.Requirepowerlev = 0;
-                CLIPlayer.PartTeck = false;
-                CLIPlayer.Speciesablaty = "";
-                CLIPlayer.Caneditname = true;
+                CLIPlayer.parasite = true;
+                CLIPlayer.requireHost = true;
+                CLIPlayer.requirePower = false;
+                CLIPlayer.requirePowerLevel = 0;
+                CLIPlayer.partTech = false;
+                CLIPlayer.speciesAbility = "";
+                CLIPlayer.canEditName = true;
                 this.Playerinfo();
                 break;
             case "3":
-                CLIPlayer.Species = "Tok'ra";
+                CLIPlayer.species = "Tok'ra";
                 CLIPlayer.Health = 30;
                 CLIPlayer.Handequipped = 2;
                 CLIPlayer.Smarts = 55;
                 CLIPlayer.Speed = 12;
                 CLIPlayer.Strength = 40;
-                CLIPlayer.Parasite = true;
-                CLIPlayer.Requirehost = true;
-                CLIPlayer.Requirepower = false;
-                CLIPlayer.Requirepowerlev = 0;
-                CLIPlayer.PartTeck = false;
-                CLIPlayer.Speciesablaty = "";
-                CLIPlayer.Caneditname = true;
+                CLIPlayer.parasite = true;
+                CLIPlayer.requireHost = true;
+                CLIPlayer.requirePower = false;
+                CLIPlayer.requirePowerLevel = 0;
+                CLIPlayer.partTech = false;
+                CLIPlayer.speciesAbility = "";
+                CLIPlayer.canEditName = true;
                 this.Playerinfo();
                 break;
             case "4":
-                CLIPlayer.Species = "Cat Boy/girl";
+                CLIPlayer.species = "Cat Boy/girl";
                 CLIPlayer.Health = 18;
                 CLIPlayer.Handequipped = 3;
                 CLIPlayer.Smarts = 45;
                 CLIPlayer.Speed = 15;
                 CLIPlayer.Strength = 32;
-                CLIPlayer.Parasite = false;
-                CLIPlayer.Requirehost = false;
-                CLIPlayer.Requirepower = false;
-                CLIPlayer.Requirepowerlev = 0;
-                CLIPlayer.PartTeck = false;
-                CLIPlayer.Speciesablaty = "ancientGRool";
-                CLIPlayer.Caneditname = true;
+                CLIPlayer.parasite = false;
+                CLIPlayer.requireHost = false;
+                CLIPlayer.requirePower = false;
+                CLIPlayer.requirePowerLevel = 0;
+                CLIPlayer.partTech = false;
+                CLIPlayer.speciesAbility = "ancientGRool";
+                CLIPlayer.canEditName = true;
                 this.Playerinfo();
                 break;
             case "0":
@@ -273,7 +273,7 @@ public class CLIGamePrep
                 K9sel();
                 break;
             case "2":
-                CLIPlayer.Species = "Goa'uld";
+                CLIPlayer.species = "Goa'uld";
                 CLIPlayer.Health = 30;
                 CLIPlayer.Handequipped = 2;
                 CLIPlayer.Smarts = 55;
@@ -282,7 +282,7 @@ public class CLIGamePrep
                 Playerinfo();
                 break;
             case "3":
-                CLIPlayer.Species = "Tok'ra";
+                CLIPlayer.species = "Tok'ra";
                 CLIPlayer.Health = 30;
                 CLIPlayer.Handequipped = 2;
                 CLIPlayer.Smarts = 55;
@@ -319,7 +319,7 @@ public class CLIGamePrep
         switch (Console.ReadLine())
         {
             case "1":
-                CLIPlayer.Species = "Wolf";
+                CLIPlayer.species = "Wolf";
                 CLIPlayer.Health = 22;
                 CLIPlayer.Handequipped = 2;
                 CLIPlayer.Smarts = 47;
@@ -328,7 +328,7 @@ public class CLIGamePrep
                 Playerinfo();
                 break;
             case "2":
-                CLIPlayer.Species = "Goa'uld";
+                CLIPlayer.species = "Goa'uld";
                 CLIPlayer.Health = 30;
                 CLIPlayer.Handequipped = 2;
                 CLIPlayer.Smarts = 55;
@@ -337,7 +337,7 @@ public class CLIGamePrep
                 Playerinfo();
                 break;
             case "3":
-                CLIPlayer.Species = "Tok'ra";
+                CLIPlayer.species = "Tok'ra";
                 CLIPlayer.Health = 30;
                 CLIPlayer.Handequipped = 2;
                 CLIPlayer.Smarts = 55;
@@ -346,7 +346,7 @@ public class CLIGamePrep
                 Playerinfo();
                 break;
             case "4":
-                CLIPlayer.Species = "Cat Boy/girl";
+                CLIPlayer.species = "Cat Boy/girl";
                 CLIPlayer.Health = 18;
                 CLIPlayer.Handequipped = 3;
                 CLIPlayer.Smarts = 45;
@@ -386,20 +386,20 @@ public class CLIGamePrep
                 Playerinfo();
                 break;
             case "3":
-                CLIPlayer.Species = "protogen";
+                CLIPlayer.species = "protogen";
                 CLIPlayer.Health = 22;
                 CLIPlayer.Handequipped = 2;
                 CLIPlayer.Smarts = 57;
                 CLIPlayer.Strength = 32;
                 CLIPlayer.Speed = 10;
-                CLIPlayer.Parasite = false;
-                CLIPlayer.Requirehost = false;
-                CLIPlayer.Requirepower = false;
-                CLIPlayer.Requirepowerlev = 0;
-                CLIPlayer.PartTeck = true;
-                CLIPlayer.Damageresistance = 1.3;
-                CLIPlayer.Speciesablaty = "none";
-                CLIPlayer.Caneditname = true;
+                CLIPlayer.parasite = false;
+                CLIPlayer.requireHost = false;
+                CLIPlayer.requirePower = false;
+                CLIPlayer.requirePowerLevel = 0;
+                CLIPlayer.partTech = true;
+                CLIPlayer.damageResistance = 1.3;
+                CLIPlayer.speciesAbility = "none";
+                CLIPlayer.canEditName = true;
                 Playerinfo();
                 break;
             case "4":
@@ -429,42 +429,42 @@ public class CLIGamePrep
         switch (Console.ReadLine())
         {
             case "1":
-                CLIPlayer.Species = "Odhex";
+                CLIPlayer.species = "Odhex";
                 CLIPlayer.Health = 30;
                 CLIPlayer.Handequipped = 2;
                 CLIPlayer.Smarts = 60;
                 CLIPlayer.Strength = 32;
                 CLIPlayer.Speed = 10;
-                CLIPlayer.Parasite = false;
-                CLIPlayer.Requirehost = false;
-                CLIPlayer.Requirepower = false;
-                CLIPlayer.Requirepowerlev = 0;
-                CLIPlayer.PartTeck = true;
-                CLIPlayer.Damageresistance = 1.2;
-                CLIPlayer.Speciesablaty = "";
-                CLIPlayer.Caneditname = true;
+                CLIPlayer.parasite = false;
+                CLIPlayer.requireHost = false;
+                CLIPlayer.requirePower = false;
+                CLIPlayer.requirePowerLevel = 0;
+                CLIPlayer.partTech = true;
+                CLIPlayer.damageResistance = 1.2;
+                CLIPlayer.speciesAbility = "";
+                CLIPlayer.canEditName = true;
                 Playerinfo();
                 break;
             case "2":
-                CLIPlayer.Species = "protohex";
+                CLIPlayer.species = "protohex";
                 CLIPlayer.Health = 25;
                 CLIPlayer.Handequipped = 2;
                 CLIPlayer.Smarts = 55;
                 CLIPlayer.Strength = 32;
                 CLIPlayer.Speed = 10;
-                CLIPlayer.Parasite = false;
-                CLIPlayer.Requirehost = false;
-                CLIPlayer.Requirepower = true;
-                CLIPlayer.Requirepowerlev = 1700;
-                CLIPlayer.PartTeck = true;
-                CLIPlayer.Damageresistance = 1.3;
-                CLIPlayer.Speciesablaty = "";
+                CLIPlayer.parasite = false;
+                CLIPlayer.requireHost = false;
+                CLIPlayer.requirePower = true;
+                CLIPlayer.requirePowerLevel = 1700;
+                CLIPlayer.partTech = true;
+                CLIPlayer.damageResistance = 1.3;
+                CLIPlayer.speciesAbility = "";
                 CLIPlayer.Protohexnum = 005;
                 CLIPlayer.Name = "Axel Wrenchblade";
                 CLIPlayer.Color = ConsoleColor.DarkCyan;
                 CLISettings.Dmcolor = ConsoleColor.DarkBlue;
                 CLISettings.Mcolor = ConsoleColor.Cyan;
-                CLIPlayer.Caneditname = false;
+                CLIPlayer.canEditName = false;
                 Playerinfo();
                 break;
             case "0":
@@ -484,7 +484,7 @@ public class CLIGamePrep
         Console.ForegroundColor = CLISettings.Dmcolor;
         Console.WriteLine("1. Code");
         Console.Write("2. ");
-         if (CLISettings.ModingIsOn == true)
+         if (CLISettings.moddingIsOn == true)
         {
             Console.ForegroundColor = ConsoleColor.Green;
         }

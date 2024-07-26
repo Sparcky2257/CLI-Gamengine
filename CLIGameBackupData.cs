@@ -2,14 +2,14 @@ public class CLIGameBackupData{
     // temp settings storage
     private bool IsCurrentCache = false; // just to make sure that something stupid doesn't happen if you write an empty cache
     // taken from CLISettings
-    private bool mainenuOpen = true;
+    private bool mainMenuOpen = true;
     private bool debug = false;
-    private bool ModingIsOn = false;
-    private bool CustomLogoIsOn = false;
+    private bool moddingIsOn = false;
+    private bool customLogoIsOn = false;
     private double bootlogo = 1;
     private ConsoleColor mcolor = ConsoleColor.Gray;
     private ConsoleColor dmcolor = ConsoleColor.DarkGray;
-    private bool NfswIsOn = false;
+    private bool NSFWIsOn = false;
     private bool BuiltInDemoEnabled = true;
     // taken from CLIPlayer
     private string? name = "none";
@@ -19,22 +19,22 @@ public class CLIGameBackupData{
     private double smarts = 45;
     private double strength = 32;
     private double speed = 10;
-    private bool Parasite = false;
-    private bool Requirehost = false;
-    private bool Requirepower = false;
-    private double Requirepowerlev = 0;
-    private bool PartTeck = false;
-    private double Damageresistance = 1.0;
-    private string? Speciesablaty = "";
+    private bool parasite = false;
+    private bool requireHost = false;
+    private bool requirePower = false;
+    private double requirePowerLevel = 0;
+    private bool partTech = false;
+    private double damageResistance = 1.0;
+    private string? speciesAbility = "";
     private double protohexnum = -1;
-    private bool caneditname = true;
+    private bool canEditName = true;
     private string? sex = "none";
-    private string? Species = "Human";
-    private bool islatex = false;
+    private string? species = "Human";
+    private bool isLatex = false;
     private bool canTF = false;
-    private string? latextipe = "";
-    private string? PevusSpecies = "";
-    private string? pronoud = "they them";
+    private string? latexType = "";
+    private string? previousSpecies = "";
+    private string? pronouns = "they them";
 
     // loads current settings into cache
     public void WriteCaches(){
@@ -42,14 +42,14 @@ public class CLIGameBackupData{
         IsCurrentCache=false;
 
         // items from clisettings
-        mainenuOpen=CLISettings.MainenuOpen;
+        mainMenuOpen=CLISettings.mainMenuOpen;
         debug=CLISettings.Debug;
-        ModingIsOn=CLISettings.ModingIsOn;
-        CustomLogoIsOn=CLISettings.CustomLogoIsOn;
+        moddingIsOn=CLISettings.moddingIsOn;
+        customLogoIsOn=CLISettings.customLogoIsOn;
         bootlogo=CLISettings.Bootlogo;
         mcolor=CLISettings.Mcolor;
         dmcolor=CLISettings.Dmcolor;
-        NfswIsOn=CLISettings.NfswIsOn;
+        NSFWIsOn=CLISettings.NSFWIsOn;
         BuiltInDemoEnabled=CLISettings.BuiltInDemoEnabled;
 
         // items from cliplayer
@@ -60,22 +60,22 @@ public class CLIGameBackupData{
         smarts=CLIPlayer.Smarts;
         strength=CLIPlayer.Strength;
         speed=CLIPlayer.Speed;
-        Parasite=CLIPlayer.Parasite;
-        Requirehost=CLIPlayer.Requirehost;
-        Requirepower=CLIPlayer.Requirepower;
-        Requirepowerlev=CLIPlayer.Requirepowerlev;
-        PartTeck=CLIPlayer.PartTeck;
-        Damageresistance=CLIPlayer.Damageresistance;
-        Speciesablaty=CLIPlayer.Speciesablaty;
+        parasite=CLIPlayer.parasite;
+        requireHost=CLIPlayer.requireHost;
+        requirePower=CLIPlayer.requirePower;
+        requirePowerLevel=CLIPlayer.requirePowerLevel;
+        partTech=CLIPlayer.partTech;
+        damageResistance=CLIPlayer.damageResistance;
+        speciesAbility=CLIPlayer.speciesAbility;
         protohexnum=CLIPlayer.Protohexnum;
-        caneditname=CLIPlayer.Caneditname;
+        canEditName=CLIPlayer.canEditName;
         sex=CLIPlayer.Sex;
-        Species=CLIPlayer.Species;
-        islatex=CLIPlayer.Islatex;
+        species=CLIPlayer.species;
+        isLatex=CLIPlayer.isLatex;
         canTF=CLIPlayer.CanTF;
-        latextipe=CLIPlayer.Latextipe;
-        PevusSpecies=CLIPlayer.PevusSpecies;
-        pronoud=CLIPlayer.Pronoud;
+        latexType=CLIPlayer.latexType;
+        previousSpecies=CLIPlayer.previousSpecies;
+        pronouns=CLIPlayer.pronouns;
 
         // now that the cache is ok, now set stuff back
         IsCurrentCache=true;
@@ -85,14 +85,14 @@ public class CLIGameBackupData{
     // DO NOT USE IT IF THE PRIOR METHOD RETURNS FALSE
     public void UseBackup(){
         // items from clisettings
-        CLISettings.MainenuOpen=mainenuOpen;
+        CLISettings.mainMenuOpen=mainMenuOpen;
         CLISettings.Debug=debug;
-        CLISettings.ModingIsOn=ModingIsOn;;
-        CLISettings.CustomLogoIsOn=CustomLogoIsOn;;
+        CLISettings.moddingIsOn=moddingIsOn;;
+        CLISettings.customLogoIsOn=customLogoIsOn;;
         CLISettings.Bootlogo=bootlogo;
         CLISettings.Mcolor=mcolor;
         CLISettings.Dmcolor=dmcolor;
-        CLISettings.NfswIsOn=NfswIsOn;
+        CLISettings.NSFWIsOn=NSFWIsOn;
         CLISettings.BuiltInDemoEnabled=BuiltInDemoEnabled;
 
         // items from cliplayer
@@ -103,22 +103,22 @@ public class CLIGameBackupData{
         CLIPlayer.Smarts=smarts;
         CLIPlayer.Strength=strength;
         CLIPlayer.Speed=speed;
-        CLIPlayer.Parasite=Parasite;
-        CLIPlayer.Requirehost=Requirehost;
-        CLIPlayer.Requirepower=Requirepower;
-        CLIPlayer.Requirepowerlev=Requirepowerlev;
-        CLIPlayer.PartTeck=PartTeck;
-        CLIPlayer.Damageresistance=Damageresistance;
-        CLIPlayer.Speciesablaty=Speciesablaty;
+        CLIPlayer.parasite=parasite;
+        CLIPlayer.requireHost=requireHost;
+        CLIPlayer.requirePower=requirePower;
+        CLIPlayer.requirePowerLevel=requirePowerLevel;
+        CLIPlayer.partTech=partTech;
+        CLIPlayer.damageResistance=damageResistance;
+        CLIPlayer.speciesAbility=speciesAbility;
         CLIPlayer.Protohexnum=protohexnum;
-        CLIPlayer.Caneditname=caneditname;
+        CLIPlayer.canEditName=canEditName;
         CLIPlayer.Sex=sex;
-        CLIPlayer.Species=Species;
-        CLIPlayer.Islatex=islatex;
+        CLIPlayer.species=species;
+        CLIPlayer.isLatex=isLatex;
         CLIPlayer.CanTF=canTF;
-        CLIPlayer.Latextipe=latextipe;
-        CLIPlayer.PevusSpecies=PevusSpecies;
-        CLIPlayer.Pronoud=pronoud;
+        CLIPlayer.latexType=latexType;
+        CLIPlayer.previousSpecies=previousSpecies;
+        CLIPlayer.pronouns=pronouns;
 
         // invalidate the cache because why the heck not??
         IsCurrentCache = false;

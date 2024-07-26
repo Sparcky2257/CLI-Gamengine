@@ -27,35 +27,35 @@ public class SGSpecieList : CLISpecieList
     // CLISettings settings = new CLISettings();
     public void Goauld()
     {
-        CLIPlayer.Species = "Goa'uld";
+        CLIPlayer.species = "Goa'uld";
         CLIPlayer.Health = 30;
         CLIPlayer.Handequipped = 2;
         CLIPlayer.Smarts = 55;
         CLIPlayer.Speed = 12;
         CLIPlayer.Strength = 40;
-        CLIPlayer.Parasite = true;
-        CLIPlayer.Requirehost = true;
-        CLIPlayer.Requirepower = false;
-        CLIPlayer.Requirepowerlev = 0;
-        CLIPlayer.PartTeck = false;
-        CLIPlayer.Speciesablaty = "";
-        CLIPlayer.Caneditname = true;
+        CLIPlayer.parasite = true;
+        CLIPlayer.requireHost = true;
+        CLIPlayer.requirePower = false;
+        CLIPlayer.requirePowerLevel = 0;
+        CLIPlayer.partTech = false;
+        CLIPlayer.speciesAbility = "";
+        CLIPlayer.canEditName = true;
     }
 
     public void Tokra()
     {
-        CLIPlayer.Species = "Tok'ra";
+        CLIPlayer.species = "Tok'ra";
         CLIPlayer.Health = 30;
         CLIPlayer.Handequipped = 2;
         CLIPlayer.Smarts = 55;
         CLIPlayer.Speed = 12;
         CLIPlayer.Strength = 40;
-        CLIPlayer.Parasite = true;
-        CLIPlayer.Requirehost = true;
-        CLIPlayer.Requirepower = false;
-        CLIPlayer.Requirepowerlev = 0;
-        CLIPlayer.PartTeck = false;
-        CLIPlayer.Speciesablaty = "";
-        CLIPlayer.Caneditname = true;
+        CLIPlayer.parasite = true;
+        CLIPlayer.requireHost = true;
+        CLIPlayer.requirePower = false;
+        CLIPlayer.requirePowerLevel = 0;
+        CLIPlayer.partTech = false;
+        CLIPlayer.speciesAbility = "";
+        CLIPlayer.canEditName = true;
     }
 }

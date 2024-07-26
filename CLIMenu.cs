@@ -15,9 +15,9 @@ public class CLIMenu
         // {
         //     mainenu();
         // }
-        // while (CLISettings.MainenuOpen == true);
+        // while (CLISettings.mainMenuOpen == true);
         // void mainenu()
-        while (CLISettings.MainenuOpen)
+        while (CLISettings.mainMenuOpen)
         {
             //Optionload();
             if (CLISettings.Debug == false)
@@ -68,7 +68,7 @@ public class CLIMenu
                     break;
                 case "0":
                     // break; // nothing happens after the break
-                    CLISettings.MainenuOpen = false;
+                    CLISettings.mainMenuOpen = false;
                     break;
                 //ClIGameBackup.WriteBackup(/*i dont know waht to put here*/); // don't do it here!
                 default:
@@ -87,7 +87,7 @@ public class CLIMenu
         Console.ForegroundColor = CLISettings.Dmcolor;
         Console.WriteLine("1. Debug");
         Console.Write("2. ");
-        if (CLISettings.ModingIsOn == true)
+        if (CLISettings.moddingIsOn == true)
         {
             Console.ForegroundColor = ConsoleColor.Green;
         }
@@ -132,13 +132,13 @@ public class CLIMenu
                 break;
             case "2":
                 //Console.WriteLine("demo 2");
-                if (CLISettings.ModingIsOn == true)
+                if (CLISettings.moddingIsOn == true)
                 {
-                    CLISettings.ModingIsOn = false;
+                    CLISettings.moddingIsOn = false;
                 }
                 else
                 {
-                    CLISettings.ModingIsOn = true;
+                    CLISettings.moddingIsOn = true;
                 }
                 options();
                 break;
@@ -281,54 +281,54 @@ public class CLIMenu
             case "logo=1":
                 //Console.WriteLine("demo 2");
                 CLISettings.Bootlogo = 1;
-                CLISettings.CustomLogoIsOn = true;
+                CLISettings.customLogoIsOn = true;
                 break;
             case "logo=2":
                 //Console.WriteLine("demo 2");
                 CLISettings.Bootlogo = 2;
-                CLISettings.CustomLogoIsOn = true;
+                CLISettings.customLogoIsOn = true;
                 break;
             case "logo=0":
                 //Console.WriteLine("demo 2");
                 CLISettings.Bootlogo = 0;
-                CLISettings.CustomLogoIsOn = true;
+                CLISettings.customLogoIsOn = true;
                 break;
             case "logo=3":
                 //Console.WriteLine("demo 2");
                 CLISettings.Bootlogo = 3;
-                CLISettings.CustomLogoIsOn = true;
+                CLISettings.customLogoIsOn = true;
                 break;
             case "mod=1":
                 //Console.WriteLine("demo 2");
-                CLISettings.ModingIsOn = true;
+                CLISettings.moddingIsOn = true;
                 //Optionsave();
                 break;
             case "mod=0":
                 //Console.WriteLine("demo 2");
-                CLISettings.ModingIsOn = false;
+                CLISettings.moddingIsOn = false;
                 //Optionsave();
                 break;
             case "mod=true":
                 //Console.WriteLine("demo 2");
-                CLISettings.ModingIsOn = true;
+                CLISettings.moddingIsOn = true;
                 //Optionsave();
                 break;
             case "mod=false":
                 //Console.WriteLine("demo 2");
-                CLISettings.ModingIsOn = false;
+                CLISettings.moddingIsOn = false;
                 //Optionsave();
                 break;
             case "nfsw=false":
-                CLISettings.NfswIsOn = false;
+                CLISettings.NSFWIsOn = false;
                 break;
             case "nfsw=0":
-                CLISettings.NfswIsOn = false;
+                CLISettings.NSFWIsOn = false;
                 break;
             case "nfsw=1":
-                CLISettings.NfswIsOn = true;
+                CLISettings.NSFWIsOn = true;
                 break;
             case "nfsw=true":
-                CLISettings.NfswIsOn = true;
+                CLISettings.NSFWIsOn = true;
                 break;
             default:
                 debugmenu();
@@ -343,7 +343,7 @@ public class CLIMenu
         // Console.Clear();
         // this is where the implementation goes :3
         // temp stop main menu
-        CLISettings.MainenuOpen = false; // make sure to set this true before EVERY return
+        CLISettings.mainMenuOpen = false; // make sure to set this true before EVERY return
 
         // test code
         // fs paf, and the path of the saves dir
@@ -357,7 +357,7 @@ public class CLIMenu
         if (!Directory.Exists(savpaf))
         {
             Console.WriteLine("You don't got a saves directory! You defintely don't got any saves.");
-            CLISettings.MainenuOpen = true;
+            CLISettings.mainMenuOpen = true;
             return;
         }
         // this is more useful (when I deploy it)
@@ -383,7 +383,7 @@ public class CLIMenu
         if (totalItems == 0)
         {
             Console.WriteLine("No save files found qwp");
-            CLISettings.MainenuOpen = true;
+            CLISettings.mainMenuOpen = true;
             return;
         }
         Console.WriteLine("The following are your save game load options:");
@@ -398,13 +398,13 @@ public class CLIMenu
         if (req == string.Empty || req == null)
         {
             Console.WriteLine("Your input is empty... This will not work.");
-            CLISettings.MainenuOpen = true;
+            CLISettings.mainMenuOpen = true;
             return;
         }
         if (req.Equals("exit"))
         {
             Console.WriteLine("Exiting per user request");
-            CLISettings.MainenuOpen = true;
+            CLISettings.mainMenuOpen = true;
             return;
         }
 
@@ -416,14 +416,14 @@ public class CLIMenu
             if (i < 1)
             {
                 Console.WriteLine("... don't go at or below zero");
-                CLISettings.MainenuOpen = true;
+                CLISettings.mainMenuOpen = true;
                 return;
             }
             // taking one off of input
             if (i > totalItems - 1)
             {
                 Console.WriteLine("That number is too beeg");
-                CLISettings.MainenuOpen = true;
+                CLISettings.mainMenuOpen = true;
                 return;
             }
             fin = files.ElementAt(i - 1);
@@ -444,7 +444,7 @@ public class CLIMenu
             if (nFinds)
             {
                 Console.WriteLine("Your value was not found!");
-                CLISettings.MainenuOpen = true;
+                CLISettings.mainMenuOpen = true;
                 return; // failure
             }
         }
@@ -458,12 +458,12 @@ public class CLIMenu
         if (!result)
         {
             Console.WriteLine("Something went wrong! Likely, this is an error with the save file.");
-            CLISettings.MainenuOpen = true;
+            CLISettings.mainMenuOpen = true;
             return;
         }
         Console.WriteLine("Session sucessfully restored!");
         // we're done, so now restore
-        CLISettings.MainenuOpen = true;
+        CLISettings.mainMenuOpen = true;
     }
 
     public string textboxvar { get; set; } = "1";
