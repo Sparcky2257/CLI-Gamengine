@@ -158,11 +158,11 @@ public class CLIMenu
                 //Console.WriteLine("demo 2");
                 if (CLISettings.moddingIsOn == true)
                 {
-                    CLISettings.Debug = false;
+                    CLISettings.moddingIsOn = false;
                 }
                 else
                 {
-                    CLISettings.Debug = true;
+                    CLISettings.moddingIsOn = true;
                 }
                 options();
                 break;
