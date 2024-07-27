@@ -13,7 +13,7 @@ public class CLIPlayer
     public static double requirePowerLevel { get; set; } = 0;
     public static bool partTech { get; set; } = false;
     public static double damageResistance { get; set; } = 1.001;
-    public static string? speciesAbility { get; set; } = "";
+    public static string? speciesAbility { get; set; } = ""; //chage to list
     public static double Protohexnum { get; set; } = -1;
     public static bool canEditName { get; set; } = true;
     public static string? Sex { get; set; } = "male";

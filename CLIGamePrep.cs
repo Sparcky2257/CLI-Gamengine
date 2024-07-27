@@ -167,13 +167,12 @@ public class CLIGamePrep
         Console.WriteLine("===Species====");
         Console.ForegroundColor = CLISettings.Dmcolor;
         Console.WriteLine("1. Human HP:20 SM:45 ST:32 SP:10");
-        Console.Write("2. Goa'uld HP:30 SM:55 ST:40 SP:12(");
+        Console.WriteLine("2. Cat Boy/girl HP:18 SM:30 ST:32 SP:15 (HQ+1)");
+        /*Console.Write("2. Goa'uld HP:30 SM:55 ST:40 SP:12(");
         Console.ForegroundColor = ConsoleColor.Red;
         Console.Write("evil");
         Console.ForegroundColor = CLISettings.Dmcolor;
-        Console.WriteLine(")");
-        Console.WriteLine("3. Tok'ra HP:30 SM:52 ST:40 SP:12");
-        Console.WriteLine("4. Cat Boy/girl HP:18 SM:30 ST:32 SP:15 (HQ+1)");
+        Console.WriteLine(")");*/
         Console.WriteLine("0. Back");
         Console.ResetColor();
         Console.WriteLine("");
@@ -181,69 +180,20 @@ public class CLIGamePrep
         switch (Console.ReadLine())
         {
             case "1":
-                CLIPlayer.species = "Human";
-                CLIPlayer.Health = 20;
-                CLIPlayer.Handequipped = 2;
-                CLIPlayer.Smarts = 45;
-                CLIPlayer.Speed = 10;
-                CLIPlayer.Strength = 32;
-                CLIPlayer.parasite = false;
-                CLIPlayer.requireHost = false;
-                CLIPlayer.requirePower = false;
-                CLIPlayer.requirePowerLevel = 0;
-                CLIPlayer.partTech = false;
-                CLIPlayer.speciesAbility = "ancientGRool";
-                CLIPlayer.canEditName = true;
+                CLISpecieList.Human();
                 this.Playerinfo();
                 break;
             case "2":
-                CLIPlayer.species = "Goa'uld";
-                CLIPlayer.Health = 30;
-                CLIPlayer.Handequipped = 2;
-                CLIPlayer.Smarts = 55;
-                CLIPlayer.Speed = 12;
-                CLIPlayer.Strength = 40;
-                CLIPlayer.parasite = true;
-                CLIPlayer.requireHost = true;
-                CLIPlayer.requirePower = false;
-                CLIPlayer.requirePowerLevel = 0;
-                CLIPlayer.partTech = false;
-                CLIPlayer.speciesAbility = "";
-                CLIPlayer.canEditName = true;
+                CLISpecieList.CatBoyGirl();
                 this.Playerinfo();
                 break;
-            case "3":
-                CLIPlayer.species = "Tok'ra";
-                CLIPlayer.Health = 30;
-                CLIPlayer.Handequipped = 2;
-                CLIPlayer.Smarts = 55;
-                CLIPlayer.Speed = 12;
-                CLIPlayer.Strength = 40;
-                CLIPlayer.parasite = true;
-                CLIPlayer.requireHost = true;
-                CLIPlayer.requirePower = false;
-                CLIPlayer.requirePowerLevel = 0;
-                CLIPlayer.partTech = false;
-                CLIPlayer.speciesAbility = "";
-                CLIPlayer.canEditName = true;
+            /*case "3":
                 this.Playerinfo();
-                break;
-            case "4":
-                CLIPlayer.species = "Cat Boy/girl";
-                CLIPlayer.Health = 18;
-                CLIPlayer.Handequipped = 3;
-                CLIPlayer.Smarts = 45;
-                CLIPlayer.Speed = 15;
-                CLIPlayer.Strength = 32;
-                CLIPlayer.parasite = false;
-                CLIPlayer.requireHost = false;
-                CLIPlayer.requirePower = false;
-                CLIPlayer.requirePowerLevel = 0;
-                CLIPlayer.partTech = false;
-                CLIPlayer.speciesAbility = "ancientGRool";
-                CLIPlayer.canEditName = true;
+                break;*/
+            /*case "4":
+                CLIRuntimevar.rerror();
                 this.Playerinfo();
-                break;
+                break;*/
             case "0":
                 Speciessel();
                 break;
@@ -273,13 +223,7 @@ public class CLIGamePrep
                 K9sel();
                 break;
             case "2":
-                CLIPlayer.species = "Goa'uld";
-                CLIPlayer.Health = 30;
-                CLIPlayer.Handequipped = 2;
-                CLIPlayer.Smarts = 55;
-                CLIPlayer.Speed = 12;
-                CLIPlayer.Strength = 40;
-                Playerinfo();
+                Catsel();
                 break;
             case "3":
                 CLIPlayer.species = "Tok'ra";
@@ -309,9 +253,6 @@ public class CLIGamePrep
         Console.WriteLine("===Species====");
         Console.ForegroundColor = CLISettings.Dmcolor;
         Console.WriteLine("1. Wolf HP:22 SM:47 ST:32 SP:12");
-        Console.WriteLine("2. Goa'uld HP:30 SM:55 ST:40 SP:12");
-        Console.WriteLine("3. Tok'ra HP:30 SM:52 ST:40 SP:12");
-        Console.WriteLine("4. Cat Boy/girl HP:18 SM:30 ST:32 SP:15 (HQ+1)");
         Console.WriteLine("0. Back");
         Console.ResetColor();
         Console.WriteLine("");
@@ -319,39 +260,16 @@ public class CLIGamePrep
         switch (Console.ReadLine())
         {
             case "1":
-                CLIPlayer.species = "Wolf";
-                CLIPlayer.Health = 22;
-                CLIPlayer.Handequipped = 2;
-                CLIPlayer.Smarts = 47;
-                CLIPlayer.Speed = 12;
-                CLIPlayer.Strength = 32;
+                CLISpecieList.Wolf();
                 Playerinfo();
                 break;
             case "2":
-                CLIPlayer.species = "Goa'uld";
-                CLIPlayer.Health = 30;
-                CLIPlayer.Handequipped = 2;
-                CLIPlayer.Smarts = 55;
-                CLIPlayer.Speed = 12;
-                CLIPlayer.Strength = 40;
                 Playerinfo();
                 break;
             case "3":
-                CLIPlayer.species = "Tok'ra";
-                CLIPlayer.Health = 30;
-                CLIPlayer.Handequipped = 2;
-                CLIPlayer.Smarts = 55;
-                CLIPlayer.Speed = 12;
-                CLIPlayer.Strength = 40;
                 Playerinfo();
                 break;
             case "4":
-                CLIPlayer.species = "Cat Boy/girl";
-                CLIPlayer.Health = 18;
-                CLIPlayer.Handequipped = 3;
-                CLIPlayer.Smarts = 45;
-                CLIPlayer.Speed = 15;
-                CLIPlayer.Strength = 32;
                 Playerinfo();
                 break;
             case "0":
@@ -363,6 +281,40 @@ public class CLIGamePrep
         }
     }
 
+    void Catsel()
+    {
+        Console.Clear();
+        Console.ForegroundColor = CLISettings.Mcolor;
+        Console.WriteLine("===Species====");
+        Console.ForegroundColor = CLISettings.Dmcolor;
+        Console.WriteLine("1. Cat HP:20 SM:47 ST:32 SP:12");
+        Console.WriteLine("0. Back");
+        Console.ResetColor();
+        Console.WriteLine("");
+        Console.Write(">");
+        switch (Console.ReadLine())
+        {
+            case "1":
+                CLISpecieList.Cat();
+                Playerinfo();
+                break;
+            case "2":
+                Playerinfo();
+                break;
+            case "3":
+                Playerinfo();
+                break;
+            case "4":
+                Playerinfo();
+                break;
+            case "0":
+                Speciessel();
+                break;
+            default:
+                Catsel();
+                break;
+        }
+    }
     void FOGsel()
     {
         Console.Clear();
@@ -370,9 +322,8 @@ public class CLIGamePrep
         Console.WriteLine("===Species====");
         Console.ForegroundColor = CLISettings.Dmcolor;
         Console.WriteLine("1. odhex by sparcky_ancientpack");
-        Console.WriteLine("2. Corpse crawler by Frico⚠️");
+        Console.WriteLine($"2. Corpse crawler by Frico {CLIIcon.Warn()}");
         Console.WriteLine("3. protogen by Malice-Risu HP:22 SM:57 ST:32 SP:10");
-        Console.WriteLine("4. Cat Boy/girl HP:18 SM:30 ST:32 SP:15");
         Console.WriteLine("0. Back");
         Console.ResetColor();
         Console.WriteLine("");
@@ -386,20 +337,7 @@ public class CLIGamePrep
                 Playerinfo();
                 break;
             case "3":
-                CLIPlayer.species = "protogen";
-                CLIPlayer.Health = 22;
-                CLIPlayer.Handequipped = 2;
-                CLIPlayer.Smarts = 57;
-                CLIPlayer.Strength = 32;
-                CLIPlayer.Speed = 10;
-                CLIPlayer.parasite = false;
-                CLIPlayer.requireHost = false;
-                CLIPlayer.requirePower = false;
-                CLIPlayer.requirePowerLevel = 0;
-                CLIPlayer.partTech = true;
-                CLIPlayer.damageResistance = 1.3;
-                CLIPlayer.speciesAbility = "none";
-                CLIPlayer.canEditName = true;
+                CLISpecieList.Protogen();
                 Playerinfo();
                 break;
             case "4":
@@ -475,7 +413,7 @@ public class CLIGamePrep
                 break;
         }
     }
-    
+
     void Custommenu()
     {
         Console.Clear();
@@ -499,50 +437,50 @@ public class CLIGamePrep
         Console.WriteLine("");
         Console.Write(">");
         switch (Console.ReadLine())
-            {
-                case"1":
+        {
+            case "1":
                 CustomCode();
                 break;
-                case"2":
+            case "2":
                 CustomMod();
                 break;
-                case"0":
+            case "0":
                 Speciessel();
                 break;
-                default:
+            default:
                 Custommenu();
                 break;
-            }
+        }
     }
 
     void CustomCode()
     {
- Console.Clear();
+        Console.Clear();
         Console.ForegroundColor = CLISettings.Mcolor;
         Console.WriteLine("====Custom====");
         Console.WriteLine($"{CLIIcon.Warn}Use 0 to go back");
         Console.ForegroundColor = CLISettings.Dmcolor;
         Console.Write("Code:");
         switch (Console.ReadLine())
-            {
-                case"1":
-                
+        {
+            case "1":
+
                 break;
-                case"2257":
-                
+            case "2257":
+
                 break;
-                case"0":
+            case "0":
                 Custommenu();
                 break;
-                default:
+            default:
                 CustomCode();
                 break;
-            }
+        }
     }
 
     void CustomMod()
     {
-    Custommenu();
+        Custommenu();
     }
 
     void Coloursel()
