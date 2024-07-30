@@ -226,12 +226,6 @@ public class CLIGamePrep
                 Catsel();
                 break;
             case "3":
-                CLIPlayer.species = "Tok'ra";
-                CLIPlayer.Health = 30;
-                CLIPlayer.Handequipped = 2;
-                CLIPlayer.Smarts = 55;
-                CLIPlayer.Speed = 12;
-                CLIPlayer.Strength = 40;
                 Playerinfo();
                 break;
             case "4":
@@ -324,6 +318,7 @@ public class CLIGamePrep
         Console.WriteLine("1. odhex by sparcky_ancientpack");
         Console.WriteLine($"2. Corpse crawler by Frico {CLIIcon.Warn()}");
         Console.WriteLine("3. protogen by Malice-Risu HP:22 SM:57 ST:32 SP:10");
+        Console.WriteLine("4. Avali by RyuujinZERO");
         Console.WriteLine("0. Back");
         Console.ResetColor();
         Console.WriteLine("");
@@ -341,6 +336,7 @@ public class CLIGamePrep
                 Playerinfo();
                 break;
             case "4":
+                CLISpecieList.Avali();
                 Playerinfo();
                 break;
             case "0":
