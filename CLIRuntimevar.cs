@@ -42,19 +42,14 @@ public class CLIRuntimevar
         {
             case "1":
                 return "Linux";
-                break;
             case "2":
                 return "MacOS";
-                break;
             case "3":
                 return "Windows";
-                break;
             case "4":
                 return "Unknown";
-                break;
             default:
                 return "error";
-                break;
         }
     }
 }
