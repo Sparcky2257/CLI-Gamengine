@@ -8,6 +8,8 @@ CLIMenu menu = new CLIMenu();
 //CLIConfig config = new CLIConfig();
 //clear
 Console.Clear();
+//int
+CLIInt.start();
 //term test
 if (Environment.GetEnvironmentVariable("TERM") == "xterm")
 {
@@ -26,9 +28,27 @@ if (Environment.GetEnvironmentVariable("TERM") == "xterm")
     Console.WriteLine("adjusted colours");
     menu.TextBoxsend();
 }
+//os test
+CLIRuntimevar.OSGet();
+//os warn
+if(CLIRuntimevar.OS == "4")
+{
+    menu.textboxvar = "0";
+    menu.textboxname = "warn";
+    menu.textboxnamec = ConsoleColor.Yellow;
+    menu.TextBoxstart();
+    Console.BackgroundColor = ConsoleColor.Yellow;
+    Console.ForegroundColor = ConsoleColor.Black;
+    Console.WriteLine("OS not recognized");
+    CLIRuntimevar.rwarns();
+    Console.ResetColor();
+    Console.WriteLine($"OS:{CLIRuntimevar.OSName()}");
+    menu.TextBoxsend();
+}
 //test zone
-
-
+Console.WriteLine(CLISpace.Galaxy[0]);
+Console.ReadLine();
+//ghvftyu
 //
 // CLIGameBackup.ReadBackup(string.Empty); //don't instantly call this, not meant for it
 //i nead help
