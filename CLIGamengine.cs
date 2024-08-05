@@ -31,7 +31,7 @@ if (Environment.GetEnvironmentVariable("TERM") == "xterm")
 //os test
 CLIRuntimevar.OSGet();
 //os warn
-if(CLIRuntimevar.OS == "4")
+if (CLIRuntimevar.OS == "4")
 {
     menu.textboxvar = "0";
     menu.textboxname = "warn";

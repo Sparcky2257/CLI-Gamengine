@@ -86,6 +86,70 @@ public class CLIMenu
         Console.ForegroundColor = CLISettings.Mcolor; ;
         Console.WriteLine("====option====");
         Console.ForegroundColor = CLISettings.Dmcolor;
+        Console.WriteLine("1. Menu Colour");
+        Console.WriteLine("2. Advancedoptions");
+        Console.WriteLine("3. Credits");
+        Console.WriteLine("4. Save");
+        Console.WriteLine("0. Exit");
+        Console.ResetColor();
+        Console.WriteLine("");
+        Console.Write(">");
+        var optionsmenu = Console.ReadLine();
+
+        switch (optionsmenu)
+        {
+            case "1":
+                //Console.WriteLine("demo 3");
+                MMAColoursel();
+                break;
+            case "4":
+                //Console.WriteLine("demo 3");
+                CLIGameBackup.WriteBackup("s");
+                break;
+            case "2":
+                //Console.WriteLine("demo 3");
+                Advancedoptions();
+                break;
+            case "3":
+                //Console.WriteLine("demo 3");
+                Credits();
+                break;
+            case "0":
+                Console.Clear();
+                break;
+            default:
+                options();
+                break;
+        }
+    }
+    void Credits()
+    {
+        Console.Clear();
+        Console.ForegroundColor = CLISettings.Mcolor;
+        Console.WriteLine("0 to go to main menu");
+        Console.ForegroundColor = CLISettings.Dmcolor;
+        int x = ClIMiscellaneous.Creditsdata.Count;
+        for (int i = 0; i < x; i++)
+        {
+            Console.WriteLine(ClIMiscellaneous.Creditsdata[i]);
+        }
+        var optionsmenu = Console.ReadLine();
+        switch (optionsmenu)
+        {
+            case "0":
+                Console.Clear();
+                break;
+            default:
+                Credits();
+                break;
+        }
+    }
+    void Advancedoptions()
+    {
+        Console.Clear();
+        Console.ForegroundColor = CLISettings.Mcolor;
+        Console.WriteLine("===Advanced===");
+        Console.ForegroundColor = CLISettings.Dmcolor;
         Console.WriteLine("1. Consol");
         Console.Write("2. ");
         if (CLISettings.Debug == true)
@@ -128,8 +192,8 @@ public class CLIMenu
             Console.WriteLine("OFF");
         }
         Console.ForegroundColor = CLISettings.Dmcolor;
-        Console.WriteLine("5. Menu Colour");
-        Console.WriteLine("6. Save");
+        //Console.WriteLine("5. Menu Colour");
+        //Console.WriteLine("6. Save");
         Console.WriteLine("0. Exit");
         Console.ResetColor();
         Console.WriteLine("");
@@ -192,14 +256,6 @@ public class CLIMenu
                     CLISettings.Icons = 1;
                 }
                 options();
-                break;
-            case "5":
-                //Console.WriteLine("demo 3");
-                MMAColoursel();
-                break;
-            case "6":
-                //Console.WriteLine("demo 3");
-                CLIGameBackup.WriteBackup("s");
                 break;
             case "0":
                 Console.Clear();

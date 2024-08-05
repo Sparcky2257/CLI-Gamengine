@@ -12,4 +12,6 @@ public class ClIMiscellaneous
     {
         Console.Write(" ");
     }
+    
+    public static List<string?> Creditsdata { get; set; } = new List<string?>();
 }
