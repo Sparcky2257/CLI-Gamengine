@@ -110,7 +110,7 @@ public class CLIGamePrep
                     CLIPlayer.requirePowerLevel = 0;
                     CLIPlayer.partTech = false;
                     CLIPlayer.Protohexnum = -1;
-                    CLIPlayer.speciesAbility = "ancientGRool";
+                    //CLIPlayer.speciesAbility = "ancientGRool";
                     Playerinfo();
                 }
                 else
@@ -375,7 +375,7 @@ public class CLIGamePrep
                 CLIPlayer.requirePowerLevel = 0;
                 CLIPlayer.partTech = true;
                 CLIPlayer.damageResistance = 1.2;
-                CLIPlayer.speciesAbility = "";
+                //CLIPlayer.speciesAbility = "";
                 CLIPlayer.canEditName = true;
                 Playerinfo();
                 break;
@@ -392,7 +392,7 @@ public class CLIGamePrep
                 CLIPlayer.requirePowerLevel = 1700;
                 CLIPlayer.partTech = true;
                 CLIPlayer.damageResistance = 1.3;
-                CLIPlayer.speciesAbility = "";
+                //CLIPlayer.speciesAbility = "";
                 CLIPlayer.Protohexnum = 005;
                 CLIPlayer.Name = "Axel Wrenchblade";
                 CLIPlayer.Color = ConsoleColor.DarkCyan;

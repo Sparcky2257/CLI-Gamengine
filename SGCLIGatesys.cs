@@ -38,7 +38,7 @@ public class SGSpecieList : CLISpecieList
         CLIPlayer.requirePower = false;
         CLIPlayer.requirePowerLevel = 0;
         CLIPlayer.partTech = false;
-        CLIPlayer.speciesAbility = "";
+        //CLIPlayer.speciesAbility = "";
         CLIPlayer.canEditName = true;
     }
 
@@ -55,7 +55,7 @@ public class SGSpecieList : CLISpecieList
         CLIPlayer.requirePower = false;
         CLIPlayer.requirePowerLevel = 0;
         CLIPlayer.partTech = false;
-        CLIPlayer.speciesAbility = "";
+        //CLIPlayer.speciesAbility = "";
         CLIPlayer.canEditName = true;
     }
 }

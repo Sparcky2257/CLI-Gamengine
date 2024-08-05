@@ -25,7 +25,7 @@ public class CLIGameBackupData{
     private double requirePowerLevel = 0;
     private bool partTech = false;
     private double damageResistance = 1.0;
-    private string? speciesAbility = "";
+    //private string? speciesAbility = ""; //needs to be fixd
     private double protohexnum = -1;
     private bool canEditName = true;
     private string? sex = "none";
@@ -66,7 +66,7 @@ public class CLIGameBackupData{
         requirePowerLevel=CLIPlayer.requirePowerLevel;
         partTech=CLIPlayer.partTech;
         damageResistance=CLIPlayer.damageResistance;
-        speciesAbility=CLIPlayer.speciesAbility;
+        //speciesAbility=CLIPlayer.speciesAbility; //needs to be fixd
         protohexnum=CLIPlayer.Protohexnum;
         canEditName=CLIPlayer.canEditName;
         sex=CLIPlayer.Sex;
@@ -109,7 +109,7 @@ public class CLIGameBackupData{
         CLIPlayer.requirePowerLevel=requirePowerLevel;
         CLIPlayer.partTech=partTech;
         CLIPlayer.damageResistance=damageResistance;
-        CLIPlayer.speciesAbility=speciesAbility;
+        //CLIPlayer.speciesAbility=speciesAbility; //needs to be fixd
         CLIPlayer.Protohexnum=protohexnum;
         CLIPlayer.canEditName=canEditName;
         CLIPlayer.Sex=sex;

@@ -98,7 +98,7 @@ if (CLISettings.Debug == true)
     logo.bootlogo2();
     Console.WriteLine("default logo:");
     logo.bootlogo1();
-    Console.WriteLine($"{CLIPlayer.species} HP{CLIPlayer.Health} SM:{CLIPlayer.Smarts} ST:{CLIPlayer.Strength} SP:{CLIPlayer.Speed} DR;{CLIPlayer.damageResistance} handequipped:{CLIPlayer.Handequipped} Parasite:{CLIPlayer.parasite} Requirehost:{CLIPlayer.requireHost} Requirepower:{CLIPlayer.requirePower} Requirepowerlev:{CLIPlayer.requirePowerLevel} PartTeck:{CLIPlayer.partTech} Speciesablaty:{CLIPlayer.speciesAbility}");
+    Console.WriteLine($"{CLIPlayer.species} HP{CLIPlayer.Health} SM:{CLIPlayer.Smarts} ST:{CLIPlayer.Strength} SP:{CLIPlayer.Speed} DR;{CLIPlayer.damageResistance} handequipped:{CLIPlayer.Handequipped} Parasite:{CLIPlayer.parasite} Requirehost:{CLIPlayer.requireHost} Requirepower:{CLIPlayer.requirePower} Requirepowerlev:{CLIPlayer.requirePowerLevel} PartTeck:{CLIPlayer.partTech} ");//Speciesablaty:{CLIPlayer.speciesAbility}
     //SharedVariables sharedVars = new SharedVariables();
     //sharedVars.Sharedname = name;
     //Console.WriteLine(sharedVars.Sharedname);

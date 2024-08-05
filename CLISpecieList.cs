@@ -17,7 +17,7 @@ public class CLISpecieList //: CLIGamePrep
         CLIPlayer.requirePower = false;
         CLIPlayer.requirePowerLevel = 0;
         CLIPlayer.partTech = false;
-        CLIPlayer.speciesAbility = "ancientGRool";
+        //CLIPlayer.speciesAbility = "ancientGRool";
         CLIPlayer.canEditName = true;
     }
     /**/
@@ -35,7 +35,7 @@ public class CLISpecieList //: CLIGamePrep
         CLIPlayer.requirePower = false;
         CLIPlayer.requirePowerLevel = 0;
         CLIPlayer.partTech = false;
-        CLIPlayer.speciesAbility = "ancientGRool";
+        //CLIPlayer.speciesAbility = "ancientGRool";
         CLIPlayer.canEditName = true;
     }
 
@@ -52,7 +52,7 @@ public class CLISpecieList //: CLIGamePrep
         CLIPlayer.requirePower = false;
         CLIPlayer.requirePowerLevel = 0;
         CLIPlayer.partTech = false;
-        CLIPlayer.speciesAbility = "";
+        //CLIPlayer.speciesAbility = "";
         CLIPlayer.canEditName = true;
     }
 
@@ -69,7 +69,7 @@ public class CLISpecieList //: CLIGamePrep
         CLIPlayer.requirePower = false;
         CLIPlayer.requirePowerLevel = 0;
         CLIPlayer.partTech = false;
-        CLIPlayer.speciesAbility = "";
+        //CLIPlayer.speciesAbility = "";
         CLIPlayer.canEditName = true;
     }
 
@@ -86,7 +86,7 @@ public class CLISpecieList //: CLIGamePrep
         CLIPlayer.requirePower = false;
         CLIPlayer.requirePowerLevel = 0;
         CLIPlayer.partTech = false;
-        CLIPlayer.speciesAbility = "Fly";
+        //CLIPlayer.speciesAbility = "Fly";
         CLIPlayer.canEditName = true;
     }
 
@@ -104,7 +104,7 @@ public class CLISpecieList //: CLIGamePrep
         CLIPlayer.requirePowerLevel = 0;
         CLIPlayer.partTech = true;
         CLIPlayer.damageResistance = 1.3;
-        CLIPlayer.speciesAbility = "none";
+        //CLIPlayer.speciesAbility = "none";
         CLIPlayer.canEditName = true;
     }
 
