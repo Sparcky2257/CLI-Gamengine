@@ -16,38 +16,50 @@ if (Environment.GetEnvironmentVariable("TERM") == "xterm")
     CLIRuntimevar.crt = true;
     CLISettings.Dmcolor = ConsoleColor.Gray;
     CLISettings.Mcolor = ConsoleColor.White;
-    menu.textboxvar = "0";
-    menu.textboxname = "warn";
-    menu.textboxnamec = ConsoleColor.Yellow;
-    menu.TextBoxstart();
+    menu.textboxvarold = "0";
+    menu.textboxnameold = "warn";
+    menu.textboxnamecold = ConsoleColor.Yellow;
+    menu.TextBoxstartold();
     Console.BackgroundColor = ConsoleColor.Yellow;
     Console.ForegroundColor = ConsoleColor.Black;
     Console.WriteLine("256 not deteted");
     CLIRuntimevar.rwarns();
     Console.ResetColor();
     Console.WriteLine("adjusted colours");
-    menu.TextBoxsend();
+    menu.TextBoxsendold();
 }
 //os test
 CLIRuntimevar.OSGet();
 //os warn
 if (CLIRuntimevar.OS == "4")
 {
-    menu.textboxvar = "0";
-    menu.textboxname = "warn";
-    menu.textboxnamec = ConsoleColor.Yellow;
-    menu.TextBoxstart();
+    menu.textboxvarold = "0";
+    menu.textboxnameold = "warn";
+    menu.textboxnamecold = ConsoleColor.Yellow;
+    menu.TextBoxstartold();
     Console.BackgroundColor = ConsoleColor.Yellow;
     Console.ForegroundColor = ConsoleColor.Black;
     Console.WriteLine("OS not recognized");
     CLIRuntimevar.rwarns();
     Console.ResetColor();
     Console.WriteLine($"OS:{CLIRuntimevar.OSName()}");
-    menu.TextBoxsend();
+    menu.TextBoxsendold();
 }
 //test zone
-Console.WriteLine(CLISpace.Galaxy[0]);
-Console.ReadLine();
+CLIMenu.textboxname = "2257";
+CLIMenu.textboxvar = "1";
+CLIMenu.textdata.Add("DMC");
+CLIMenu.textdata.Add("Hi i Believe That ");
+CLIMenu.textdata.Add("CL");
+CLIMenu.textdata.Add($"{ConsoleColor.Red}");
+CLIMenu.textdata.Add("you");
+CLIMenu.textdata.Add("DMC");
+CLIMenu.textdata.Add(" are located in ");
+CLIMenu.textdata.Add(CLISpace.Galaxy[0]);
+CLIMenu.textdata.Add("Galaxy");
+CLIMenu.textdata.Add("NX");
+CLIMenu.textdata.Add("RS");
+CLIMenu.textbox(); 
 //ghvftyu
 //
 // CLIGameBackup.ReadBackup(string.Empty); //don't instantly call this, not meant for it

@@ -131,7 +131,74 @@ public class CLIMenu
         int x = ClIMiscellaneous.Creditsdata.Count;
         for (int i = 0; i < x; i++)
         {
-            Console.WriteLine(ClIMiscellaneous.Creditsdata[i]);
+            switch (ClIMiscellaneous.Creditsdata[i])
+            {
+                case "CL":
+                    Color();
+                    break;
+                case "MC":
+                    Console.ForegroundColor = CLISettings.Mcolor;
+                    break;
+                case "DMC":
+                    Console.ForegroundColor = CLISettings.Dmcolor;
+                    break;
+                default:
+                    Console.WriteLine(ClIMiscellaneous.Creditsdata[i]);
+                    break;
+
+            }
+            void Color()
+            {
+                i++;
+                switch (ClIMiscellaneous.Creditsdata[i])
+                {
+                    case "Red":
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        break;
+                    case "Magenta":
+                        Console.ForegroundColor = ConsoleColor.Magenta;
+                        break;
+                    case "Yellow":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        break;
+                    case "Green":
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        break;
+                    case "Blue":
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        break;
+                    case "Cyan":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        break;
+                    case "Gray":
+                        Console.ForegroundColor = ConsoleColor.Gray;
+                        break;
+                    case "DarkRed":
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                        break;
+                    case "DarkMagenta":
+                        Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                        break;
+                    case "DarkYellow":
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        break;
+                    case "DarkGreen":
+                        Console.ForegroundColor = ConsoleColor.DarkGreen;
+                        break;
+                    case "DarkBlue":
+                        Console.ForegroundColor = ConsoleColor.DarkBlue;
+                        break;
+                    case "DarkCyan":
+                        Console.ForegroundColor = ConsoleColor.DarkCyan;
+                        break;
+                    case "DarkGray":
+                        Console.ForegroundColor = ConsoleColor.DarkGray;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
         }
         var optionsmenu = Console.ReadLine();
         switch (optionsmenu)
@@ -546,20 +613,181 @@ public class CLIMenu
         CLISettings.mainMenuOpen = true;
     }
 
-    public string textboxvar { get; set; } = "1";
-    public string textboxname { get; set; } = "";
-    public ConsoleColor textboxnamec { get; set; } = ConsoleColor.White;
-
-    public void TextBoxstart()
+    //text
+    public static string textboxname { get; set; } = "";
+    public static string textboxvar { get; set; } = "1";
+    static string textboxstylevar = "1";
+    static ConsoleColor textboxnameCL { get; set; } = ConsoleColor.White;
+    static ConsoleColor CLtemmp { get; set; } = ConsoleColor.White;
+    public static List<string?> textdata { get; set; } = new List<string?>();
+    public static void textbox()
     {
-        switch (textboxvar)
+        textboxstyle();
+        int line = 1;
+        int x = textdata.Count;
+        for (int i = 0; i < x; i++)
+        {
+
+            switch (textdata[i])
+            {
+                case "CL":
+                    Color();
+                    break;
+                case "MC":
+                    Console.ForegroundColor = CLISettings.Mcolor;
+                    break;
+                case "DMC":
+                    Console.ForegroundColor = CLISettings.Dmcolor;
+                    break;
+                case "CR":
+                    Console.ResetColor();
+                    break;
+                case "WL":
+                    line++;
+                    if (CLISettings.Debug == true)
+                    {
+                        Console.WriteLine($" {line - 1}/{CLISettings.textmaxline - 1}");
+                    }
+                    else
+                    {
+                        Console.WriteLine();
+                    }
+                    if (line >= CLISettings.textmaxline)
+                    {
+                        textboxstylenext();
+                        line = 1;
+                        textboxstyle();
+                    }
+
+
+                    break;
+                case "RS":
+                    textdata.Clear();
+                    break;
+                case "TP":
+                    textboxstyle();
+                    break;
+                case "NX":
+                    if (line != CLISettings.textmaxline)
+                    {
+                        //int z = line;
+                        for (int z = line; z < CLISettings.textmaxline; z++)
+                        {
+                            if (CLISettings.Debug == true)
+                            {
+                                Console.WriteLine($" {line - 1}/{CLISettings.textmaxline - 1}");
+                            }
+                            else
+                            {
+                                Console.WriteLine();
+                            }
+                        }
+                        line = 1;
+                    }
+                    textboxstylenext();
+                    break;
+                default:
+                    Console.Write(textdata[i]);
+                    break;
+
+            }
+            void Color()
+            {
+                i++;
+                switch (textdata[i])
+                {
+                    case "Red":
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        break;
+                    case "Magenta":
+                        Console.ForegroundColor = ConsoleColor.Magenta;
+                        break;
+                    case "Yellow":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        break;
+                    case "Green":
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        break;
+                    case "Blue":
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        break;
+                    case "Cyan":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        break;
+                    case "Gray":
+                        Console.ForegroundColor = ConsoleColor.Gray;
+                        break;
+                    case "DarkRed":
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                        break;
+                    case "DarkMagenta":
+                        Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                        break;
+                    case "DarkYellow":
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        break;
+                    case "DarkGreen":
+                        Console.ForegroundColor = ConsoleColor.DarkGreen;
+                        break;
+                    case "DarkBlue":
+                        Console.ForegroundColor = ConsoleColor.DarkBlue;
+                        break;
+                    case "DarkCyan":
+                        Console.ForegroundColor = ConsoleColor.DarkCyan;
+                        break;
+                    case "DarkGray":
+                        Console.ForegroundColor = ConsoleColor.DarkGray;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+        }
+    }
+
+    static void textboxstyle()
+    {
+        switch (textboxstylevar)
+        {
+            case "1":
+                Console.Clear();
+                Console.WriteLine();
+                CLtemmp = Console.ForegroundColor;
+                Console.ForegroundColor = CLISettings.Mcolor;
+                Console.Write($"####/");
+                Console.WriteLine(textboxname, Console.ForegroundColor = textboxnameCL);
+                Console.ForegroundColor = CLtemmp;
+                break;
+            default:
+                break;
+        }
+    }
+    static void textboxstylenext()
+    {
+        //Console.WriteLine();
+        CLtemmp = Console.ForegroundColor;
+        Console.ForegroundColor = CLISettings.Mcolor;
+        Console.Write($"next");
+        Console.ReadLine();
+        Console.ForegroundColor = CLtemmp;
+        //return "null";
+    }
+    //old
+    public string textboxvarold { get; set; } = "1";
+    public string textboxnameold { get; set; } = "";
+    public ConsoleColor textboxnamecold { get; set; } = ConsoleColor.White;
+
+    public void TextBoxstartold()
+    {
+        switch (textboxvarold)
         {
             case "1":
                 Console.Clear();
                 Console.WriteLine();
                 Console.ForegroundColor = CLISettings.Mcolor;
                 Console.Write($"####/");
-                Console.WriteLine(textboxname, Console.ForegroundColor = textboxnamec);
+                Console.WriteLine(textboxnameold, Console.ForegroundColor = textboxnamecold);
                 Console.ForegroundColor = CLISettings.Mcolor;
                 break;
             case "0":
@@ -567,7 +795,7 @@ public class CLIMenu
                 Console.Clear();
                 Console.ForegroundColor = CLISettings.Mcolor;
                 Console.Write($"####/");
-                Console.WriteLine(textboxname, Console.ForegroundColor = textboxnamec);
+                Console.WriteLine(textboxnameold, Console.ForegroundColor = textboxnamecold);
                 Console.ForegroundColor = CLISettings.Mcolor;
                 break;
             default:
@@ -579,9 +807,9 @@ public class CLIMenu
                 break;
         }
     }
-    public void TextBoxsend()
+    public void TextBoxsendold()
     {
-        switch (textboxvar)
+        switch (textboxvarold)
         {
             case "1":
 
@@ -599,7 +827,8 @@ public class CLIMenu
                 break;
         }
     }
-    public void InGameControls()
+    //still good
+    static public void InGameControls()
     {
         //Console.ForegroundColor = CLISettings.Mcolor;
         //Console.WriteLine("enter a action uns /help for available options.");

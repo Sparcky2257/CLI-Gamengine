@@ -11,6 +11,7 @@ public class CLISettings
     public static char audioeng {get; set;} = '1';
     // 1 dot net defult. (widnows)
     //
+    public static int textmaxline {get; set;} = 5; // put it hier by one than wat you want
     public static bool NSFWIsOn { get; set; } = false;
     public static bool BuiltInDemoEnabled { get; set; } = true;
 }
