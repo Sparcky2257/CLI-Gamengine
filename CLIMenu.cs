@@ -283,7 +283,7 @@ public class CLIMenu
                 {
                     CLISettings.Debug = true;
                 }
-                options();
+                Advancedoptions();
                 break;
             case "3":
                 //Console.WriteLine("demo 2");
@@ -295,7 +295,7 @@ public class CLIMenu
                 {
                     CLISettings.moddingIsOn = true;
                 }
-                options();
+                Advancedoptions();
                 break;
             // case "3":
             //     //Console.WriteLine("demo 2");
@@ -322,13 +322,13 @@ public class CLIMenu
                 {
                     CLISettings.Icons = 1;
                 }
-                options();
+                Advancedoptions();
                 break;
             case "0":
                 Console.Clear();
                 break;
             default:
-                options();
+                Advancedoptions();
                 break;
         }
     }
