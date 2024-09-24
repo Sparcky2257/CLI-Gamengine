@@ -1,6 +1,14 @@
 using System.ComponentModel;
 using System.Net.Sockets;
-
+public class SG
+{
+    public static void startup(){
+        ClIMiscellaneous.Creditsdata.Add("MC");
+        ClIMiscellaneous.Creditsdata.Add("========SGCLI=======");
+        ClIMiscellaneous.Creditsdata.Add("DMC");
+        ClIMiscellaneous.Creditsdata.Add("Sparcky Ancientpack");
+    }
+}
 
 public class SGStargate
 {

@@ -1,7 +1,7 @@
 public class CLILogo
 {
     // CLISettings settings = new CLISettings();
-    public void bootlogo1()
+    public static void bootlogo1()
     {
         Console.WriteLine();
         Console.ForegroundColor = CLISettings.Mcolor;
@@ -26,12 +26,27 @@ public class CLILogo
         Console.WriteLine("404");
         CLIRuntimevar.rerror();
     }
-    public void bootlogo3()
+    public static void bootlogo3()
     {
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.Write("error ");
+        Console.WriteLine();
+        Console.ForegroundColor = CLISettings.Mcolor;
+        Console.Write("╔═╗╦  ╦");
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("  ┌─┐┌─┐┌┬┐┌─┐┌┐┌┌─┐┬┌┐┌┌─┐");
+        Console.ForegroundColor = CLISettings.Mcolor; ;
+        Console.Write("║  ║  ║");
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("  │ ┬├─┤│││├┤ ││││ ┬││││├┤ ");
+        Console.ForegroundColor = CLISettings.Mcolor; ;
+        Console.Write("╚═╝╩═╝╩");
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.Write("  └─┘┴ ┴┴ ┴└─┘┘└┘└─┘┴┘└┘└─┘ ");
         Console.ResetColor();
-        Console.WriteLine("404");
-        CLIRuntimevar.rerror();
+    }
+    public static void logostart(string text="error",int times=249){
+        Console.Clear();
+        bootlogo3();
+        Console.WriteLine(text);
+        Thread.Sleep(times);//149
     }
 }

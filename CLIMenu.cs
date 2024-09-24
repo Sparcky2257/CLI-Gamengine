@@ -3,7 +3,7 @@ using System.IO;
 
 public class CLIMenu
 {
-    CLILogo logo = new CLILogo();
+    //CLILogo logo = new CLILogo();
     // CLIPlayer player = new CLIPlayer();
     //CLISettings settings = new CLISettings();
     CLIGamePrep gameprep = new CLIGamePrep();
@@ -24,23 +24,7 @@ public class CLIMenu
             {
                 Console.Clear(); // stawp clearing for nowww
             }
-            switch (CLISettings.Bootlogo)
-            {
-                case 1:
-                    logo.bootlogo1();
-                    break;
-                case 2:
-                    logo.bootlogo2();
-                    break;
-                case 3:
-                    // Console.Clear();
-                    logo.bootlogo3();
-                    break;
-                default:
-                    // Console.Clear();
-                    Console.WriteLine("no logo");
-                    break;
-            }
+            CLIConfig.bootlogo();
             Console.ForegroundColor = CLISettings.Mcolor;
             Console.WriteLine("=====menu=====");
             Console.ForegroundColor = CLISettings.Dmcolor;
@@ -427,22 +411,22 @@ public class CLIMenu
                 break;
             case "logo=1":
                 //Console.WriteLine("demo 2");
-                CLISettings.Bootlogo = 1;
+                //CLISettings.Bootlogo = 1;
                 CLISettings.customLogoIsOn = true;
                 break;
             case "logo=2":
                 //Console.WriteLine("demo 2");
-                CLISettings.Bootlogo = 2;
+                //CLISettings.Bootlogo = 2;
                 CLISettings.customLogoIsOn = true;
                 break;
             case "logo=0":
                 //Console.WriteLine("demo 2");
-                CLISettings.Bootlogo = 0;
+                //CLISettings.Bootlogo = 0;
                 CLISettings.customLogoIsOn = true;
                 break;
             case "logo=3":
                 //Console.WriteLine("demo 2");
-                CLISettings.Bootlogo = 3;
+                //CLISettings.Bootlogo = 3;
                 CLISettings.customLogoIsOn = true;
                 break;
             case "mod=1":

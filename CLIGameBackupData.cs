@@ -46,7 +46,7 @@ public class CLIGameBackupData{
         debug=CLISettings.Debug;
         moddingIsOn=CLISettings.moddingIsOn;
         customLogoIsOn=CLISettings.customLogoIsOn;
-        bootlogo=CLISettings.Bootlogo;
+        //bootlogo=CLISettings.Bootlogo;
         mcolor=CLISettings.Mcolor;
         dmcolor=CLISettings.Dmcolor;
         NSFWIsOn=CLISettings.NSFWIsOn;
@@ -89,7 +89,7 @@ public class CLIGameBackupData{
         CLISettings.Debug=debug;
         CLISettings.moddingIsOn=moddingIsOn;;
         CLISettings.customLogoIsOn=customLogoIsOn;;
-        CLISettings.Bootlogo=bootlogo;
+        //CLISettings.Bootlogo=bootlogo;
         CLISettings.Mcolor=mcolor;
         CLISettings.Dmcolor=dmcolor;
         CLISettings.NSFWIsOn=NSFWIsOn;

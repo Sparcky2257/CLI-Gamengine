@@ -3,7 +3,7 @@
 // CLISettings settings = new CLISettings();
 //ClIMiscellaneous miscellaneous = new ClIMiscellaneous();
 //CLIGamePrep gameprep= new CLIGamePrep();
-CLILogo logo = new CLILogo();
+//CLILogo logo = new CLILogo();
 CLIMenu menu = new CLIMenu();
 //CLIConfig config = new CLIConfig();
 //clear
@@ -55,7 +55,7 @@ CLIMenu.textdata.Add($"{ConsoleColor.Red}");
 CLIMenu.textdata.Add("you");
 CLIMenu.textdata.Add("DMC");
 CLIMenu.textdata.Add(" are located in ");
-CLIMenu.textdata.Add(CLISpace.Galaxy[0]);
+CLIMenu.textdata.Add("idk");
 CLIMenu.textdata.Add("Galaxy");
 CLIMenu.textdata.Add("NX");
 CLIMenu.textdata.Add("RS");
@@ -92,7 +92,7 @@ if (CLISettings.Debug == true)
     Console.ResetColor();
     Console.WriteLine("bootlogo: ");
     Console.ForegroundColor = ConsoleColor.Blue;
-    Console.Write(CLISettings.Bootlogo);
+    /*Console.Write(CLISettings.Bootlogo);
     switch (CLISettings.Bootlogo)
     {
         case 1:
@@ -105,11 +105,12 @@ if (CLISettings.Debug == true)
             Console.WriteLine(" no logo");
             break;
     }
-    Console.ResetColor();
-    Console.WriteLine("moded logo:");
-    logo.bootlogo2();
+    Console.ResetColor();*/
+    //Console.WriteLine("moded logo:");
+    //logo.bootlogo2();
     Console.WriteLine("default logo:");
-    logo.bootlogo1();
+    //logo.bootlogo1();
+    CLIConfig.bootlogo();
     Console.WriteLine($"{CLIPlayer.species} HP{CLIPlayer.Health} SM:{CLIPlayer.Smarts} ST:{CLIPlayer.Strength} SP:{CLIPlayer.Speed} DR;{CLIPlayer.damageResistance} handequipped:{CLIPlayer.Handequipped} Parasite:{CLIPlayer.parasite} Requirehost:{CLIPlayer.requireHost} Requirepower:{CLIPlayer.requirePower} Requirepowerlev:{CLIPlayer.requirePowerLevel} PartTeck:{CLIPlayer.partTech} ");//Speciesablaty:{CLIPlayer.speciesAbility}
     //SharedVariables sharedVars = new SharedVariables();
     //sharedVars.Sharedname = name;

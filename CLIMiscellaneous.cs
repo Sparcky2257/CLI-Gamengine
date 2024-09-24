@@ -12,6 +12,14 @@ public class ClIMiscellaneous
     {
         Console.Write(" ");
     }
-    
+
     public static List<string?> Creditsdata { get; set; } = new List<string?>();
+    public static void Creditsdatainfo()
+    {
+        int x = ClIMiscellaneous.Creditsdata.Count;
+        for (int i = 0; i < x; i++)
+        {
+            CLILogo.logostart("Credits " + ClIMiscellaneous.Creditsdata[i]);
+        }
+    }
 }
