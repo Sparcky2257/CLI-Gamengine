@@ -461,13 +461,39 @@ public class CLIMenu
             case "nfsw=true":
                 CLISettings.NSFWIsOn = true;
                 break;
+            case "API":
+                    APImenu();
+                break;
             default:
                 debugmenu();
                 break;
         }
         Console.ResetColor();
     }
-
+    void APImenu(){
+        Console.Write("Api args:");
+        switch (Console.ReadLine())
+        {
+            case "1":
+                Console.Write("Api arg1:");
+                CLIConfig.addon(Console.ReadLine());
+                debugmenu();
+                break;
+            case "3":
+                Console.Write("Api arg1:");
+                string? A = Console.ReadLine();
+                Console.Write("Api arg2:");
+                string? B = Console.ReadLine();
+                Console.Write("Api arg3:");
+                string? C = Console.ReadLine();
+                CLIConfig.addon(A,B,C);
+                debugmenu();
+                break;
+            default:
+                APImenu();
+                break;
+        }
+    }
     void loadgame()
     {
         // Console.WriteLine("error 404");

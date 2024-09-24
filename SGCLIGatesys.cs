@@ -1,14 +1,51 @@
 using System.ComponentModel;
 using System.Net.Sockets;
-public class SG
+public class SGCLI
 {
-    public static void startup(){
+    public static void api(string local="null",string local2="null",string local3="null"){
+        switch (local)
+        {
+            case "S":
+                SGCLI.SpecieList(local2,local3);
+            break;
+            default:
+            break;
+        }
         ClIMiscellaneous.Creditsdata.Add("MC");
         ClIMiscellaneous.Creditsdata.Add("========SGCLI=======");
         ClIMiscellaneous.Creditsdata.Add("DMC");
         ClIMiscellaneous.Creditsdata.Add("Sparcky Ancientpack");
+        CLIApi.codeaddonspecies.Add("SGCLI:ID001:H");
+        CLIApi.codeaddonspecies.Add("SGCLI:ID002:H");
+    }
+    static void SpecieList(string llocal2="null",string llocal3="null"){
+        switch (llocal2)
+        {
+            case "SGCLI:ID001:H":
+                if (llocal3 == "L"){
+                    SGSpecieList.ID001();
+                }
+            break;
+            default:
+            break;
+        }
     }
 }
+//    public static List<string?> codeaddonspecies { get; set; } = new List<string?>();
+    /*  CLIPlayer.species = "Goa'uld";
+        CLIPlayer.Health = 30;
+        CLIPlayer.Handequipped = 2;
+        CLIPlayer.Smarts = 55;
+        CLIPlayer.Speed = 12;
+        CLIPlayer.Strength = 40;
+        CLIPlayer.parasite = true;
+        CLIPlayer.requireHost = true;
+        CLIPlayer.requirePower = false;
+        CLIPlayer.requirePowerLevel = 0;
+        CLIPlayer.partTech = false;
+        //CLIPlayer.speciesAbility = "";
+        CLIPlayer.canEditName = true;*/
+    
 
 public class SGStargate
 {
@@ -33,7 +70,7 @@ public class SGSpecieList : CLISpecieList
 {
     // ClIPlayer player = new ClIPlayer();
     // CLISettings settings = new CLISettings();
-    public void Goauld()
+    public static void ID001()
     {
         CLIPlayer.species = "Goa'uld";
         CLIPlayer.Health = 30;
@@ -50,7 +87,7 @@ public class SGSpecieList : CLISpecieList
         CLIPlayer.canEditName = true;
     }
 
-    public void Tokra()
+    public static void ID002()
     {
         CLIPlayer.species = "Tok'ra";
         CLIPlayer.Health = 30;

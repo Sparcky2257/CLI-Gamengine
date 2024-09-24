@@ -41,9 +41,9 @@ public class CLIConfig
         //codeaddons
 
     }
-    public static void addon()
+    public static void addon(string? api1="null",string? api2="null",string? api3="null",string? api4="null",string? api5="null")
     {
-        //SG.startup();//sg addon
+        //SGCLI.startup();//sg addon
     }
     public static void bootlogo()
     {
@@ -58,6 +58,6 @@ public class CLIApi
         ClIMiscellaneous.Creditsdata.Add("DMC");
         CLIConfig.addon();
     }
-    public static List<string?> codeaddonsnames { get; set; } = new List<string?>();
-    
+    //public static List<string?> codeaddonsnames { get; set; } = new List<string?>();
+    public static List<string?> codeaddonspecies { get; set; } = new List<string?>();
 }
