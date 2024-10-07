@@ -1,3 +1,5 @@
+using System.Security.Cryptography.X509Certificates;
+
 public class CLIInt
 {
     public static void start()
@@ -11,6 +13,7 @@ public class CLIInt
         ClIMiscellaneous.Creditsdata.Add("DMC");
         ClIMiscellaneous.Creditsdata.Add("Sparcky Ancientpack");
         ClIMiscellaneous.Creditsdata.Add("Pawos Howl");
+        //dont edit top
         //replace text by your game name and name by yores
         ClIMiscellaneous.Creditsdata.Add("MC");
         //ClIMiscellaneous.Creditsdata.Add("====text====");
@@ -19,13 +22,16 @@ public class CLIInt
 
         //Console.WriteLine(ClIMiscellaneous.Creditsdata.Count);
         //CLISettings.Debug = true; //this just for testing
-        ClIMiscellaneous.Creditsdatainfo();
-        CLILogo.logostart("Config", 498);
-        CLIConfig.load();
-        CLISpace.init();
-
         //api
         CLIApi.codeaddonsstart();
+        //config
+        CLIConfig.load();
+        //infostart
+        ClIMiscellaneous.Creditsdatainfo();
+        CLILogo.logostart("Config", 498);
+        CLISpace.init();
+
+
     }
 }
 public class CLIConfig
@@ -38,12 +44,10 @@ public class CLIConfig
         CLISpace.Solar_System.Add("Sol");
         //Planets
         CLISpace.Planet.Add("Earth");
-        //codeaddons
-
     }
     public static void addon(string? api1="null",string? api2="null",string? api3="null",string? api4="null",string? api5="null")
     {
-        //SGCLI.startup();//sg addon
+        //SGCLI.api(api1,api2,api3);//sg addon
     }
     public static void bootlogo()
     {
@@ -52,11 +56,14 @@ public class CLIConfig
 }
 public class CLIApi
 {
+    public static bool codeaddonsstartbool=false;
     public static void codeaddonsstart(){
+        codeaddonsstartbool = true;
         ClIMiscellaneous.Creditsdata.Add("MC");
         ClIMiscellaneous.Creditsdata.Add("=======Addons=======");
         ClIMiscellaneous.Creditsdata.Add("DMC");
         CLIConfig.addon();
+        codeaddonsstartbool = false;
     }
     //public static List<string?> codeaddonsnames { get; set; } = new List<string?>();
     public static List<string?> codeaddonspecies { get; set; } = new List<string?>();

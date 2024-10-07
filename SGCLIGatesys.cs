@@ -1,51 +1,84 @@
 using System.ComponentModel;
 using System.Net.Sockets;
+
 public class SGCLI
 {
-    public static void api(string local="null",string local2="null",string local3="null"){
+    private static bool add_abdos;
+    private static void config()
+    {
+        add_abdos = true;
+        configlogc();
+    }
+    private static void configlogc()
+    {
+        if (add_abdos == true)
+        {
+            int x = CLISpace.Galaxy.Count;
+            int z=0;
+            bool y=false;
+            if (CLISpace.Galaxy.Any() == true)
+            {
+                for (int i = 0; i < x; i++)
+                {
+                   if (CLISpace.Galaxy[i]=="Milky Way"){y=true; z=i;}
+                }
+            }
+            if (y==false){}
+            CLISpace.Solar_System.Add($"Sol_Abdos:{z}");
+            CLISpace.Planet.Add("Abdos");
+        }
+    }
+    public static void api(string local = "null", string local2 = "null", string local3 = "null")
+    {
         switch (local)
         {
             case "S":
-                SGCLI.SpecieList(local2,local3);
-            break;
+                SGCLI.SpecieList(local2, local3);
+                break;
             default:
-            break;
+                break;
         }
-        ClIMiscellaneous.Creditsdata.Add("MC");
-        ClIMiscellaneous.Creditsdata.Add("========SGCLI=======");
-        ClIMiscellaneous.Creditsdata.Add("DMC");
-        ClIMiscellaneous.Creditsdata.Add("Sparcky Ancientpack");
-        CLIApi.codeaddonspecies.Add("SGCLI:ID001:H");
-        CLIApi.codeaddonspecies.Add("SGCLI:ID002:H");
+        if (CLIApi.codeaddonsstartbool == true)
+        {
+            ClIMiscellaneous.Creditsdata.Add("MC");
+            ClIMiscellaneous.Creditsdata.Add("========SGCLI=======");
+            ClIMiscellaneous.Creditsdata.Add("DMC");
+            ClIMiscellaneous.Creditsdata.Add("Sparcky Ancientpack");
+            CLIApi.codeaddonspecies.Add("SGCLI:ID001:H");
+            CLIApi.codeaddonspecies.Add("SGCLI:ID002:H");
+            SGCLI.config();
+        }
     }
-    static void SpecieList(string llocal2="null",string llocal3="null"){
+    static void SpecieList(string llocal2 = "null", string llocal3 = "null")
+    {
         switch (llocal2)
         {
             case "SGCLI:ID001:H":
-                if (llocal3 == "L"){
+                if (llocal3 == "L")
+                {
                     SGSpecieList.ID001();
                 }
-            break;
+                break;
             default:
-            break;
+                break;
         }
     }
 }
 //    public static List<string?> codeaddonspecies { get; set; } = new List<string?>();
-    /*  CLIPlayer.species = "Goa'uld";
-        CLIPlayer.Health = 30;
-        CLIPlayer.Handequipped = 2;
-        CLIPlayer.Smarts = 55;
-        CLIPlayer.Speed = 12;
-        CLIPlayer.Strength = 40;
-        CLIPlayer.parasite = true;
-        CLIPlayer.requireHost = true;
-        CLIPlayer.requirePower = false;
-        CLIPlayer.requirePowerLevel = 0;
-        CLIPlayer.partTech = false;
-        //CLIPlayer.speciesAbility = "";
-        CLIPlayer.canEditName = true;*/
-    
+/*  CLIPlayer.species = "Goa'uld";
+    CLIPlayer.Health = 30;
+    CLIPlayer.Handequipped = 2;
+    CLIPlayer.Smarts = 55;
+    CLIPlayer.Speed = 12;
+    CLIPlayer.Strength = 40;
+    CLIPlayer.parasite = true;
+    CLIPlayer.requireHost = true;
+    CLIPlayer.requirePower = false;
+    CLIPlayer.requirePowerLevel = 0;
+    CLIPlayer.partTech = false;
+    //CLIPlayer.speciesAbility = "";
+    CLIPlayer.canEditName = true;*/
+
 
 public class SGStargate
 {
