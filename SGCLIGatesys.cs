@@ -41,7 +41,7 @@ public class SGCLI
         if (CLIApi.codeaddonsstartbool == true)
         {
             ClIMiscellaneous.Creditsdata.Add("MC");
-            ClIMiscellaneous.Creditsdata.Add("========SGCLI=======");
+            ClIMiscellaneous.Creditsdata.Add("SGCLI");
             ClIMiscellaneous.Creditsdata.Add("DMC");
             ClIMiscellaneous.Creditsdata.Add("Sparcky Ancientpack");
             CLIApi.codeaddonspecies.Add("SGCLI:ID001:H");
