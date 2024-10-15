@@ -38,12 +38,15 @@ public class CLIConfig
 {
     public static void load()
     {
+        CLISpace.input.Add("G:Milky Way:S:Sol:P:Earth:Mars");
+        CLISpace.inputrun();
+        // do not use this system does not include IDs system still public because of add-ons
         //galaxies
-        CLISpace.Galaxy.Add("Milky Way");//id = 0
+        //CLISpace.Galaxy.Add("Milky Way");//id = 0
         //Solar systems
-        CLISpace.Solar_System.Add("Sol");
+        //CLISpace.Solar_System.Add("Sol");
         //Planets
-        CLISpace.Planet.Add("Earth");
+        //CLISpace.Planet.Add("Earth");
     }
     public static void addon(string? api1="null",string? api2="null",string? api3="null",string? api4="null",string? api5="null")
     {

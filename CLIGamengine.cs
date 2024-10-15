@@ -115,5 +115,6 @@ if (CLISettings.Debug == true)
     //SharedVariables sharedVars = new SharedVariables();
     //sharedVars.Sharedname = name;
     //Console.WriteLine(sharedVars.Sharedname);
+    CLISpace.print();
 }
 

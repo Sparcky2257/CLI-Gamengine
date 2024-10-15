@@ -25,7 +25,16 @@ public class SGCLI
             }
             if (y==false){}
             CLISpace.Solar_System.Add($"Sol_Abdos:{z}");
-            CLISpace.Planet.Add("Abdos");
+
+                        if (CLISpace.Solar_System.Any() == true)
+            {
+                for (int i = 0; i < x; i++)
+                {
+                   if (CLISpace.Solar_System[i]==$"Sol_Abdos:{z}"){ z=i;}
+                }
+            }
+            if (y==false){}
+            CLISpace.Planet.Add($"Abdos:{z}");
         }
     }
     public static void api(string local = "null", string local2 = "null", string local3 = "null")
