@@ -1,8 +1,5 @@
 public class CLISpecieList //: CLIGamePrep
 {
-    // ClIPlayer player = new ClIPlayer();
-    // CLISettings settings = new CLISettings(); // I didn't touch the settings vars commented out
-    ClIMiscellaneous miscellaneous = new ClIMiscellaneous();
 
     public static void Human()
     {
@@ -107,234 +104,274 @@ public class CLISpecieList //: CLIGamePrep
         //CLIPlayer.speciesAbility = "none";
         CLIPlayer.canEditName = true;
     }
-
-
-    /*void Furrysel()
+    /*
+    //text
+    public static string textboxname { get; set; } = "";
+    public static string textboxvar { get; set; } = "1";
+    static string textboxstylevar = "1";
+    static ConsoleColor textboxnameCL { get; set; } = ConsoleColor.White;
+    static ConsoleColor CLtemmp { get; set; } = ConsoleColor.White;
+    public static List<string?> textdata { get; set; } = new List<string?>();
+    public static void textbox()
     {
-        Console.Clear();
-        Console.ForegroundColor = settings.mcolor;
-        Console.WriteLine("===species====");
-        Console.ForegroundColor = settings.dmcolor;
-        Console.WriteLine("1. K9");
-        Console.WriteLine("2. Feline");
-        Console.WriteLine("3. ...");
-        Console.WriteLine("4. OG speses");
-        Console.WriteLine("0. Back");
-        Console.ResetColor();
-        Console.WriteLine("");
-        Console.Write(">");
-        switch (Console.ReadLine())
+        textboxstyle();
+        int line = 1;
+        int x = textdata.Count;
+        for (int i = 0; i < x; i++)
         {
-            case "1":
-                K9sel();
-                break;
-            case "2":
-                player.species = "Goa'uld";
-                player.health = 30;
-                player.handequipped = 2;
-                player.smarts = 55;
-                player.speed = 12;
-                player.strength = 40;
-                Playerinfo();
-                break;
-            case "3":
-                player.species = "Tok'ra";
-                player.health = 30;
-                player.handequipped = 2;
-                player.smarts = 55;
-                player.speed = 12;
-                player.strength = 40;
-                Playerinfo();
-                break;
-            case "4":
-                FOGsel();
-                break;
-            case "0":
-                speciessel();
-                break;
-            default:
-                Furrysel();
-                break;
+
+            switch (textdata[i])
+            {
+                case "CL":
+                    Color();
+                    break;
+                case "MC":
+                    Console.ForegroundColor = CLISettings.Mcolor;
+                    break;
+                case "DMC":
+                    Console.ForegroundColor = CLISettings.Dmcolor;
+                    break;
+                case "CR":
+                    Console.ResetColor();
+                    break;
+                case "WL":
+                    line++;
+                    if (CLISettings.Debug == true)
+                    {
+                        Console.WriteLine($" {line - 1}/{CLISettings.textmaxline - 1}");
+                    }
+                    else
+                    {
+                        Console.WriteLine();
+                    }
+                    if (line >= CLISettings.textmaxline)
+                    {
+                        textboxstylenext();
+                        line = 1;
+                        textboxstyle();
+                    }
+
+
+                    break;
+                case "RS":
+                    textdata.Clear();
+                    break;
+                case "TP":
+                    textboxstyle();
+                    break;
+                case "NX":
+                    if (line != CLISettings.textmaxline)
+                    {
+                        //int z = line;
+                        for (int z = line; z < CLISettings.textmaxline; z++)
+                        {
+                            if (CLISettings.Debug == true)
+                            {
+                                Console.WriteLine($" {line - 1}/{CLISettings.textmaxline - 1}");
+                            }
+                            else
+                            {
+                                Console.WriteLine();
+                            }
+                        }
+                        line = 1;
+                    }
+                    textboxstylenext();
+                    break;
+                default:
+                    Console.Write(textdata[i]);
+                    break;
+
+            }
+            void Color()
+            {
+                i++;
+                switch (textdata[i])
+                {
+                    case "Red":
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        break;
+                    case "Magenta":
+                        Console.ForegroundColor = ConsoleColor.Magenta;
+                        break;
+                    case "Yellow":
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        break;
+                    case "Green":
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        break;
+                    case "Blue":
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        break;
+                    case "Cyan":
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        break;
+                    case "Gray":
+                        Console.ForegroundColor = ConsoleColor.Gray;
+                        break;
+                    case "DarkRed":
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                        break;
+                    case "DarkMagenta":
+                        Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                        break;
+                    case "DarkYellow":
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        break;
+                    case "DarkGreen":
+                        Console.ForegroundColor = ConsoleColor.DarkGreen;
+                        break;
+                    case "DarkBlue":
+                        Console.ForegroundColor = ConsoleColor.DarkBlue;
+                        break;
+                    case "DarkCyan":
+                        Console.ForegroundColor = ConsoleColor.DarkCyan;
+                        break;
+                    case "DarkGray":
+                        Console.ForegroundColor = ConsoleColor.DarkGray;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
         }
     }
 
-
-    void FOGsel()
+    static void textboxstyle()
     {
-        Console.Clear();
-        Console.ForegroundColor = settings.mcolor;
-        Console.WriteLine("===species====");
-        Console.ForegroundColor = settings.dmcolor;
-        Console.WriteLine("1. odhex by sparcky_ancientpack");
-        Console.WriteLine("2. Corpse crawler by Frico⚠️");
-        Console.WriteLine("3. protogen by Malice-Risu HP:22 SM:57 ST:32 SP:10");
-        Console.WriteLine("4. Cat Boy/girl HP:18 SM:30 ST:32 SP:15");
-        Console.WriteLine("0. Back");
-        Console.ResetColor();
-        Console.WriteLine("");
-        Console.Write(">");
-        switch (Console.ReadLine())
+        switch (textboxstylevar)
         {
             case "1":
-                Odhexsel();
-                break;
-            case "2":
-                Playerinfo();
-                break;
-            case "3":
-                player.species = "protogen";
-                player.health = 22;
-                player.handequipped = 2;
-                player.smarts = 57;
-                player.strength = 32;
-                player.speed = 10;
-                player.parasite = false;
-                player.requireHost = false;
-                player.requirePower = false;
-                player.requirePowerLevel = 0;
-                player.partTech = true;
-                player.Damageresistance = 1.3;
-                player.speciesAbility = "none";
-                player.canEditName = true;
-                Playerinfo();
-                break;
-            case "4":
-                Playerinfo();
-                break;
-            case "0":
-                speciessel();
+                Console.Clear();
+                Console.WriteLine();
+                CLtemmp = Console.ForegroundColor;
+                Console.ForegroundColor = CLISettings.Mcolor;
+                Console.Write($"####/");
+                Console.WriteLine(textboxname, Console.ForegroundColor = textboxnameCL);
+                Console.ForegroundColor = CLtemmp;
                 break;
             default:
-                K9sel();
                 break;
         }
     }
-
-    void Odhexsel()
+    static void textboxstylenext()
     {
-        Console.Clear();
-        Console.ForegroundColor = settings.mcolor;
-        Console.WriteLine("====Odhex=====");
-        Console.ForegroundColor = settings.dmcolor;
-        Console.WriteLine("1. Odhex");
-        Console.WriteLine("2. ");
-        Console.WriteLine("0. Back");
-        Console.ResetColor();
-        Console.WriteLine("");
-        Console.Write(">");
-        switch (Console.ReadLine())
+        //Console.WriteLine();
+        CLtemmp = Console.ForegroundColor;
+        Console.ForegroundColor = CLISettings.Mcolor;
+        Console.Write($"next");
+        Console.ReadLine();
+        Console.ForegroundColor = CLtemmp;
+        //return "null";
+    }
+    //old
+    public string textboxvarold { get; set; } = "1";
+    public string textboxnameold { get; set; } = "";
+    public ConsoleColor textboxnamecold { get; set; } = ConsoleColor.White;
+
+    public void TextBoxstartold()
+    {
+        switch (textboxvarold)
         {
             case "1":
-                player.species = "Odhex";
-                player.health = 30;
-                player.handequipped = 2;
-                player.smarts = 60;
-                player.strength = 32;
-                player.speed = 10;
-                player.parasite = false;
-                player.requireHost = false;
-                player.requirePower = false;
-                player.requirePowerLevel = 0;
-                player.partTech = true;
-                player.Damageresistance = 1.2;
-                player.speciesAbility = "";
-                player.canEditName = true;
-                Playerinfo();
-                break;
-            case "2":
-                player.species = "protohex";
-                player.health = 25;
-                player.handequipped = 2;
-                player.smarts = 55;
-                player.strength = 32;
-                player.speed = 10;
-                player.parasite = false;
-                player.requireHost = false;
-                player.requirePower = true;
-                player.requirePowerLevel = 1700;
-                player.partTech = true;
-                player.Damageresistance = 1.3;
-                player.speciesAbility = "";
-                player.protohexnum = 005;
-                player.name = "Axel Wrenchblade";
-                player.color = ConsoleColor.DarkCyan;
-                settings.dmcolor = ConsoleColor.DarkBlue;
-                settings.mcolor = ConsoleColor.Cyan;
-                player.canEditName = false;
-                Playerinfo();
+                Console.Clear();
+                Console.WriteLine();
+                Console.ForegroundColor = CLISettings.Mcolor;
+                Console.Write($"####/");
+                Console.WriteLine(textboxnameold, Console.ForegroundColor = textboxnamecold);
+                Console.ForegroundColor = CLISettings.Mcolor;
                 break;
             case "0":
-                speciessel();
+                Console.WriteLine();
+                Console.Clear();
+                Console.ForegroundColor = CLISettings.Mcolor;
+                Console.Write($"####/");
+                Console.WriteLine(textboxnameold, Console.ForegroundColor = textboxnamecold);
+                Console.ForegroundColor = CLISettings.Mcolor;
                 break;
             default:
-                Odhexsel();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("textvar mode:error 404 perss enter to contue.");
+                Console.ForegroundColor = ConsoleColor.White;
+                CLIRuntimevar.rerror();
+                Console.ReadLine();
                 break;
         }
     }
-
-    void Coloursel()
+    public void TextBoxsendold()
     {
-        Console.Clear();
-        Console.ForegroundColor = settings.dmcolor;
-        Console.Write("1. ");
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine("red");
-        Console.ForegroundColor = settings.dmcolor;
-        Console.Write("2. ");
-        Console.ForegroundColor = ConsoleColor.Magenta;
-        Console.WriteLine("Magenta");
-        Console.ForegroundColor = settings.dmcolor;
-        Console.Write("3. ");
-        Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine("Yellow");
-        Console.ForegroundColor = settings.dmcolor;
-        Console.Write("4. ");
-        Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine("Green");
-        Console.ForegroundColor = settings.dmcolor;
-        Console.Write("5. ");
-        Console.ForegroundColor = ConsoleColor.Blue;
-        Console.WriteLine("Blue");
-        Console.ForegroundColor = settings.dmcolor;
-        Console.Write("6. ");
-        Console.ForegroundColor = ConsoleColor.Cyan;
-        Console.WriteLine("Cyan");
-        Console.ForegroundColor = settings.dmcolor;
-        Console.Write("7. ");
-        Console.ForegroundColor = ConsoleColor.Gray;
-        Console.WriteLine("Gray");
-        Console.ForegroundColor = settings.dmcolor;
-        Console.WriteLine("");
-        Console.Write(">");
-        Console.ForegroundColor = ConsoleColor.White;
-        switch (Console.ReadLine())
+        switch (textboxvarold)
         {
             case "1":
-                player.color = ConsoleColor.Red;
+
+                //return r;
+                InGameControls();
                 break;
-            case "2":
-                player.color = ConsoleColor.Magenta;
-                break;
-            case "3":
-                player.color = ConsoleColor.Yellow;
-                break;
-            case "4":
-                player.color = ConsoleColor.Green;
-                break;
-            case "5":
-                player.color = ConsoleColor.Blue;
-                break;
-            case "6":
-                player.color = ConsoleColor.Cyan;
-                break;
-            case "7":
-                player.color = ConsoleColor.Gray;
+            case "0":
+                Console.WriteLine();
+                Console.ForegroundColor = CLISettings.Mcolor;
+                Console.Write($"next");
+                Console.ReadLine();
+                //return "null";
                 break;
             default:
-                Coloursel();
                 break;
         }
-        Playerinfo();
-    }*/
-
+    }
+    //still good
+    static public void InGameControls()
+    {
+        //Console.ForegroundColor = CLISettings.Mcolor;
+        //Console.WriteLine("enter a action uns /help for available options.");
+        //Console.Write(">");
+        //Console.ForegroundColor = CLIPlayer.Color;
+        Console.WriteLine();
+        Console.ForegroundColor = CLISettings.Mcolor;
+        Console.Write($">_");
+        Console.ForegroundColor = CLIPlayer.Color;
+        //var r = Console.ReadLine();
+        Console.ForegroundColor = CLISettings.Mcolor;
+        switch (Console.ReadLine())
+        {
+            case "inventory":
+                Console.WriteLine("not implemented");
+                CLIRuntimevar.rerror();
+                InGameControls();
+                break;
+            case "inv":
+                Console.WriteLine("not implemented");
+                CLIRuntimevar.rerror();
+                InGameControls();
+                break;
+            case "chat":
+                Console.WriteLine("not implemented");
+                CLIRuntimevar.rerror();
+                InGameControls();
+                break;
+            case "thalk":
+                Console.WriteLine("not implemented");
+                CLIRuntimevar.rerror();
+                InGameControls();
+                break;
+            case "next":
+                Console.Clear();
+                //Items.sustoygun.InUse = true;
+                //Items.Start();
+                break;
+            case "/help":
+                Console.WriteLine("inv/inventory for your inventory");
+                Console.WriteLine("next to Continue");
+                Console.WriteLine("chat/thalk to thalk");
+                InGameControls();
+                break;
+            case "help":
+                Console.WriteLine("try /help");
+                InGameControls();
+                break;
+            default:
+                break;
+        }
+    }
+    */
 }
