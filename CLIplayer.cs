@@ -24,4 +24,5 @@ public class CLIPlayer
     public static string? latexType { get; set; } = "";
     public static string? previousSpecies { get; set; } = "";
     public static string? pronouns { get; set; } = "thay him";
+    public static List<string?> extraData { get; set; } = new List<string?>();// ex:"data type:data","data type:data:data 2"...
 }
