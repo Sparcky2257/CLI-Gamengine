@@ -4,4 +4,5 @@ public class CLINPC : CLIPlayer
     //"Gay","Pan","Str","Ace"
     public static bool canjoinparty { get; set; } = true;
     public static string? type { get; set; } = "none";
+    public static bool frindly { get; set; } = true;
 }
