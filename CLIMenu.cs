@@ -40,8 +40,7 @@ public class CLIMenu
             switch (menu)
             {
                 case "1":
-                    //Console.WriteLine("demo 1");
-                    //gameprep.newgame();
+                    CLIConfig.newgame();
                     break;
                 case "2":
                     //Console.WriteLine("demo 2");
