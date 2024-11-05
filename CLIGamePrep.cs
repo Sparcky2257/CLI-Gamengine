@@ -2,19 +2,18 @@ public class CLIGamePrep
 {
     // ClIPlayer player = new ClIPlayer();
     // CLISettings settings = new CLISettings();
-    ClIMiscellaneous miscellaneous = new ClIMiscellaneous();
-    public void newgame()
+    //ClIMiscellaneous miscellaneous = new ClIMiscellaneous();
+    public static void newgame()
     {
         CLISettings.mainMenuOpen = false;
         Console.Clear();
         Console.WriteLine("set a name for your save:");
-        miscellaneous.savename = Console.ReadLine();
-        //Playerinfo();
-        this.Playerinfo();
+        //miscellaneous.savename = Console.ReadLine();
+        Playerinfo();
 
     }
 
-    public void Playerinfo()
+    public static void Playerinfo()
     {
         Console.Clear();
         Console.ForegroundColor = CLISettings.Mcolor;
@@ -67,7 +66,7 @@ public class CLIGamePrep
                 //Console.WriteLine("demo 2");
                 if (CLIPlayer.canEditName == true)
                 {
-                    Coloursel();
+                    CLIGamePrep.Coloursel();
                 }
                 else
                 {
@@ -78,7 +77,7 @@ public class CLIGamePrep
                 //Console.WriteLine("demo 3");
                 if (CLIPlayer.canEditName == true)
                 {
-                    Speciessel();
+                    CLIGamePrep.Speciessel();
                 }
                 else
                 {
@@ -88,7 +87,7 @@ public class CLIGamePrep
             case "4":
                 if (CLISettings.BuiltInDemoEnabled == true)
                 {
-                    start();
+                    CLIGamePrep.start();
                 }
                 else { }
                 break;
@@ -127,7 +126,7 @@ public class CLIGamePrep
         }
     }
 
-    void Speciessel()
+    static void Speciessel()
     {
         Console.Clear();
         Console.ForegroundColor = CLISettings.Mcolor;
@@ -143,24 +142,24 @@ public class CLIGamePrep
         switch (Console.ReadLine())
         {
             case "1":
-                Humanssel();
+                CLIGamePrep.Humanssel();
                 break;
             case "2":
-                Furrysel();
+                CLIGamePrep.Furrysel();
                 break;
             case "3":
-                Custommenu();
+                CLIGamePrep.Custommenu();
                 break;
             case "0":
                 Playerinfo();
                 break;
             default:
-                Speciessel();
+                CLIGamePrep.Speciessel();
                 break;
         }
     }
 
-    void Humanssel()
+    public static void Humanssel()
     {
         Console.Clear();
         Console.ForegroundColor = CLISettings.Mcolor;
@@ -181,11 +180,11 @@ public class CLIGamePrep
         {
             case "1":
                 CLISpecieList.Human();
-                this.Playerinfo();
+                CLIGamePrep.Playerinfo();
                 break;
             case "2":
                 CLISpecieList.CatBoyGirl();
-                this.Playerinfo();
+                CLIGamePrep.Playerinfo();
                 break;
             /*case "3":
                 this.Playerinfo();
@@ -203,7 +202,7 @@ public class CLIGamePrep
         }
     }
 
-    void Furrysel()
+    static void Furrysel()
     {
         Console.Clear();
         Console.ForegroundColor = CLISettings.Mcolor;
@@ -240,7 +239,7 @@ public class CLIGamePrep
         }
     }
 
-    void K9sel()
+    static void K9sel()
     {
         Console.Clear();
         Console.ForegroundColor = CLISettings.Mcolor;
@@ -275,7 +274,7 @@ public class CLIGamePrep
         }
     }
 
-    void Catsel()
+    static void Catsel()
     {
         Console.Clear();
         Console.ForegroundColor = CLISettings.Mcolor;
@@ -309,7 +308,7 @@ public class CLIGamePrep
                 break;
         }
     }
-    void FOGsel()
+    static void FOGsel()
     {
         Console.Clear();
         Console.ForegroundColor = CLISettings.Mcolor;
@@ -348,7 +347,7 @@ public class CLIGamePrep
         }
     }
 
-    void Odhexsel()
+    static void Odhexsel()
     {
         Console.Clear();
         Console.ForegroundColor = CLISettings.Mcolor;
@@ -410,7 +409,7 @@ public class CLIGamePrep
         }
     }
 
-    void Custommenu()
+    static void Custommenu()
     {
         Console.Clear();
         Console.ForegroundColor = CLISettings.Mcolor;
@@ -418,7 +417,7 @@ public class CLIGamePrep
         Console.ForegroundColor = CLISettings.Dmcolor;
         Console.WriteLine("1. Code");
         Console.Write("2. ");
-         if (CLISettings.moddingIsOn == true)
+        if (CLISettings.moddingIsOn == true)
         {
             Console.ForegroundColor = ConsoleColor.Green;
         }
@@ -449,7 +448,7 @@ public class CLIGamePrep
         }
     }
 
-    void CustomCode()
+    static void CustomCode()
     {
         Console.Clear();
         Console.ForegroundColor = CLISettings.Mcolor;
@@ -474,12 +473,12 @@ public class CLIGamePrep
         }
     }
 
-    void CustomMod()
+    static void CustomMod()
     {
         Custommenu();
     }
 
-    void Coloursel()
+    static void Coloursel()
     {
         Console.Clear();
         Console.ForegroundColor = CLISettings.Dmcolor;
@@ -544,7 +543,7 @@ public class CLIGamePrep
         Playerinfo();
     }
 
-    void start()
+    static void start()
     {
         //Console.ForegroundColor= settings.mcolor;
         Console.ForegroundColor = ConsoleColor.Gray;

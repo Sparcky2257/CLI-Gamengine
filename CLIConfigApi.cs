@@ -56,6 +56,9 @@ public class CLIConfig
     {
         CLILogo.bootlogo1();
     }
+    public static void newgame(){
+        CLIGamePrep.newgame();
+    }
 }
 public class CLIApi
 {
