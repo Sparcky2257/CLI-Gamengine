@@ -8,7 +8,7 @@ public class CLIMenu
     //CLISettings settings = new CLISettings();
     CLIGamePrep gameprep = new CLIGamePrep();
 
-    public void MainMenu()
+    public static void MainMenu()
     {
         // why are you doing it like this??
         // do
@@ -44,11 +44,13 @@ public class CLIMenu
                     break;
                 case "2":
                     //Console.WriteLine("demo 2");
-                    loadgame();
+                    //loadgame();
+                    CLIConfig.loadgame();
                     break;
                 case "3":
                     //Console.WriteLine("demo 3");
-                    options();
+                    //options();
+                    CLIConfig.options();
                     break;
                 case "0":
                     // break; // nothing happens after the break
@@ -63,7 +65,7 @@ public class CLIMenu
 
     }
 
-    void options()
+    public static void options()
     {
         Console.Clear();
         Console.ForegroundColor = CLISettings.Mcolor; ;
@@ -91,21 +93,23 @@ public class CLIMenu
                 break;
             case "2":
                 //Console.WriteLine("demo 3");
-                Advancedoptions();
+                //Advancedoptions();
+                CLIConfig.Advancedoptions();
                 break;
             case "3":
                 //Console.WriteLine("demo 3");
                 Credits();
                 break;
             case "0":
-                Console.Clear();
+                //Console.Clear();
+                CLIConfig.optionsretun();
                 break;
             default:
                 options();
                 break;
         }
     }
-    void Credits()
+    static void Credits()
     {
         Console.Clear();
         Console.ForegroundColor = CLISettings.Mcolor;
@@ -194,7 +198,7 @@ public class CLIMenu
                 break;
         }
     }
-    void Advancedoptions()
+    public static void Advancedoptions()
     {
         Console.Clear();
         Console.ForegroundColor = CLISettings.Mcolor;
@@ -254,7 +258,8 @@ public class CLIMenu
         {
             case "1":
                 //Console.WriteLine("demo 1");
-                debugmenu();
+                //debugmenu();
+                CLIConfig.Consol();
                 break;
             case "2":
                 //Console.WriteLine("demo 1");
@@ -308,7 +313,8 @@ public class CLIMenu
                 Advancedoptions();
                 break;
             case "0":
-                Console.Clear();
+                //Console.Clear();
+                CLIConfig.options();
                 break;
             default:
                 Advancedoptions();
@@ -316,7 +322,7 @@ public class CLIMenu
         }
     }
 
-    void MMAColoursel()
+    static void MMAColoursel()
     {
         Console.Clear();
         Console.ForegroundColor = CLISettings.Dmcolor;
@@ -395,7 +401,7 @@ public class CLIMenu
         }
     }
 
-    void debugmenu()
+    public static void Consol()
     {
         Console.Clear();
         Console.ForegroundColor = ConsoleColor.Yellow;
@@ -407,6 +413,7 @@ public class CLIMenu
         switch (Console.ReadLine())
         {
             case "0":
+                CLIConfig.Consolext();
                 break;
             case "logo=1":
                 //Console.WriteLine("demo 2");
@@ -461,22 +468,23 @@ public class CLIMenu
                 CLISettings.NSFWIsOn = true;
                 break;
             case "API":
-                    APImenu();
+                APImenu();
                 break;
             default:
-                debugmenu();
+                Consol();
                 break;
         }
         Console.ResetColor();
     }
-    void APImenu(){
+    static void APImenu()
+    {
         Console.Write("Api args:");
         switch (Console.ReadLine())
         {
             case "1":
                 Console.Write("Api arg1:");
                 CLIConfig.addon(Console.ReadLine());
-                debugmenu();
+                Consol();
                 break;
             case "3":
                 Console.Write("Api arg1:");
@@ -485,15 +493,15 @@ public class CLIMenu
                 string? B = Console.ReadLine();
                 Console.Write("Api arg3:");
                 string? C = Console.ReadLine();
-                CLIConfig.addon(A,B,C);
-                debugmenu();
+                CLIConfig.addon(A, B, C);
+                Consol();
                 break;
             default:
                 APImenu();
                 break;
         }
     }
-    void loadgame()
+    public static void loadgame()
     {
         // Console.WriteLine("error 404");
         // Console.Clear();

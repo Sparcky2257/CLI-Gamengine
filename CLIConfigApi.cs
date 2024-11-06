@@ -48,22 +48,56 @@ public class CLIConfig
         //Planets
         //CLISpace.Planet.Add("Earth");
     }
-    public static void addon(string? api1="null",string? api2="null",string? api3="null",string? api4="null",string? api5="null")
+    public static void addon(string? api1 = "null", string? api2 = "null", string? api3 = "null", string? api4 = "null", string? api5 = "null")
     {
         //SGCLI.api(api1,api2,api3);//sg addon
     }
+    // these functions only exists so you can use the code in different modules. For example, if you wanted to make your own module, he could override it here.
     public static void bootlogo()
     {
         CLILogo.bootlogo1();
     }
-    public static void newgame(){
+    // main menu
+    public static void MainMenu()
+    {
+        CLIMenu.MainMenu();
+    }
+    public static void newgame()
+    {
         CLIGamePrep.newgame();
+    }
+    public static void loadgame()
+    {
+        CLIMenu.loadgame();
+    }
+    public static void options()
+    {
+        CLIMenu.options();
+    }
+    //options
+    public static void optionsretun()
+    {
+        Console.Clear();
+    }
+    public static void Advancedoptions()
+    {
+        CLIMenu.Advancedoptions();
+    }
+    //Consol
+    public static void Consol()
+    {
+        CLIMenu.Consol();
+    }
+    public static void Consolext()
+    {
+        
     }
 }
 public class CLIApi
 {
-    public static bool codeaddonsstartbool=false;
-    public static void codeaddonsstart(){
+    public static bool codeaddonsstartbool = false;
+    public static void codeaddonsstart()
+    {
         codeaddonsstartbool = true;
         ClIMiscellaneous.Creditsdata.Add("MC");
         ClIMiscellaneous.Creditsdata.Add("=======Addons=======");

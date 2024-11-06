@@ -64,7 +64,8 @@ CLIMenu.textbox();
 //
 // CLIGameBackup.ReadBackup(string.Empty); //don't instantly call this, not meant for it
 //i nead help
-menu.MainMenu();
+//menu.MainMenu();
+CLIConfig.MainMenu();
 //end
 Console.Clear();
 Console.ForegroundColor = ConsoleColor.Red;
