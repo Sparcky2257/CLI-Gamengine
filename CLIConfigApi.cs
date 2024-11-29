@@ -13,6 +13,7 @@ public class CLIInt
         ClIMiscellaneous.Creditsdata.Add("DMC");
         ClIMiscellaneous.Creditsdata.Add("Sparcky Ancientpack");
         ClIMiscellaneous.Creditsdata.Add("Pawos Howl");
+        ClIMiscellaneous.checkelist();
         //dont edit top
         //replace text by your game name and name by yores
         ClIMiscellaneous.Creditsdata.Add("MC");
@@ -62,19 +63,39 @@ public class CLIConfig
     {
         CLIMenu.MainMenu();
     }
+    // new game
     public static void newgame()
     {
         CLIGamePrep.newgame();
     }
+    //Cli new game setings
+    public static void GPsavename()
+    {
+        CLIGamePrep.savename();
+    }
+    public static void GPPlayerinfo()
+    {
+        CLIGamePrep.Playerinfo();
+    }
+    public static void GPPlayerName()
+    {
+        CLIGamePrep.PlayerName();
+    }
+     public static void GPColour()
+    {
+        CLIGamePrep.Colour();
+    }
+    // load game
     public static void loadgame()
     {
         CLIMenu.loadgame();
     }
+    //options
     public static void options()
     {
         CLIMenu.options();
     }
-    //options
+    //cli options settings 
     public static void optionsretun()
     {
         Console.Clear();
@@ -88,6 +109,7 @@ public class CLIConfig
     {
         CLIMenu.Consol();
     }
+    //Cli Consol settings
     public static void Consolext()
     {
         

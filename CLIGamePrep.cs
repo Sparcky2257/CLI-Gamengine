@@ -5,11 +5,17 @@ public class CLIGamePrep
     //ClIMiscellaneous miscellaneous = new ClIMiscellaneous();
     public static void newgame()
     {
+        ClIMiscellaneous.checkelist();
+        CLIConfig.GPsavename();
+    }
+    public static void savename()
+    {
         CLISettings.mainMenuOpen = false;
         Console.Clear();
         Console.WriteLine("set a name for your save:");
         //miscellaneous.savename = Console.ReadLine();
-        Playerinfo();
+        ClIMiscellaneous.checkelist();
+        CLIConfig.GPPlayerinfo();
 
     }
 
@@ -53,25 +59,10 @@ public class CLIGamePrep
         switch (plinfo)
         {
             case "1":
-                //Console.WriteLine("demo 1");
-                Console.Clear();
-                if (CLIPlayer.canEditName == true)
-                {
-                    Console.WriteLine("name:");
-                    CLIPlayer.Name = Console.ReadLine();
-                }
-                Playerinfo();
+                CLIConfig.GPPlayerName();
                 break;
             case "2":
-                //Console.WriteLine("demo 2");
-                if (CLIPlayer.canEditName == true)
-                {
-                    CLIGamePrep.Coloursel();
-                }
-                else
-                {
-                    Playerinfo();
-                }
+                CLIConfig.GPColour();//temp fix
                 break;
             case "3":
                 //Console.WriteLine("demo 3");
@@ -81,7 +72,7 @@ public class CLIGamePrep
                 }
                 else
                 {
-                    Playerinfo();
+                    CLIConfig.GPPlayerinfo();
                 }
                 break;
             case "4":
@@ -110,19 +101,40 @@ public class CLIGamePrep
                     CLIPlayer.partTech = false;
                     CLIPlayer.Protohexnum = -1;
                     //CLIPlayer.speciesAbility = "ancientGRool";
-                    Playerinfo();
+                    CLIConfig.GPPlayerinfo();
                 }
                 else
                 {
-                    Playerinfo();
+                    CLIConfig.GPPlayerinfo();
                 }
                 break;
             case "0":
                 //varpush();
                 break;
             default:
-                Playerinfo();
+                CLIConfig.GPPlayerinfo();
                 break;
+        }
+    }
+    public static void PlayerName()
+    {
+        Console.Clear();
+        if (CLIPlayer.canEditName == true)
+        {
+            Console.WriteLine("name:");
+            CLIPlayer.Name = Console.ReadLine();
+        }
+        CLIConfig.GPPlayerinfo();
+    }
+    public static void Colour()
+    {
+        if (CLIPlayer.canEditName == true)
+        {
+            CLIGamePrep.Coloursel();
+        }
+        else
+        {
+            CLIConfig.GPPlayerinfo();
         }
     }
 
@@ -151,7 +163,7 @@ public class CLIGamePrep
                 CLIGamePrep.Custommenu();
                 break;
             case "0":
-                Playerinfo();
+                CLIConfig.GPPlayerinfo();
                 break;
             default:
                 CLIGamePrep.Speciessel();
@@ -180,18 +192,18 @@ public class CLIGamePrep
         {
             case "1":
                 CLISpecieList.Human();
-                CLIGamePrep.Playerinfo();
+                CLIConfig.GPPlayerinfo();
                 break;
             case "2":
                 CLISpecieList.CatBoyGirl();
-                CLIGamePrep.Playerinfo();
+                CLIConfig.GPPlayerinfo();
                 break;
             /*case "3":
-                this.Playerinfo();
+                this.CLIConfig.GPPlayerinfo();
                 break;*/
             /*case "4":
                 CLIRuntimevar.rerror();
-                this.Playerinfo();
+                this.CLIConfig.GPPlayerinfo();
                 break;*/
             case "0":
                 Speciessel();
@@ -225,7 +237,7 @@ public class CLIGamePrep
                 Catsel();
                 break;
             case "3":
-                Playerinfo();
+                CLIConfig.GPPlayerinfo();
                 break;
             case "4":
                 FOGsel();
@@ -254,16 +266,16 @@ public class CLIGamePrep
         {
             case "1":
                 CLISpecieList.Wolf();
-                Playerinfo();
+                CLIConfig.GPPlayerinfo();
                 break;
             case "2":
-                Playerinfo();
+                CLIConfig.GPPlayerinfo();
                 break;
             case "3":
-                Playerinfo();
+                CLIConfig.GPPlayerinfo();
                 break;
             case "4":
-                Playerinfo();
+                CLIConfig.GPPlayerinfo();
                 break;
             case "0":
                 Speciessel();
@@ -289,16 +301,16 @@ public class CLIGamePrep
         {
             case "1":
                 CLISpecieList.Cat();
-                Playerinfo();
+                CLIConfig.GPPlayerinfo();
                 break;
             case "2":
-                Playerinfo();
+                CLIConfig.GPPlayerinfo();
                 break;
             case "3":
-                Playerinfo();
+                CLIConfig.GPPlayerinfo();
                 break;
             case "4":
-                Playerinfo();
+                CLIConfig.GPPlayerinfo();
                 break;
             case "0":
                 Speciessel();
@@ -328,15 +340,15 @@ public class CLIGamePrep
                 Odhexsel();
                 break;
             case "2":
-                Playerinfo();
+                CLIConfig.GPPlayerinfo();
                 break;
             case "3":
                 CLISpecieList.Protogen();
-                Playerinfo();
+                CLIConfig.GPPlayerinfo();
                 break;
             case "4":
                 CLISpecieList.Avali();
-                Playerinfo();
+                CLIConfig.GPPlayerinfo();
                 break;
             case "0":
                 Speciessel();
@@ -376,7 +388,7 @@ public class CLIGamePrep
                 CLIPlayer.damageResistance = 1.2;
                 //CLIPlayer.speciesAbility = "";
                 CLIPlayer.canEditName = true;
-                Playerinfo();
+                CLIConfig.GPPlayerinfo();
                 break;
             case "2":
                 CLIPlayer.species = "protohex";
@@ -398,7 +410,7 @@ public class CLIGamePrep
                 CLISettings.Dmcolor = ConsoleColor.DarkBlue;
                 CLISettings.Mcolor = ConsoleColor.Cyan;
                 CLIPlayer.canEditName = false;
-                Playerinfo();
+                CLIConfig.GPPlayerinfo();
                 break;
             case "0":
                 Speciessel();
@@ -540,7 +552,7 @@ public class CLIGamePrep
                 Coloursel();
                 break;
         }
-        Playerinfo();
+        CLIConfig.GPPlayerinfo();
     }
 
     static void start()

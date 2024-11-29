@@ -43,10 +43,13 @@ public class CLILogo
         Console.Write("  └─┘┴ ┴┴ ┴└─┘┘└┘└─┘┴┘└┘└─┘ ");
         Console.ResetColor();
     }
-    public static void logostart(string text="error",int times=249){
+    public static void logostart(string text = "error", int times = 249)
+    {
         Console.Clear();
         bootlogo3();
         Console.WriteLine(text);
+       
         Thread.Sleep(times);//149
     }
+
 }
