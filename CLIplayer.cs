@@ -29,5 +29,5 @@ public class CLIPlayer
     public static string? latexType { get; set; } = ""; // depcadchon in a futre update ues extraData
     public static string? previousSpecies { get; set; } = ""; // depcadchon in a futre update ues extraData
     public static string? pronouns { get; set; } = "thay him"; //same
-    public static List<string?> extraData { get; set; } = new List<string?>();// ex:"data type:data","data type:data:data 2"...
+    public static List<string?> extraData { get; set; } = new List<string?>();// ex: "data type:data","data type:data:data 2"...
 }

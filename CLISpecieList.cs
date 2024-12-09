@@ -1,4 +1,4 @@
-public class CLISpecieList //: CLIGamePrep
+public class CLISpecieList //: CLIGamePrep 
 {
     public static List<string?> List { get; set; } = new List<string?>();// ex:"type:data"
     public static void Human()
