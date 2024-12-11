@@ -2,10 +2,13 @@ public class CLIDemo
 {
     public static void Play()
     {
-        CLIMenu.textboxname = "2257";
+        CLIMenu.textboxname = CLIPlayer.Name;
         CLIMenu.textboxvar = "1";
         CLIMenu.textdata.Add("DMC");
-        CLIMenu.textdata.Add("Hi i Believe That ");
+        CLIMenu.textdata.Add("Hello");
+        CLIMenu.textdata.Add("CL");
+        CLIMenu.textdata.Add($"{CLIPlayer.Color}");
+        CLIMenu.textdata.Add("");
         CLIMenu.textdata.Add("CL");
         CLIMenu.textdata.Add($"{ConsoleColor.Red}");
         CLIMenu.textdata.Add("you");

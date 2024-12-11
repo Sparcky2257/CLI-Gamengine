@@ -656,6 +656,9 @@ public class CLIMenu
                 case "DMC":
                     Console.ForegroundColor = CLISettings.Dmcolor;
                     break;
+                case "PLC":
+                    Console.ForegroundColor = CLIPlayer.Color;
+                    break;
                 case "CR":
                     Console.ResetColor();
                     break;

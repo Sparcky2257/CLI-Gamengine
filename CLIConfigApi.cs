@@ -53,7 +53,9 @@ public class CLIConfig
     {
         //SGCLI.api(api1,api2,api3);//sg addon
     }
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------
     // these functions only exists so you can use the code in different modules. For example, if you wanted to make your own module, he could override it here.
+    //-------------------------------------------------------------------------------------------------------------------------------------------------------------------  
     public static void bootlogo()
     {
         CLILogo.bootlogo1();
