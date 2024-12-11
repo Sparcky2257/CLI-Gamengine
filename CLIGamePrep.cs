@@ -565,10 +565,10 @@ public class CLIGamePrep
         switch (Console.ReadLine())
         {
             case "1":
-                start();
+                CLIConfig.PlayMain();
                 break;
             case "2":
-                //demo.demo1();
+                CLIConfig.Demo();
                 break;
             default:
                 start();

@@ -114,6 +114,16 @@ public class CLIConfig
     {
         
     }
+     public static void Demo()
+    {
+        CLIDemo.Play();
+    }
+    public static void PlayMain()
+    {
+        //XX.play();
+        CLISettings.mainMenuOpen = true;
+        CLIMenu.MainMenu();
+    }
 }
 public class CLIApi
 {
