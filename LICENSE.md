@@ -6,7 +6,7 @@
 
 ## **2. ShareAlike**:
 
-### If you remix, transform, or build upon the material,
+### you can remix, transform, or build upon the material.
 
 ## **3. Release of Derivative Works**:
 
