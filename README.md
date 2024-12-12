@@ -18,7 +18,7 @@ git clone https://github.com/Sparcky2257/CLI-Gamengine.git
 ### Navigate to the Project Directory:
 
 ```
-cd cli-game-engine
+cd CLI-Gamengine
 ```
 
 ### Install Dependencies:
