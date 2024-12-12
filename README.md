@@ -12,7 +12,7 @@ CLI Gamengine CLI Game Engine is a text-based game engine coded in C# using .NET
 ### Clone the Repository:
 
 ```
-git clone https://github.com/Sparcky2257/cli-game-engine.git
+git clone https://github.com/Sparcky2257/CLI-Gamengine.git
 ```
 
 ### Navigate to the Project Directory:

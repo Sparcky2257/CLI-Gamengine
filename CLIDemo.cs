@@ -8,7 +8,7 @@ public class CLIDemo
         CLIMenu.textdata.Add("Hello");
         CLIMenu.textdata.Add("CL");
         CLIMenu.textdata.Add($"{CLIPlayer.Color}");
-        CLIMenu.textdata.Add("");
+        CLIMenu.textdata.Add($" {CLIPlayer.Name} ");
         CLIMenu.textdata.Add("CL");
         CLIMenu.textdata.Add($"{ConsoleColor.Red}");
         CLIMenu.textdata.Add("you");
