@@ -1,22 +1,42 @@
-/*public class CLIInventory
+public class CLIInventory
 {
-    public List<CLIItems.Items> items;  // List of Item objects
-
-    public CLIInventory()
+    public static List<string?> Inventoryplace { get; set; } = new List<string?>(); // "place"
+    public static List<string?> Inventorystore { get; set; } = new List<string?>(); // "place:itemid"
+    public static List<string?> items { get; set; } = new List<string?>(); // "itemid:name:description:data"
+    public static void Inventory(string place = "null", string func1 = "null", string func2 = "null") //place ex player 
     {
-        items = new List<CLIItems.Items>();
-        CLIItems.Gun gun = new CLIItems.Gun
+        if (place == "null" | func1 == "null")
         {
-            Name = "AK-47",
-            // Set other properties as needed...
-        };
-        items.Add(gun);
-    }
+            CLIRuntimevar.rwarns();
+        }
+        else
+        {
+            var x = Inventoryplace.Count;
+            var z = -1;
+            for (int i = 0; i < x; i++)
+            {
+                if (Inventoryplace[i] == place)
+                {
+                    z = i;
+                }
+                if (z == -1)
+                {
+                    CLIRuntimevar.rwarns();
+                }
+                else
+                {
+                    Inventoryfuncall(Inventoryplace[z]);
+                }
+            }
 
-    public void AddItem(CLIItems.Items item)
+        }
+    }
+    static void Inventoryfuncall(string place = "null", string func1 = "null", string func2 = "null")
     {
-        items.Add(item);
-    }
 
-    // More methods as needed...
-}*/
+    }
+    public static void setup()
+    {
+
+    }
+}
