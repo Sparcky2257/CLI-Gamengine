@@ -62,7 +62,7 @@ public class CLIInventory
     //ues check
     static void UseCH(string place = "null", string func2 = "null", string func3 = "null")
     {
-        string souceid = "null";
+        string dsouceid = "null";
                     var x = SouceId.Count;
             var z = -1;
             for (int i = 0; i < x; i++)

@@ -63,7 +63,8 @@ public class CLIConfig
     // main menu
     public static void MainMenu()
     {
-        CLIMenu.MainMenu();
+        //CLIMenu.MainMenu();
+        CLITest.MainMenu();
     }
     // new game
     public static void newgame()
@@ -77,7 +78,8 @@ public class CLIConfig
     }
     public static void GPPlayerinfo()
     {
-        CLIGamePrep.Playerinfo();
+        //CLIGamePrep.Playerinfo();
+        CLITest.Playerinfo();
     }
     public static void GPPlayerName()
     {

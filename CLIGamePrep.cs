@@ -138,7 +138,7 @@ public class CLIGamePrep
         }
     }
 
-    static void Speciessel()
+    public static void Speciessel() //open for test
     {
         Console.Clear();
         Console.ForegroundColor = CLISettings.Mcolor;
@@ -555,7 +555,7 @@ public class CLIGamePrep
         CLIConfig.GPPlayerinfo();
     }
 
-    static void start()
+    public static void start() //open for test
     {
         //Console.ForegroundColor= settings.mcolor;
         Console.ForegroundColor = ConsoleColor.Gray;

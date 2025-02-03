@@ -12,13 +12,14 @@
 
 ### you must distribute your contributions under the same license as the original.
 
-## **3. Revocation**:
+## **4. Revocation**:
 
 ### The licensor reserves the right to revoke this license under the following conditions:
 
 * Violation of the license
 * Misuse of the work
+* this setion can only be invcoed by the owner of CLI-Gmame enige.
 
-## **4. Contact for Different License**:
+## **5. Contact for Different License**:
 
 ### The licensor can be contacted to negotiate a different license for your project.
