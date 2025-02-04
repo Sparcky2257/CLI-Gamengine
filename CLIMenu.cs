@@ -109,7 +109,7 @@ public class CLIMenu
                 break;
         }
     }
-    static void Credits()
+    public static void Credits()
     {
         Console.Clear();
         Console.ForegroundColor = CLISettings.Mcolor;

@@ -97,7 +97,8 @@ public class CLIConfig
     //options
     public static void options()
     {
-        CLIMenu.options();
+        //CLIMenu.options();
+        CLITest.Options();
     }
     //cli options settings 
     public static void optionsretun()

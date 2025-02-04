@@ -1,4 +1,4 @@
-# CLI-GAMEENGINE LICENCE
+# CLI-GAMENGINE LICENCE
 
 ## **1. Attribution**:
 

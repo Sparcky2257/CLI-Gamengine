@@ -33,15 +33,21 @@ dotnet run
 
 ## Requirements
 
-### **.NET** 8 SDK:
+### **.NET** 9 SDK:
 
-Ensure you have the .NET 8 SDK installed on your machine.
+Ensure you have the .NET 9 SDK installed on your machine for V A.5.0 and up.
+
+##### **.NET** 8 SDK:
+
+Ensure you have the .NET 8 SDK installed on your machine for V T-A.5.0.
+
+
 ContributingFeel free to submit issues or pull requests. Contributions are welcome!
 
 ## License
 
 ### This project is licensed under the:
 
-#### ...
+##### CLI-GAMENGINE LICENCE
 
 contat me if you want to have a difrint License
