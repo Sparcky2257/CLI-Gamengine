@@ -18,7 +18,7 @@
 
 * Violation of the license
 * Misuse of the work
-* this setion can only be invcoed by the owner of CLI-Gmame enige.
+* this setion can only be invcoed by the owner of CLI-GAMENGINE.
 
 ## **5. Contact for Different License**:
 
