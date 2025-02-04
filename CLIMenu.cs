@@ -403,102 +403,79 @@ public class CLIMenu
 
     public static void Consol()
     {
-        Console.Clear();
-        Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine("====Consol====");
-        Console.WriteLine("you can write commands here 0 to exsit");
-        Console.ForegroundColor = ConsoleColor.Blue;
-        Console.WriteLine("");
-        Console.Write(">");
-        switch (Console.ReadLine())
+        while (true)
         {
-            case "0":
-                CLIConfig.Consolext();
-                break;
-            case "logo=1":
-                //Console.WriteLine("demo 2");
-                //CLISettings.Bootlogo = 1;
-                CLISettings.customLogoIsOn = true;
-                break;
-            case "logo=2":
-                //Console.WriteLine("demo 2");
-                //CLISettings.Bootlogo = 2;
-                CLISettings.customLogoIsOn = true;
-                break;
-            case "logo=0":
-                //Console.WriteLine("demo 2");
-                //CLISettings.Bootlogo = 0;
-                CLISettings.customLogoIsOn = true;
-                break;
-            case "logo=3":
-                //Console.WriteLine("demo 2");
-                //CLISettings.Bootlogo = 3;
-                CLISettings.customLogoIsOn = true;
-                break;
-            case "mod=1":
-                //Console.WriteLine("demo 2");
-                CLISettings.moddingIsOn = true;
-                //Optionsave();
-                break;
-            case "mod=0":
-                //Console.WriteLine("demo 2");
-                CLISettings.moddingIsOn = false;
-                //Optionsave();
-                break;
-            case "mod=true":
-                //Console.WriteLine("demo 2");
-                CLISettings.moddingIsOn = true;
-                //Optionsave();
-                break;
-            case "mod=false":
-                //Console.WriteLine("demo 2");
-                CLISettings.moddingIsOn = false;
-                //Optionsave();
-                break;
-            case "nfsw=false":
-                CLISettings.NSFWIsOn = false;
-                break;
-            case "nfsw=0":
-                CLISettings.NSFWIsOn = false;
-                break;
-            case "nfsw=1":
-                CLISettings.NSFWIsOn = true;
-                break;
-            case "nfsw=true":
-                CLISettings.NSFWIsOn = true;
-                break;
-            case "API":
-                APImenu();
-                break;
-            default:
-                Consol();
-                break;
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("====Consol====");
+            Console.WriteLine("You can write commands here. Enter 0 to exit.");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("");
+            Console.Write(">");
+            string input = Console.ReadLine();
+
+            switch (input)
+            {
+                case "0":
+                    CLIConfig.Consolext();
+                    return;
+                case "mod=1":
+                    CLISettings.moddingIsOn = true;
+                    break;
+                case "mod=0":
+                    CLISettings.moddingIsOn = false;
+                    break;
+                case "mod=true":
+                    CLISettings.moddingIsOn = true;
+                    break;
+                case "mod=false":
+                    CLISettings.moddingIsOn = false;
+                    break;
+                case "nfsw=false":
+                    CLISettings.NSFWIsOn = false;
+                    break;
+                case "nfsw=0":
+                    CLISettings.NSFWIsOn = false;
+                    break;
+                case "nfsw=1":
+                    CLISettings.NSFWIsOn = true;
+                    break;
+                case "nfsw=true":
+                    CLISettings.NSFWIsOn = true;
+                    break;
+                case "API":
+                    APImenu();
+                    break;
+                default:
+                    Console.WriteLine("Invalid command. Please try again.");
+                    break;
+            }
+            Console.ResetColor();
         }
-        Console.ResetColor();
-    }
-    static void APImenu()
-    {
-        Console.Write("Api args:");
-        switch (Console.ReadLine())
+        static void APImenu()
         {
-            case "1":
-                Console.Write("Api arg1:");
-                CLIConfig.addon(Console.ReadLine());
-                Consol();
-                break;
-            case "3":
-                Console.Write("Api arg1:");
-                string? A = Console.ReadLine();
-                Console.Write("Api arg2:");
-                string? B = Console.ReadLine();
-                Console.Write("Api arg3:");
-                string? C = Console.ReadLine();
-                CLIConfig.addon(A, B, C);
-                Consol();
-                break;
-            default:
-                APImenu();
-                break;
+            Console.Write("Api args:");
+            switch (Console.ReadLine())
+            {
+                case "1":
+                    Console.Write("Api arg1:");
+                    CLIConfig.addon(Console.ReadLine());
+                    Consol();
+                    break;
+                case "3":
+                    Console.Write("Api arg1:");
+                    string? A = Console.ReadLine();
+                    Console.Write("Api arg2:");
+                    string? B = Console.ReadLine();
+                    Console.Write("Api arg3:");
+                    string? C = Console.ReadLine();
+                    CLIConfig.addon(A, B, C);
+                    Consol();
+                    break;
+                default:
+                    APImenu();
+                    break;
+            }
         }
     }
     public static void loadgame()
