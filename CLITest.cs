@@ -269,79 +269,83 @@ public class CLITest
     static void MMAColoursel()
     {
         Console.Clear();
-        Console.ForegroundColor = CLISettings.Dmcolor;
-        Console.Write("1. ");
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine("red");
-        Console.ForegroundColor = CLISettings.Dmcolor;
-        Console.Write("2. ");
-        Console.ForegroundColor = ConsoleColor.Magenta;
-        Console.WriteLine("Magenta");
-        Console.ForegroundColor = CLISettings.Dmcolor;
-        Console.Write("3. ");
-        Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine("Yellow");
-        Console.ForegroundColor = CLISettings.Dmcolor;
-        Console.Write("4. ");
-        Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine("Green");
-        Console.ForegroundColor = CLISettings.Dmcolor;
-        Console.Write("5. ");
-        Console.ForegroundColor = ConsoleColor.Blue;
-        Console.WriteLine("Blue");
-        Console.ForegroundColor = CLISettings.Dmcolor;
-        Console.Write("6. ");
-        Console.ForegroundColor = ConsoleColor.Cyan;
-        Console.WriteLine("Cyan");
-        Console.ForegroundColor = CLISettings.Dmcolor;
-        Console.Write("7. ");
-        Console.ForegroundColor = ConsoleColor.Gray;
-        Console.WriteLine("Gray");
-        Console.ForegroundColor = CLISettings.Dmcolor;
-        Console.WriteLine("");
-        Console.Write(">");
-        Console.ForegroundColor = ConsoleColor.White;
-        switch (Console.ReadLine())
+        string[] colors = { "Red", "Magenta", "Yellow", "Green", "Blue", "Cyan", "Gray" };
+        ConsoleColor[] colorsEnum = { ConsoleColor.Red, ConsoleColor.Magenta, ConsoleColor.Yellow, ConsoleColor.Green, ConsoleColor.Blue, ConsoleColor.Cyan, ConsoleColor.Gray };
+
+        int index = 0;
+        while (true)
         {
-            case "1":
-                CLISettings.Mcolor = ConsoleColor.Red;
-                CLISettings.Dmcolor = ConsoleColor.DarkRed;
-                break;
-            case "2":
-                CLISettings.Mcolor = ConsoleColor.Magenta;
-                CLISettings.Dmcolor = ConsoleColor.DarkMagenta;
-                break;
-            case "3":
-                CLISettings.Mcolor = ConsoleColor.Yellow;
-                CLISettings.Dmcolor = ConsoleColor.DarkYellow;
-                break;
-            case "4":
-                CLISettings.Mcolor = ConsoleColor.Green;
-                CLISettings.Dmcolor = ConsoleColor.DarkGreen;
-                break;
-            case "5":
-                CLISettings.Mcolor = ConsoleColor.Blue;
-                CLISettings.Dmcolor = ConsoleColor.DarkBlue;
-                break;
-            case "6":
-                CLISettings.Mcolor = ConsoleColor.Cyan;
-                CLISettings.Dmcolor = ConsoleColor.DarkCyan;
-                break;
-            case "7":
-                if (CLIRuntimevar.crt == true)
+            Console.Clear();
+            for (int i = 0; i < colors.Length; i++)
+            {
+                if (i == index)
                 {
-                    CLISettings.Mcolor = ConsoleColor.White;
-                    CLISettings.Dmcolor = ConsoleColor.Gray;
+                    Console.ForegroundColor = colorsEnum[i];
+                    Console.Write("→ "); // Add arrow for selected item
                 }
                 else
                 {
-                    CLISettings.Mcolor = ConsoleColor.Gray;
-                    CLISettings.Dmcolor = ConsoleColor.DarkGray;
+                    Console.ForegroundColor = CLISettings.Dmcolor;
                 }
-                break;
-            default:
-                MMAColoursel();
-                break;
+                Console.WriteLine($"{colors[i]}");
+            }
+            Console.ResetColor();
+
+            var key = Console.ReadKey(true).Key;
+
+            switch (key)
+            {
+                case ConsoleKey.UpArrow:
+                    index = (index == 0) ? colors.Length - 1 : index - 1;
+                    break;
+                case ConsoleKey.DownArrow:
+                    index = (index == colors.Length - 1) ? 0 : index + 1;
+                    break;
+                case ConsoleKey.Enter:
+                    switch (index)
+                    {
+                        case 0:
+                            CLISettings.Mcolor = ConsoleColor.Red;
+                            CLISettings.Dmcolor = ConsoleColor.DarkRed;
+                            break;
+                        case 1:
+                            CLISettings.Mcolor = ConsoleColor.Magenta;
+                            CLISettings.Dmcolor = ConsoleColor.DarkMagenta;
+                            break;
+                        case 2:
+                            CLISettings.Mcolor = ConsoleColor.Yellow;
+                            CLISettings.Dmcolor = ConsoleColor.DarkYellow;
+                            break;
+                        case 3:
+                            CLISettings.Mcolor = ConsoleColor.Green;
+                            CLISettings.Dmcolor = ConsoleColor.DarkGreen;
+                            break;
+                        case 4:
+                            CLISettings.Mcolor = ConsoleColor.Blue;
+                            CLISettings.Dmcolor = ConsoleColor.DarkBlue;
+                            break;
+                        case 5:
+                            CLISettings.Mcolor = ConsoleColor.Cyan;
+                            CLISettings.Dmcolor = ConsoleColor.DarkCyan;
+                            break;
+                        case 6:
+                            if (CLIRuntimevar.crt == true)
+                            {
+                                CLISettings.Mcolor = ConsoleColor.White;
+                                CLISettings.Dmcolor = ConsoleColor.Gray;
+                            }
+                            else
+                            {
+                                CLISettings.Mcolor = ConsoleColor.Gray;
+                                CLISettings.Dmcolor = ConsoleColor.DarkGray;
+                            }
+                            break;
+                        default:
+                            MMAColoursel();
+                            break;
+                    }
+                    return;  // Exit function after a selection
+            }
         }
     }
 }

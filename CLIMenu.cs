@@ -322,7 +322,7 @@ public class CLIMenu
         }
     }
 
-    static void MMAColoursel()
+    public static void MMAColoursel()
     {
         Console.Clear();
         Console.ForegroundColor = CLISettings.Dmcolor;
