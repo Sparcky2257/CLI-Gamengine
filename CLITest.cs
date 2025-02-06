@@ -247,7 +247,7 @@ public class CLITest
                     switch (selectedIndex)
                     {
                         case 0:
-                            MMAColoursel();
+                            CLIConfig.MMAColoursel();
                             break;
                         case 1:
                             CLIConfig.Advancedoptions();
@@ -256,7 +256,7 @@ public class CLITest
                             CLIMenu.Credits();
                             break;
                         case 3:
-                            CLIGameBackup.WriteBackup("s");
+                            //CLIGameBackup.WriteBackup("s");
                             break;
                         case 4:
                             CLIConfig.optionsretun();
@@ -266,7 +266,8 @@ public class CLITest
             }
         }
     }
-    static void MMAColoursel()
+    //MMAColoursel
+    public static void MMAColoursel()
     {
         Console.Clear();
         string[] colors = { "Red", "Magenta", "Yellow", "Green", "Blue", "Cyan", "Gray" };
@@ -348,4 +349,93 @@ public class CLITest
             }
         }
     }
+    //
+    public static void Advancedoptions()
+    {
+        Console.Clear();
+        string[] options = { "Consol", "Debug", "Moding", "Icons", "Back" };
+        int index = 0;
+
+        while (true)
+        {
+            Console.Clear();
+            Console.ForegroundColor = CLISettings.Mcolor;
+            Console.WriteLine("===Advanced===");
+            Console.ForegroundColor = CLISettings.Dmcolor;
+
+            for (int i = 0; i < options.Length; i++)
+            {
+                if (i == index)
+                {
+                    Console.Write("→ ");
+                    Console.ForegroundColor = (i == 1 && CLISettings.Debug) || (i == 2 && CLISettings.moddingIsOn) || (i == 3 && (CLISettings.Icons == 1 || CLISettings.Icons == 2)) ? ConsoleColor.Green : CLISettings.Mcolor;
+                }
+                else
+                {
+                    Console.ForegroundColor = CLISettings.Dmcolor;
+                }
+
+                
+                if (i == 1) Console.ForegroundColor = CLISettings.Debug ? ConsoleColor.Green : ConsoleColor.Red;
+                if (i == 2) Console.ForegroundColor = CLISettings.moddingIsOn ? ConsoleColor.Green : ConsoleColor.Red;
+                if (i == 3)
+                {
+                    if (CLISettings.Icons == 1)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("Icons:  MesloLGS-NF(FONT)");
+                    }
+                    else if (CLISettings.Icons == 2)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("Icons: 📂 Emojis + Emoticon");
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Icons: OFF");
+                    }
+                }
+                else
+                {
+                    //Console.ForegroundColor= CLISettings.Mcolor;
+                    Console.WriteLine(options[i]);
+                }
+            }
+            Console.ResetColor();
+
+            var key = Console.ReadKey(true).Key;
+
+            switch (key)
+            {
+                case ConsoleKey.UpArrow:
+                    index = (index == 0) ? options.Length - 1 : index - 1;
+                    break;
+                case ConsoleKey.DownArrow:
+                    index = (index == options.Length - 1) ? 0 : index + 1;
+                    break;
+                case ConsoleKey.Enter:
+                    switch (index)
+                    {
+                        case 0:
+                            CLIConfig.Consol();
+                            return;
+                        case 1:
+                            CLISettings.Debug = !CLISettings.Debug;
+                            break;
+                        case 2:
+                            CLISettings.moddingIsOn = !CLISettings.moddingIsOn;
+                            break;
+                        case 3:
+                            CLISettings.Icons = (CLISettings.Icons == 1) ? 2 : (CLISettings.Icons == 2) ? 0 : 1;
+                            break;
+                        case 4:
+                            CLIConfig.options();
+                            return;
+                    }
+                    break;
+            }
+        }
+    }
+
 }

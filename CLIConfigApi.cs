@@ -107,7 +107,8 @@ public class CLIConfig
     }
     public static void Advancedoptions()
     {
-        CLIMenu.Advancedoptions();
+        //CLIMenu.Advancedoptions();
+        CLITest.Advancedoptions();
     }
     //Consol
     public static void Consol()
@@ -128,6 +129,12 @@ public class CLIConfig
         //XX.play();
         CLISettings.mainMenuOpen = true;
         CLIMenu.MainMenu();
+    }
+    //MMAColoursel ui color settings
+    public static void MMAColoursel()
+    {
+        //CLIMenu.MMAColoursel();
+        CLITest.MMAColoursel();
     }
 }
 public class CLIApi
