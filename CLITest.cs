@@ -193,8 +193,7 @@ public class CLITest
         }
     }
     //opions
-    public static void Options()
-    {
+    public static void Options(){
         int selectedIndex = 0;
         string[] options = { "Menu Colour", "Advanced Options", "Credits", "Save", "Back" };
 
@@ -349,9 +348,8 @@ public class CLITest
             }
         }
     }
-    //
-    public static void Advancedoptions()
-    {
+    //Advancedoptions
+    public static void Advancedoptions(){
         Console.Clear();
         string[] options = { "Consol", "Debug", "Moding", "Icons", "Back" };
         int index = 0;
@@ -437,5 +435,8 @@ public class CLITest
             }
         }
     }
-
+    // 
+    public static void move(){
+        
+    }
 }

@@ -1,6 +1,6 @@
 using System.ComponentModel;
 using System.Net.Sockets;
-
+// htis file is a example of a addon for the CLIGamengine
 public class SGCLI
 {
     private static bool add_abdos;
