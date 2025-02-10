@@ -436,7 +436,7 @@ public class CLITest
         }
     }
     // 
-    public static void move(){
+   // public static void move(){
         
-    }
+   // }
 }
