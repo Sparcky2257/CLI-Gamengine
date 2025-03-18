@@ -65,7 +65,7 @@ public class CLITest
                             break;
                         case 3:
                             CLISettings.mainMenuOpen = false;
-                            break;
+                            return;
                     }
                     break;
             }
@@ -140,10 +140,10 @@ public class CLITest
                     {
                         case 0:
                             CLIConfig.GPPlayerName();
-                            break;
+                            return;
                         case 1:
                             CLIConfig.GPColour();
-                            break;
+                            return;
                         case 2:
                             if (CLIPlayer.canEditName)
                             {
@@ -153,13 +153,13 @@ public class CLITest
                             {
                                 CLIConfig.GPPlayerinfo();
                             }
-                            break;
+                            return;
                         case 3:
                             if (CLISettings.BuiltInDemoEnabled)
                             {
                                 CLIGamePrep.start();
                             }
-                            break;
+                            return;
                         case 4:
                             if (!CLIPlayer.canEditName)
                             {
@@ -184,7 +184,7 @@ public class CLITest
                             {
                                 CLIConfig.GPPlayerinfo();
                             }
-                            break;
+                            return;
                         case 5:
                             return;
                     }
@@ -193,7 +193,8 @@ public class CLITest
         }
     }
     //opions
-    public static void Options(){
+    public static void Options()
+    {
         int selectedIndex = 0;
         string[] options = { "Menu Colour", "Advanced Options", "Credits", "Save", "Back" };
 
@@ -250,13 +251,14 @@ public class CLITest
                             break;
                         case 1:
                             CLIConfig.Advancedoptions();
-                            break;
+                            return;
                         case 2:
                             CLIMenu.Credits();
-                            break;
+                            return;
                         case 3:
                             //CLIGameBackup.WriteBackup("s");
-                            break;
+                            return;
+                            //break;
                         case 4:
                             CLIConfig.optionsretun();
                             return;
@@ -307,7 +309,7 @@ public class CLITest
                         case 0:
                             CLISettings.Mcolor = ConsoleColor.Red;
                             CLISettings.Dmcolor = ConsoleColor.DarkRed;
-                            break;
+                           break;
                         case 1:
                             CLISettings.Mcolor = ConsoleColor.Magenta;
                             CLISettings.Dmcolor = ConsoleColor.DarkMagenta;
@@ -342,14 +344,15 @@ public class CLITest
                             break;
                         default:
                             MMAColoursel();
-                            break;
+                            return;
                     }
                     return;  // Exit function after a selection
             }
         }
     }
     //Advancedoptions
-    public static void Advancedoptions(){
+    public static void Advancedoptions()
+    {
         Console.Clear();
         string[] options = { "Consol", "Debug", "Moding", "Icons", "Back" };
         int index = 0;
@@ -373,7 +376,7 @@ public class CLITest
                     Console.ForegroundColor = CLISettings.Dmcolor;
                 }
 
-                
+
                 if (i == 1) Console.ForegroundColor = CLISettings.Debug ? ConsoleColor.Green : ConsoleColor.Red;
                 if (i == 2) Console.ForegroundColor = CLISettings.moddingIsOn ? ConsoleColor.Green : ConsoleColor.Red;
                 if (i == 3)
@@ -420,13 +423,13 @@ public class CLITest
                             return;
                         case 1:
                             CLISettings.Debug = !CLISettings.Debug;
-                            break;
+                            return;
                         case 2:
                             CLISettings.moddingIsOn = !CLISettings.moddingIsOn;
-                            break;
+                            return;
                         case 3:
                             CLISettings.Icons = (CLISettings.Icons == 1) ? 2 : (CLISettings.Icons == 2) ? 0 : 1;
-                            break;
+                            return;
                         case 4:
                             CLIConfig.options();
                             return;
@@ -436,7 +439,7 @@ public class CLITest
         }
     }
     // 
-   // public static void move(){
-        
-   // }
+    // public static void move(){
+
+    // }
 }
