@@ -412,7 +412,7 @@ public class CLIMenu
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("");
             Console.Write(">");
-            string input = Console.ReadLine();
+            string ?input = Console.ReadLine();
 
             switch (input)
             {
