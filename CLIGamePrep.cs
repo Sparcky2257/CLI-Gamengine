@@ -68,7 +68,7 @@ public class CLIGamePrep
                 //Console.WriteLine("demo 3");
                 if (CLIPlayer.canEditName == true)
                 {
-                    CLIGamePrep.Speciessel();
+                    CLIConfig.Speciessel();
                 }
                 else
                 {

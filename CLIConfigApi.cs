@@ -136,6 +136,12 @@ public class CLIConfig
         //CLIMenu.MMAColoursel();
         CLITest.MMAColoursel();
     }
+    public static void Speciessel(){
+        //old 
+        CLIGamePrep.Speciessel(); //works but old and not compaible witf mod pakesg
+        //new
+        //CLISpecieList.SeltionMenu(); //not redy
+    }
 }
 public class CLIApi
 {

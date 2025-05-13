@@ -1,6 +1,10 @@
 public class CLISpecieList //: CLIGamePrep
 {
     public static List<string?> List { get; set; } = new List<string?>();// ex:"type:data"
+    public static void SeltionMenu()
+    {
+
+    }
     public static void Human()
     {
         CLIPlayer.species = "Human";
