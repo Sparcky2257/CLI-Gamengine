@@ -31,8 +31,8 @@ public class CLIInt
         ClIMiscellaneous.Creditsdatainfo();
         CLILogo.logostart("Config", 498);
         CLISpace.init();
-
-
+        CLILogo.logostart("Audio", 498);
+        CLIConfig.AudioStart();
     }
 }
 public class CLIConfig
@@ -54,7 +54,7 @@ public class CLIConfig
         //SGCLI.api(api1,api2,api3);//sg addon
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    // these functions only exists so you can use the code in different modules. For example, if you wanted to make your own module, he could override it here.
+    // these functions only exists so you can use the code in different modules. For example, if you wanted to make your own module, you could override it here.
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------  
     public static void bootlogo()
     {
@@ -85,7 +85,7 @@ public class CLIConfig
     {
         CLIGamePrep.PlayerName();
     }
-     public static void GPColour()
+    public static void GPColour()
     {
         CLIGamePrep.Colour();
     }
@@ -118,9 +118,9 @@ public class CLIConfig
     //Cli Consol settings
     public static void Consolext()
     {
-        
+
     }
-     public static void Demo()
+    public static void Demo()
     {
         CLIDemo.Play();
     }
@@ -136,11 +136,16 @@ public class CLIConfig
         //CLIMenu.MMAColoursel();
         CLITest.MMAColoursel();
     }
-    public static void Speciessel(){
+    public static void Speciessel()
+    {
         //old 
         CLIGamePrep.Speciessel(); //works but old and not compaible witf mod pakesg
         //new
         //CLISpecieList.SeltionMenu(); //not redy
+    }
+    public static void AudioStart()
+    {
+        CLIAudio.AudioStart();
     }
 }
 public class CLIApi
