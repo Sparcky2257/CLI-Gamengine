@@ -403,16 +403,16 @@ public class CLIMenu
 
     public static void Consol()
     {
+        Console.Clear();
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine("====Consol====");
+        Console.WriteLine("You can write commands here. Enter 0 to exit.");
         while (true)
         {
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("====Consol====");
-            Console.WriteLine("You can write commands here. Enter 0 to exit.");
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("");
             Console.Write(">");
-            string ?input = Console.ReadLine();
+            string? input = Console.ReadLine();
 
             switch (input)
             {
@@ -420,16 +420,16 @@ public class CLIMenu
                     CLIConfig.Consolext();
                     return;
                 case "mod=1":
-                    CLISettings.moddingIsOn = true;
+                    CLICmd.mod1();
                     break;
                 case "mod=0":
-                    CLISettings.moddingIsOn = false;
+                    CLICmd.mod0();
                     break;
                 case "mod=true":
-                    CLISettings.moddingIsOn = true;
+                    CLICmd.mod1();
                     break;
                 case "mod=false":
-                    CLISettings.moddingIsOn = false;
+                    CLICmd.mod0();
                     break;
                 case "nfsw=false":
                     CLISettings.NSFWIsOn = false;
@@ -444,17 +444,23 @@ public class CLIMenu
                     CLISettings.NSFWIsOn = true;
                     break;
                 case "API":
+                    Console.WriteLine("Please use the 'api' command instead. this command will be removed in a future version.");
+                    APImenu();
+                    break;
+                case "api":
                     APImenu();
                     break;
                 default:
-                    Console.WriteLine("Invalid command. Please try again.");
+                    Console.WriteLine($"Invalid command '{input}'. Please try again.");
                     break;
             }
             Console.ResetColor();
         }
         static void APImenu()
         {
-            Console.Write("Api args:");
+            Console.Clear();
+            Console.ForegroundColor = CLISettings.Mcolor;
+            Console.Write("put number of the api arg you want to use:");
             switch (Console.ReadLine())
             {
                 case "1":
@@ -476,8 +482,13 @@ public class CLIMenu
                     APImenu();
                     break;
             }
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("====Consol====");
+                Console.WriteLine("You can write commands here. Enter 0 to exit.");
+            }
         }
-    }
+    
     public static void loadgame()
     {
         // Console.WriteLine("error 404");
