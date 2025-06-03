@@ -400,94 +400,28 @@ public class CLIMenu
                 break;
         }
     }
-
+    public static bool consolebool { get; set; } = false; 
     public static void Consol()
     {
         Console.Clear();
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine("====Consol====");
         Console.WriteLine("You can write commands here. Enter 0 to exit.");
-        while (true)
+        CLIMenu.consolebool = true; // set the console bool to true so it can be used
+        while (CLIMenu.consolebool == true)
         {
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("");
             Console.Write(">");
             string? input = Console.ReadLine();
 
-            switch (input)
-            {
-                case "0":
-                    CLIConfig.Consolext();
-                    return;
-                case "mod=1":
-                    CLICmd.mod1();
-                    break;
-                case "mod=0":
-                    CLICmd.mod0();
-                    break;
-                case "mod=true":
-                    CLICmd.mod1();
-                    break;
-                case "mod=false":
-                    CLICmd.mod0();
-                    break;
-                case "nfsw=false":
-                    CLISettings.NSFWIsOn = false;
-                    break;
-                case "nfsw=0":
-                    CLISettings.NSFWIsOn = false;
-                    break;
-                case "nfsw=1":
-                    CLISettings.NSFWIsOn = true;
-                    break;
-                case "nfsw=true":
-                    CLISettings.NSFWIsOn = true;
-                    break;
-                case "API":
-                    Console.WriteLine("Please use the 'api' command instead. this command will be removed in a future version.");
-                    APImenu();
-                    break;
-                case "api":
-                    APImenu();
-                    break;
-                default:
-                    Console.WriteLine($"Invalid command '{input}'. Please try again.");
-                    break;
-            }
+
+            CLICmd.Cmd(input);
+
             Console.ResetColor();
         }
-        static void APImenu()
-        {
-            Console.Clear();
-            Console.ForegroundColor = CLISettings.Mcolor;
-            Console.Write("put number of the api arg you want to use:");
-            switch (Console.ReadLine())
-            {
-                case "1":
-                    Console.Write("Api arg1:");
-                    CLIConfig.addon(Console.ReadLine());
-                    Consol();
-                    break;
-                case "3":
-                    Console.Write("Api arg1:");
-                    string? A = Console.ReadLine();
-                    Console.Write("Api arg2:");
-                    string? B = Console.ReadLine();
-                    Console.Write("Api arg3:");
-                    string? C = Console.ReadLine();
-                    CLIConfig.addon(A, B, C);
-                    Consol();
-                    break;
-                default:
-                    APImenu();
-                    break;
-            }
-                Console.Clear();
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("====Consol====");
-                Console.WriteLine("You can write commands here. Enter 0 to exit.");
-            }
-        }
+       
+  }
     
     public static void loadgame()
     {

@@ -118,7 +118,7 @@ public class CLIConfig
     //Cli Consol settings
     public static void Consolext()
     {
-
+         CLIMenu.consolebool = false;
     }
     public static void Demo()
     {
