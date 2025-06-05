@@ -33,6 +33,7 @@ public class CLIInt
         CLISpace.init();
         CLILogo.logostart("Audio", 498);
         CLIConfig.AudioStart();
+        CLISpecieList.start();
     }
 }
 public class CLIConfig

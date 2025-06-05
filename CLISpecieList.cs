@@ -1,9 +1,81 @@
 public class CLISpecieList //: CLIGamePrep
 {
-    public static List<string?> List { get; set; } = new List<string?>();// ex:"type:data"
-    public static void SeltionMenu()
+    public static List<string?> List { get; set; } = new List<string?>();// ex:"type:species:health:handequipped:smarts:speed:strength:parasite:requireHost:requirePower:requirePowerLevel:partTech:canEditName:speciesability(extra data)"
+    public static void start()
     {
+        // Initialize the species list
+        List.Add("Human:Human:20:2:45:10:32:false:false:false:0:false:true:ancientGRool");
+        List.Add("Human:Cat Boy/girl:18:3:45:15:32:false:false:false:0:false:true:ancientGRool");
+        List.Add("K9:Wolf:22:2:47:12:32:false:false:false:0:false:true:ancientGRool");
+        List.Add("Cat:Cat:20:3:47:14:32:false:false:false:0:false:true:ancientGRool");
+    }
+    public static void SelectionMenu()
+    {
+        SelectionMenutemp();
+    }
 
+    public static void SelectionMenutemp() //dont ues this is just a function as a reference for the selection menu will be removed later 
+    {
+        int index = 0;
+        ConsoleKey key;
+
+        do
+        {
+            Console.Clear();
+            Console.WriteLine("Select a species using arrow keys and press Enter:");
+
+            for (int i = 0; i < List.Count; i++)
+            {
+                if (i == index)
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine($"> {List[i].Split(':')[0]}"); // Highlight selected option
+                    Console.ResetColor();
+                }
+                else
+                {
+                    Console.WriteLine($"  {List[i].Split(':')[0]}");
+                }
+            }
+
+            key = Console.ReadKey(true).Key;
+
+            if (key == ConsoleKey.UpArrow)
+            {
+                index = (index > 0) ? index - 1 : List.Count - 1;
+            }
+            else if (key == ConsoleKey.DownArrow)
+            {
+                index = (index < List.Count - 1) ? index + 1 : 0;
+            }
+
+        } while (key != ConsoleKey.Enter);
+
+        // User selected a species; display details
+        DisplaySpeciesDetails(List[index]);
+    }
+
+    public static void DisplaySpeciesDetails(string speciesData)
+    {
+        var attributes = speciesData.Split(':');
+        Console.Clear();
+        Console.WriteLine($"Species: {attributes[1]}");
+        Console.WriteLine($"Health: {attributes[2]}");
+        Console.WriteLine($"Handequipped: {attributes[3]}");
+        Console.WriteLine($"Smarts: {attributes[4]}");
+        Console.WriteLine($"Speed: {attributes[5]}");
+        Console.WriteLine($"Strength: {attributes[6]}");
+        Console.WriteLine($"Parasite: {attributes[7]}");
+        Console.WriteLine($"Require Host: {attributes[8]}");
+        Console.WriteLine($"Require Power: {attributes[9]}");
+        Console.WriteLine($"Require Power Level: {attributes[10]}");
+        Console.WriteLine($"Part Tech: {attributes[11]}");
+        Console.WriteLine($"Can Edit Name: {attributes[12]}");
+        Console.WriteLine($"Species Ability: {attributes[13]}");
+
+        Console.WriteLine("\nPress any key to return to menu...");
+        Console.ReadKey();
+        //SelectionMenu(); // Return to menu after viewing details
     }
     public static void Human()
     {
