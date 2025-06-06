@@ -17,7 +17,7 @@ public class CLIPlayer
     public static double PowerDrain { get; set; } = -1; //new
     public static bool partTech { get; set; } = false; //same
     public static double damageResistance { get; set; } = 1.001; //same
-    public static List<string?> speciesAbility { get; set; } = new List<string?>(); //same
+    public static string? speciesAbility { get; set; } = "none"; //same
     public static double Protohexnum { get; set; } = -1; //same
     public static bool canEditName { get; set; } = true; //same
     public static string? Sex { get; set; } = "male"; //same

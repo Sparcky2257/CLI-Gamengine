@@ -105,5 +105,6 @@ if (CLISettings.Debug == true)
     //sharedVars.Sharedname = name;
     //Console.WriteLine(sharedVars.Sharedname);
     CLISpace.print();
+    CLISpecieList.Typelist.ForEach(Console.WriteLine);
 }
 

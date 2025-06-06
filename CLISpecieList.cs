@@ -1,6 +1,7 @@
 public class CLISpecieList //: CLIGamePrep
 {
     public static List<string?> List { get; set; } = new List<string?>();// ex:"type:species:health:handequipped:smarts:speed:strength:parasite:requireHost:requirePower:requirePowerLevel:partTech:canEditName:speciesability(extra data):shown"
+    public static List<string?> Typelist { get; set; } = new List<string?>();// ex:"type"
     public static void start()
     {
         // Initialize the species list
@@ -9,6 +10,20 @@ public class CLISpecieList //: CLIGamePrep
         List.Add("K9:Wolf:22:2:47:12:32:false:false:false:0:false:true:ancientGRool:true");
         List.Add("K9:Fox:20:2:50:16:32:false:false:false:0:false:true:ancientGRool:true");
         List.Add("Feline:Cat:20:3:47:14:32:false:false:false:0:false:true:ancientGRool:true");
+        List.Add("Avian:Avali:30:2:20:16:36:false:false:false:0:false:true:Fly:true");
+        List.Add("Protogen:Protogen:22:2:57:10:32:false:false:true:0:true:true:none:true");
+        // create a list of types
+        foreach (var item in List)
+        {
+            var attributes = item.Split(':');
+            if (attributes.Length > 0)
+            {
+                if (!Typelist.Contains(attributes[0]))
+                {
+                    Typelist.Add(attributes[0]);
+                }
+            }
+        }
     }
     public static void SelectionMenu()
     {
@@ -17,71 +32,35 @@ public class CLISpecieList //: CLIGamePrep
         // Display the list of types of species
             // excude using excud list for overide
         // call a genaraded menu of the type seleated
-           // This is a placeholder for the selection menu logic
+        // This is a placeholder for the selection menu logic
     }
-
-    public static void SelectionMenutemp() //dont ues this is just a function as a reference for the selection menu will be removed later 
+    public static void setspecies(int index)
     {
-        int index = 0;
-        ConsoleKey key;
-
-        do
+        if (index < 0 || index >= List.Count)
         {
-            Console.Clear();
-            Console.WriteLine("Select a species using arrow keys and press Enter:");
-
-            for (int i = 0; i < List.Count; i++)
-            {
-                if (i == index)
-                {
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine($"> {List[i].Split(':')[0]}"); // Highlight selected option
-                    Console.ResetColor();
-                }
-                else
-                {
-                    Console.WriteLine($"  {List[i].Split(':')[0]}");
-                }
-            }
-
-            key = Console.ReadKey(true).Key;
-
-            if (key == ConsoleKey.UpArrow)
-            {
-                index = (index > 0) ? index - 1 : List.Count - 1;
-            }
-            else if (key == ConsoleKey.DownArrow)
-            {
-                index = (index < List.Count - 1) ? index + 1 : 0;
-            }
-
-        } while (key != ConsoleKey.Enter);
-
-        // User selected a species; display details
-        DisplaySpeciesDetails(List[index]);
-    }
-
-    public static void DisplaySpeciesDetails(string speciesData)
-    {
-        var attributes = speciesData.Split(':');
-        Console.Clear();
-        Console.WriteLine($"Species: {attributes[1]}");
-        Console.WriteLine($"Health: {attributes[2]}");
-        Console.WriteLine($"Handequipped: {attributes[3]}");
-        Console.WriteLine($"Smarts: {attributes[4]}");
-        Console.WriteLine($"Speed: {attributes[5]}");
-        Console.WriteLine($"Strength: {attributes[6]}");
-        Console.WriteLine($"Parasite: {attributes[7]}");
-        Console.WriteLine($"Require Host: {attributes[8]}");
-        Console.WriteLine($"Require Power: {attributes[9]}");
-        Console.WriteLine($"Require Power Level: {attributes[10]}");
-        Console.WriteLine($"Part Tech: {attributes[11]}");
-        Console.WriteLine($"Can Edit Name: {attributes[12]}");
-        Console.WriteLine($"Species Ability: {attributes[13]}");
-
-        Console.WriteLine("\nPress any key to return to menu...");
-        Console.ReadKey();
-        //SelectionMenu(); // Return to menu after viewing details
+            Console.WriteLine("Invalid index. Please select a valid species.");
+            return;
+        }
+        var attributes = List[index].Split(':');
+        if (attributes.Length < 14)
+        {
+            Console.WriteLine("Invalid species data.");
+            return;
+        }
+        // attributes[0] is is not needed here 
+        CLIPlayer.species = attributes[1];
+        CLIPlayer.Health = int.Parse(attributes[2]);
+        CLIPlayer.Handequipped = int.Parse(attributes[3]);
+        CLIPlayer.Smarts = int.Parse(attributes[4]);
+        CLIPlayer.Speed = int.Parse(attributes[5]);
+        CLIPlayer.Strength = int.Parse(attributes[6]);
+        CLIPlayer.parasite = bool.Parse(attributes[7]);
+        CLIPlayer.requireHost = bool.Parse(attributes[8]);
+        CLIPlayer.requirePower = bool.Parse(attributes[9]);
+        CLIPlayer.requirePowerLevel = int.Parse(attributes[10]);
+        CLIPlayer.partTech = bool.Parse(attributes[11]);
+        CLIPlayer.canEditName = bool.Parse(attributes[12]);
+        CLIPlayer.speciesAbility = attributes[13];
     }
     public static void Human()
     {
