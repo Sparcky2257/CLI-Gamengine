@@ -46,7 +46,7 @@ if (CLIRuntimevar.OS == "4")
     menu.TextBoxsendold();
 }
 //test zone
-CLISpecieList.SelectionMenu();
+//CLISpecieList.SelectionMenu();
 //ghvftyu
 //
 // CLIGameBackup.ReadBackup(string.Empty); //don't instantly call this, not meant for it
@@ -56,6 +56,7 @@ CLIConfig.MainMenu();
 //end
 Console.Clear();
 Console.ForegroundColor = ConsoleColor.Red;
+//ClIMiscellaneous.CWrite("exiting...", 999);
 Console.WriteLine("exiting...");
 Console.ResetColor();
 Thread.Sleep(999);

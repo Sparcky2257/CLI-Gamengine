@@ -1,17 +1,23 @@
 public class CLISpecieList //: CLIGamePrep
 {
-    public static List<string?> List { get; set; } = new List<string?>();// ex:"type:species:health:handequipped:smarts:speed:strength:parasite:requireHost:requirePower:requirePowerLevel:partTech:canEditName:speciesability(extra data)"
+    public static List<string?> List { get; set; } = new List<string?>();// ex:"type:species:health:handequipped:smarts:speed:strength:parasite:requireHost:requirePower:requirePowerLevel:partTech:canEditName:speciesability(extra data):shown"
     public static void start()
     {
         // Initialize the species list
-        List.Add("Human:Human:20:2:45:10:32:false:false:false:0:false:true:ancientGRool");
-        List.Add("Human:Cat Boy/girl:18:3:45:15:32:false:false:false:0:false:true:ancientGRool");
-        List.Add("K9:Wolf:22:2:47:12:32:false:false:false:0:false:true:ancientGRool");
-        List.Add("Cat:Cat:20:3:47:14:32:false:false:false:0:false:true:ancientGRool");
+        List.Add("Human:Human:20:2:45:10:32:false:false:false:0:false:true:ancientGRool:true");
+        List.Add("Human:Cat Boy/girl:18:3:45:15:32:false:false:false:0:false:true:ancientGRool:true");
+        List.Add("K9:Wolf:22:2:47:12:32:false:false:false:0:false:true:ancientGRool:true");
+        List.Add("K9:Fox:20:2:50:16:32:false:false:false:0:false:true:ancientGRool:true");
+        List.Add("Feline:Cat:20:3:47:14:32:false:false:false:0:false:true:ancientGRool:true");
     }
     public static void SelectionMenu()
     {
-        SelectionMenutemp();
+        Console.Clear();
+        Console.WriteLine("Select a species");
+        // Display the list of types of species
+            // excude using excud list for overide
+        // call a genaraded menu of the type seleated
+           // This is a placeholder for the selection menu logic
     }
 
     public static void SelectionMenutemp() //dont ues this is just a function as a reference for the selection menu will be removed later 

@@ -3,6 +3,49 @@ using System.ComponentModel;
 public class ClIMiscellaneous
 {
     public string? savename { get; set; } = "none"; // this is... fines
+    public static void CWriteLine(string? text = "null", int Chartime=999) //broken ikd why
+    {
+        if (text == "null")
+        {
+            text = "error";
+            CLIRuntimevar.rerror();
+            List<char> charList = text.Select(c => c).ToList();
+            var x = 0;
+            x = charList.Count;
+
+            while (x >= 0)
+            {
+                if (x == 0)
+                {
+                    Console.WriteLine(charList[x]);
+                }
+                else
+                {
+                    Console.Write(charList[x]);
+                }
+                Console.Write(charList[x]);
+                x--;
+            }
+            Thread.Sleep(Chartime);
+        }
+    }
+    public static void CWrite(string? text = "null", double Chartime = 1) //broken ikd why
+    {
+        if (text == "null")
+        {
+            text = "error";
+            CLIRuntimevar.rerror();
+            List<char> charList = text.Select(c => c).ToList();
+
+            foreach (char c in charList)
+            {
+                //charList.
+                Console.Write(c);
+                System.Threading.Thread.Sleep((int)Chartime);
+            }
+
+        }
+    }
     void Optionsave()
     {
         Console.ForegroundColor = ConsoleColor.Red;
@@ -52,7 +95,7 @@ public class ClIMiscellaneous
             CLIMenu.textdata.Add("CL");
             CLIMenu.textdata.Add($"{ConsoleColor.Blue}");
             CLIMenu.textdata.Add(":(");
-             CLIMenu.textdata.Add("CL");
+            CLIMenu.textdata.Add("CL");
             CLIMenu.textdata.Add($"{ConsoleColor.Red}");
             CLIMenu.textdata.Add("NX");
             CLIMenu.textdata.Add("RS");
