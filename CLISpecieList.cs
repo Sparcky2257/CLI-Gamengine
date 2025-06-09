@@ -1,4 +1,4 @@
-public class CLISpecieList //: CLIGamePrep
+public class CLISpecieList
 {
     public static List<string?> List { get; set; } = new List<string?>();// ex:"type:species:health:handequipped:smarts:speed:strength:parasite:requireHost:requirePower:requirePowerLevel:partTech:canEditName:speciesability(extra data):shown"
     public static List<string?> Typelist { get; set; } = new List<string?>();// ex:"type"
@@ -24,16 +24,121 @@ public class CLISpecieList //: CLIGamePrep
                 }
             }
         }
+        UpdateMenuItems();// Update the menu items based on the species list
     }
+    static string? menuitem1 = "null";
+    static string? menuitem2 = "null";
+    static string? menuitem3 = "null";
+    static string? menuitem4 = "null";
+    static int page = 0;
+ public static void UpdateMenuItems()
+{
+    int maxPage = (Typelist.Count - 1) / 4; // Calculate max pages correctly
+    page = Math.Min(page, maxPage); // Prevent exceeding the maxPage
+
+    int startIndex = page * 4;
+
+    menuitem1 = (startIndex < Typelist.Count) ? Typelist[startIndex] : "null";
+    menuitem2 = (startIndex + 1 < Typelist.Count) ? Typelist[startIndex + 1] : "null";
+    menuitem3 = (startIndex + 2 < Typelist.Count) ? Typelist[startIndex + 2] : "null";
+    menuitem4 = (startIndex + 3 < Typelist.Count) ? Typelist[startIndex + 3] : "null";
+}
+
     public static void SelectionMenu()
     {
+        int selectedIndex = 0;
+        // Define menu items
+        string[] options = { menuitem1, menuitem2, menuitem3, menuitem4, "Exit" };
         Console.Clear();
-        Console.WriteLine("Select a species");
+        Console.WriteLine("");
         // Display the list of types of species
-            // excude using excud list for overide
+
+        while (true)
+        {
+            // Clear the console and display the menu header
+            Console.Clear();
+            Console.ForegroundColor = CLISettings.Mcolor;
+            Console.WriteLine("Select a species");
+            Console.ResetColor();
+
+            // Display menu options
+            for (int i = 0; i < options.Length; i++)
+            {
+                if (i == selectedIndex)
+                {
+                    if (options[i] == "Exit")
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = CLISettings.Mcolor;
+                    }
+                    Console.Write("→ ");
+                }
+                else
+                {
+                    Console.ForegroundColor = CLISettings.Dmcolor;
+                }
+                Console.WriteLine(options[i]);
+                Console.ResetColor();
+            }
+
+            Console.ResetColor();
+            Console.WriteLine();
+            Console.Write(">");
+
+            // Handle user input for navigation and selection
+            ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+            switch (keyInfo.Key)
+            {
+                case ConsoleKey.UpArrow:
+                    selectedIndex = (selectedIndex - 1 + options.Length) % options.Length;
+                    break;
+                case ConsoleKey.DownArrow:
+                    selectedIndex = (selectedIndex + 1) % options.Length;
+                    break;
+                case ConsoleKey.LeftArrow:
+                    if (page < (Typelist.Count - 1) / 4) // Ensure page does not exceed max pages
+                    {
+                        page++;
+                        UpdateMenuItems();
+                    }
+                    break;
+
+                case ConsoleKey.RightArrow:
+                    if (page > 0) // Prevent going below zero
+                    {
+                        page--;
+                        UpdateMenuItems();
+                    }
+                    break;
+                case ConsoleKey.Enter:
+                    switch (selectedIndex)
+                    {
+                        case 0:
+
+                            break;
+                        case 1:
+
+                            return;
+                        case 2:
+
+                            return;
+                        case 3:
+
+                            return;
+                        case 4:
+                            CLIConfig.optionsretun();
+                            return;
+                    }
+                    break;
+            }
+        }
         // call a genaraded menu of the type seleated
-        // This is a placeholder for the selection menu logic
+        // This is a placeholder for the selection menu logic 
     }
+
     public static void setspecies(int index)
     {
         if (index < 0 || index >= List.Count)

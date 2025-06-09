@@ -45,8 +45,7 @@ if (CLIRuntimevar.OS == "4")
     Console.WriteLine($"OS:{CLIRuntimevar.OSName()}");
     menu.TextBoxsendold();
 }
-//test zone
-//CLISpecieList.SelectionMenu();
+CLISpecieList.SelectionMenu();
 //ghvftyu
 //
 // CLIGameBackup.ReadBackup(string.Empty); //don't instantly call this, not meant for it
