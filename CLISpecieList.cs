@@ -12,7 +12,10 @@ public class CLISpecieList //CLISpecieList.SelectionMenu();
         List.Add("Feline:Cat:20:3:47:14:32:false:false:false:0:false:true:ancientGRool:true");
         List.Add("Avian:Avali:30:2:20:16:36:false:false:false:0:false:true:Fly:true");
         List.Add("Protogen:Protogen:22:2:57:10:32:false:false:true:0:true:true:none:true");
-        // create a list of types
+
+    }
+    public static void wrapup()
+    {
         foreach (var item in List)
         {
             var attributes = item.Split(':');

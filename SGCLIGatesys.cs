@@ -42,7 +42,7 @@ public class SGCLI
         switch (local)
         {
             case "S":
-                SGCLI.SpecieList(local2, local3);
+               
                 break;
             default:
                 break;
@@ -53,25 +53,16 @@ public class SGCLI
             ClIMiscellaneous.Creditsdata.Add("SGCLI");
             ClIMiscellaneous.Creditsdata.Add("DMC");
             ClIMiscellaneous.Creditsdata.Add("Sparcky Ancientpack");
-            CLIApi.codeaddonspecies.Add("SGCLI:ID001:H");
-            CLIApi.codeaddonspecies.Add("SGCLI:ID002:H");
+            CLISpecieList.List.Add("Human:Goa'uld:30:2:55:12:40:true:true:false:0:false:true:nauwada:true");
+            CLISpecieList.List.Add("Human:Tok'ra:30:2:55:12:40:true:true:false:0:false:true:nauwada:true");
+            CLISpecieList.List.Add("Asgard:Asgard:30:2:70:12:40:false:false:false:0:false:true:none:true");
+            CLISpecieList.List.Add("Human:Jaffa:30:2:40:12:40:false:true:false:0:false:true:none:true"); 
+            CLISpecieList.List.Add("Ancient:Ancient:30:2:55:12:40:false:false:false:0:false:true:ancientG:true");
+            
             SGCLI.config();
         }
     }
-    static void SpecieList(string llocal2 = "null", string llocal3 = "null")
-    {
-        switch (llocal2)
-        {
-            case "SGCLI:ID001:H":
-                if (llocal3 == "L")
-                {
-                    SGSpecieList.ID001();
-                }
-                break;
-            default:
-                break;
-        }
-    }
+
 }
 //    public static List<string?> codeaddonspecies { get; set; } = new List<string?>();
 /*  CLIPlayer.species = "Goa'uld";
@@ -107,42 +98,4 @@ public class SGPDD : CLIHandheldDevices
     public bool isGoauld { get; set; }
     public bool HasAdressBase { get; set; }
     public string? AddressBase { get; set; }
-}
-public class SGSpecieList : CLISpecieList
-{
-    // ClIPlayer player = new ClIPlayer();
-    // CLISettings settings = new CLISettings();
-    public static void ID001()
-    {
-        CLIPlayer.species = "Goa'uld";
-        CLIPlayer.Health = 30;
-        CLIPlayer.Handequipped = 2;
-        CLIPlayer.Smarts = 55;
-        CLIPlayer.Speed = 12;
-        CLIPlayer.Strength = 40;
-        CLIPlayer.parasite = true;
-        CLIPlayer.requireHost = true;
-        CLIPlayer.requirePower = false;
-        CLIPlayer.requirePowerLevel = 0;
-        CLIPlayer.partTech = false;
-        //CLIPlayer.speciesAbility = "";
-        CLIPlayer.canEditName = true;
-    }
-
-    public static void ID002()
-    {
-        CLIPlayer.species = "Tok'ra";
-        CLIPlayer.Health = 30;
-        CLIPlayer.Handequipped = 2;
-        CLIPlayer.Smarts = 55;
-        CLIPlayer.Speed = 12;
-        CLIPlayer.Strength = 40;
-        CLIPlayer.parasite = true;
-        CLIPlayer.requireHost = true;
-        CLIPlayer.requirePower = false;
-        CLIPlayer.requirePowerLevel = 0;
-        CLIPlayer.partTech = false;
-        //CLIPlayer.speciesAbility = "";
-        CLIPlayer.canEditName = true;
-    }
 }

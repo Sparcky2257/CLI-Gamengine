@@ -23,8 +23,8 @@ public class CLIInt
 
         //Console.WriteLine(ClIMiscellaneous.Creditsdata.Count);
         //CLISettings.Debug = true; //this just for testing
-        //api
-        CLIApi.codeaddonsstart();
+        CLISpecieList.start();
+
         //config
         CLIConfig.load();
         //infostart
@@ -33,7 +33,10 @@ public class CLIInt
         CLISpace.init();
         CLILogo.logostart("Audio", 498);
         CLIConfig.AudioStart();
-        CLISpecieList.start();
+        //api
+        CLIApi.codeaddonsstart();
+        CLISpecieList.wrapup();
+
     }
 }
 public class CLIConfig
@@ -52,7 +55,7 @@ public class CLIConfig
     }
     public static void addon(string? api1 = "null", string? api2 = "null", string? api3 = "null", string? api4 = "null", string? api5 = "null")
     {
-        //SGCLI.api(api1,api2,api3);//sg addon
+        SGCLI.api(api1, api2, api3);//sg addon
     }
     //-------------------------------------------------------------------------------------------------------------------------------------------------------------------
     // these functions only exists so you can use the code in different modules. For example, if you wanted to make your own module, you could override it here.
@@ -124,7 +127,7 @@ public class CLIConfig
     //Cli Consol settings
     public static void Consolext()
     {
-         CLIMenu.consolebool = false;
+        CLIMenu.consolebool = false;
     }
     public static void Demo()
     {
