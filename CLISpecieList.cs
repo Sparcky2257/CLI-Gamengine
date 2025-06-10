@@ -188,7 +188,7 @@ public class CLISpecieList //CLISpecieList.SelectionMenu();
             Console.WriteLine($"Require Host:{attributes[8]}");
 
             Console.ResetColor();
-            //Console.WriteLine("\nUse [↑] [↓] to navigate, [Enter] to select, [Esc] to exit.");
+            Console.WriteLine("up/down to select, enter to confirm, left/right to change type");
 
             ConsoleKeyInfo keyInfo = Console.ReadKey(true);
             switch (keyInfo.Key)
