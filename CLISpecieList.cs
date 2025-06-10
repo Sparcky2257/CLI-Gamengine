@@ -1,4 +1,4 @@
-public class CLISpecieList
+public class CLISpecieList //CLISpecieList.SelectionMenu();
 {
     public static List<string?> List { get; set; } = new List<string?>();// ex:"type:species:health:handequipped:smarts:speed:strength:parasite:requireHost:requirePower:requirePowerLevel:partTech:canEditName:speciesability(extra data):shown"
     public static List<string?> Typelist { get; set; } = new List<string?>();// ex:"type"
@@ -31,30 +31,31 @@ public class CLISpecieList
     static string? menuitem3 = "null";
     static string? menuitem4 = "null";
     static int page = 0;
- public static void UpdateMenuItems()
-{
-    int maxPage = (Typelist.Count - 1) / 4; // Calculate max pages correctly
-    page = Math.Min(page, maxPage); // Prevent exceeding the maxPage
+    public static void UpdateMenuItems()
+    {
+        int maxPage = (Typelist.Count - 1) / 4; // Calculate max pages correctly
+        page = Math.Min(page, maxPage); // Prevent exceeding the maxPage
 
-    int startIndex = page * 4;
+        int startIndex = page * 4;
 
-    menuitem1 = (startIndex < Typelist.Count) ? Typelist[startIndex] : "null";
-    menuitem2 = (startIndex + 1 < Typelist.Count) ? Typelist[startIndex + 1] : "null";
-    menuitem3 = (startIndex + 2 < Typelist.Count) ? Typelist[startIndex + 2] : "null";
-    menuitem4 = (startIndex + 3 < Typelist.Count) ? Typelist[startIndex + 3] : "null";
-}
+        menuitem1 = (startIndex < Typelist.Count) ? Typelist[startIndex] : "null";
+        menuitem2 = (startIndex + 1 < Typelist.Count) ? Typelist[startIndex + 1] : "null";
+        menuitem3 = (startIndex + 2 < Typelist.Count) ? Typelist[startIndex + 2] : "null";
+        menuitem4 = (startIndex + 3 < Typelist.Count) ? Typelist[startIndex + 3] : "null";
+    }
 
     public static void SelectionMenu()
     {
         int selectedIndex = 0;
         // Define menu items
-        string[] options = { menuitem1, menuitem2, menuitem3, menuitem4, "Exit" };
+
         Console.Clear();
         Console.WriteLine("");
         // Display the list of types of species
 
         while (true)
         {
+            string[] options = { menuitem1, menuitem2, menuitem3, menuitem4, "back" };
             // Clear the console and display the menu header
             Console.Clear();
             Console.ForegroundColor = CLISettings.Mcolor;
@@ -98,7 +99,7 @@ public class CLISpecieList
                 case ConsoleKey.DownArrow:
                     selectedIndex = (selectedIndex + 1) % options.Length;
                     break;
-                case ConsoleKey.LeftArrow:
+                case ConsoleKey.RightArrow:
                     if (page < (Typelist.Count - 1) / 4) // Ensure page does not exceed max pages
                     {
                         page++;
@@ -106,7 +107,7 @@ public class CLISpecieList
                     }
                     break;
 
-                case ConsoleKey.RightArrow:
+                case ConsoleKey.LeftArrow:
                     if (page > 0) // Prevent going below zero
                     {
                         page--;
@@ -117,26 +118,93 @@ public class CLISpecieList
                     switch (selectedIndex)
                     {
                         case 0:
-
-                            break;
+                            SelectionMenuSpecies(menuitem1);
+                            return;
                         case 1:
-
+                            SelectionMenuSpecies(menuitem2);
                             return;
                         case 2:
-
+                            SelectionMenuSpecies(menuitem3);
                             return;
                         case 3:
-
+                            SelectionMenuSpecies(menuitem4);
                             return;
                         case 4:
-                            CLIConfig.optionsretun();
-                            return;
+
+                            CLIConfig.GPPlayerinfo(); // Call the player info setup
+                            break;
                     }
                     break;
             }
         }
         // call a genaraded menu of the type seleated
         // This is a placeholder for the selection menu logic 
+    }
+    public static void SelectionMenuSpecies(string type)
+    {
+        var matchingSpecies = List.Where(s => s.StartsWith(type + ":")).ToList();
+        if (matchingSpecies.Count == 0)
+        {
+            Console.WriteLine("No species found for this type.");
+            return;
+        }
+
+        int selectedIndex = 0;
+        while (true)
+        {
+            Console.Clear();
+            Console.ForegroundColor = CLISettings.Mcolor;
+            Console.WriteLine($"Select a {type} species:");
+            Console.ResetColor();
+            var attributes = List[selectedIndex + 1].Split(':');
+            // Display available species of the selected type
+            for (int i = 0; i < matchingSpecies.Count; i++)
+            {
+                var speciesName = matchingSpecies[i].Split(':')[1]; // Extract name
+                if (i == selectedIndex)
+                {
+                    Console.ForegroundColor = CLISettings.Mcolor;
+                    Console.Write("→ ");
+                }
+                else
+                {
+                    Console.ForegroundColor = CLISettings.Dmcolor;
+                }
+                Console.WriteLine(speciesName);
+                Console.ResetColor();
+            }
+            Console.WriteLine($"Health:{attributes[2]}");
+            Console.WriteLine($"Smarts:{attributes[4]}");
+            Console.WriteLine($"Speed:{attributes[5]}");
+            Console.WriteLine($"Strength:{attributes[6]}");
+            Console.WriteLine($"Species Ability:{attributes[13]}");
+            Console.WriteLine($"Hand equipped:{attributes[3]}");
+            Console.WriteLine($"Require Power:{attributes[9]}");
+            Console.WriteLine($"Part Tech:{attributes[11]}");
+            Console.WriteLine($"Parasite:{attributes[7]}");
+            Console.WriteLine($"Require Host:{attributes[8]}");
+
+            Console.ResetColor();
+            //Console.WriteLine("\nUse [↑] [↓] to navigate, [Enter] to select, [Esc] to exit.");
+
+            ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+            switch (keyInfo.Key)
+            {
+                case ConsoleKey.UpArrow:
+                    selectedIndex = (selectedIndex - 1 + matchingSpecies.Count) % matchingSpecies.Count;
+                    break;
+                case ConsoleKey.DownArrow:
+                    selectedIndex = (selectedIndex + 1) % matchingSpecies.Count;
+                    break;
+                case ConsoleKey.Enter:
+                    setspecies(List.IndexOf(matchingSpecies[selectedIndex])); // Call your existing selection system
+                                                CLIConfig.GPPlayerinfo(); // Call the player info setup
+                    return;
+                case ConsoleKey.Escape:
+                    return;
+            }
+
+        }
     }
 
     public static void setspecies(int index)

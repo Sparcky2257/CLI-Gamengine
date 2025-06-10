@@ -147,7 +147,7 @@ public class CLITest
                         case 2:
                             if (CLIPlayer.canEditName)
                             {
-                                CLIGamePrep.Speciessel();
+                                CLIConfig.Speciessel();
                             }
                             else
                             {

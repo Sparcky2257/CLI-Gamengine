@@ -82,6 +82,11 @@ public class CLIConfig
         //CLIGamePrep.Playerinfo();
         CLITest.Playerinfo();
     }
+    public static void Speciessel()
+    {
+        //CLIGamePrep.Speciessel(); // works but old and not compaible with mod package hard coded do not use
+        CLISpecieList.SelectionMenu(); //new ready mitg have bugs
+    }
     public static void GPPlayerName()
     {
         CLIGamePrep.PlayerName();
@@ -136,13 +141,6 @@ public class CLIConfig
     {
         //CLIMenu.MMAColoursel();
         CLITest.MMAColoursel();
-    }
-    public static void Speciessel()
-    {
-        //old 
-        CLIGamePrep.Speciessel(); //works but old and not compaible witf mod pakesg
-        //new
-        //CLISpecieList.SeltionMenu(); //not redy
     }
     public static void AudioStart()
     {
