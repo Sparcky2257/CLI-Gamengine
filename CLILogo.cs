@@ -1,34 +1,29 @@
 public class CLILogo
 {
     // CLISettings settings = new CLISettings();
-    public static void bootlogo1()
+    public static void bootlogo1(int speed = 0)
     {
-        Console.WriteLine();
         Console.ForegroundColor = CLISettings.Mcolor;
-        Console.Write("╔═╗╦  ╦");
+        CLIText.print("╔═╗╦  ╦", speed, false);
         Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine("  ┌─┐┌─┐┌┬┐┌─┐┌┐┌┌─┐┬┌┐┌┌─┐");
+        CLIText.print("  ┌─┐┌─┐┌┬┐┌─┐┌┐┌┌─┐┬┌┐┌┌─┐", speed, true);
         Console.ForegroundColor = CLISettings.Mcolor; ;
-        Console.Write("║  ║  ║");
+        CLIText.print("║  ║  ║", speed, false);
         Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine("  │ ┬├─┤│││├┤ ││││ ┬││││├┤ ");
+        CLIText.print("  │ ┬├─┤│││├┤ ││││ ┬││││├┤ ", speed, true);
         Console.ForegroundColor = CLISettings.Mcolor; ;
-        Console.Write("╚═╝╩═╝╩");
+        CLIText.print("╚═╝╩═╝╩", speed, false);
         Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine("  └─┘┴ ┴┴ ┴└─┘┘└┘└─┘┴┘└┘└─┘");
+        CLIText.print("  └─┘┴ ┴┴ ┴└─┘┘└┘└─┘┴┘└┘└─┘", speed, true);
         Console.ResetColor();
     }
-    public void bootlogo2()
+    public static void bootlogo2()
     {
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.Write("error ");
-        Console.ResetColor();
-        Console.WriteLine("404");
-        CLIRuntimevar.rerror();
+        bootlogo1(25);
+        Thread.Sleep(899);
     }
     public static void bootlogo3()
     {
-        Console.WriteLine();
         Console.ForegroundColor = CLISettings.Mcolor;
         Console.Write("╔═╗╦  ╦");
         Console.ForegroundColor = ConsoleColor.Green;
@@ -47,7 +42,8 @@ public class CLILogo
     {
         Console.Clear();
         bootlogo3();
-        Console.WriteLine(text);
+        CLIText.print(text, 15, true);
+        //Console.WriteLine(text);
        
         Thread.Sleep(times);//149
     }

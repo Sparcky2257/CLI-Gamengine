@@ -21,8 +21,12 @@ public class CLICmd
     }
     public static void help()
     {
-        Console.WriteLine("Available commands:");
-        Console.WriteLine("0 - Exit the console");
+        CLIText.print("Available commands:",125,true);
+        CLIText.print("0 - Exit the console",25,true);
+        CLIText.print("mod=1 or mod=true - Enable modding",25,true);
+        CLIText.print("mod=0 or mod=false - Disable modding",25,true);
+        //Console.WriteLine("Available commands:");
+        /*Console.WriteLine("0 - Exit the console");
         Console.WriteLine("mod=1 or mod=true - Enable modding");
         Console.WriteLine("mod=0 or mod=false - Disable modding");
         if (CLISettings.NSFWIsOn) // only show NSFW commands if enabled if not enabled, don't show them
@@ -31,7 +35,7 @@ public class CLICmd
              Console.WriteLine("nfsw=0 or nfsw=false - Disable NSFW content");
         }
         Console.WriteLine("api - Access API menu");
-        Console.WriteLine("help - Show this help message");
+        Console.WriteLine("help - Show this help message");*/
      }
     // call logic for the console commands
     public static void Cmd(string input) //

@@ -47,7 +47,11 @@ if (CLIRuntimevar.OS == "4")
 }
 //CLISpecieList.SelectionMenu();
 //ghvftyu
-//
+//test
+
+//CLIText.textBackend("@speed;50:hi :@Red:This :@Mcolor:is a test"); 
+//Thread.Sleep(9999);
+
 // CLIGameBackup.ReadBackup(string.Empty); //don't instantly call this, not meant for it
 //i nead help
 //menu.MainMenu();
@@ -56,10 +60,13 @@ CLIConfig.MainMenu();
 Console.Clear();
 Console.ForegroundColor = ConsoleColor.Red;
 //ClIMiscellaneous.CWrite("exiting...", 999);
-Console.WriteLine("exiting...");
+CLIText.print("exiting", 15, false);
+CLIText.print("...", 500, true);
+//Console.WriteLine("exiting...");
 Console.ResetColor();
 Thread.Sleep(999);
 Console.Clear();
+Thread.Sleep(50);
 if (CLISettings.Debug == true)
 {
     Console.WriteLine("debug:");

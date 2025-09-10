@@ -17,6 +17,8 @@ public class CLITest
             Console.ForegroundColor = CLISettings.Dmcolor;
             Console.WriteLine("=====menu=====");
             //Console.ResetColor();
+            int speed = 50;
+            bool fistTime = true;
 
             for (int i = 0; i < options.Length; i++)
             {
@@ -30,10 +32,20 @@ public class CLITest
                     {
                         Console.ForegroundColor = CLISettings.Mcolor;
                     }
-                    Console.Write("→ ");
+                    CLIText.print("→ ", speed, false);
+                    speed = 50;
                 }
                 else
                 {
+                    if (fistTime)
+                    {
+                        speed = 50;
+                        if (i == options.Length) { fistTime = false; }
+                    }
+                    else
+                    {
+                        speed = 0;
+                    }
                     Console.ResetColor();
                     Console.ForegroundColor = CLISettings.Dmcolor;
                 }
@@ -55,15 +67,19 @@ public class CLITest
                     switch (selectedIndex)
                     {
                         case 0:
+                            fistTime = true;
                             CLIConfig.newgame();
                             break;
                         case 1:
+                            fistTime = true;
                             CLIConfig.loadgame();
                             break;
                         case 2:
+                            fistTime = true;
                             CLIConfig.options();
                             break;
                         case 3:
+                            fistTime = true;
                             CLISettings.mainMenuOpen = false;
                             return;
                     }
@@ -109,11 +125,13 @@ public class CLITest
                 }
                 if (options[i] != "Unlock")
                 {
-                    Console.WriteLine(options[i]);
+                    CLIText.print(options[i], 15, true);
+                    //Console.WriteLine(options[i]);
                 }
                 else if (CLIPlayer.canEditName == false)
                 {
-                    Console.WriteLine(options[i]);
+                    CLIText.print(options[i], 25, true);
+                    //Console.WriteLine(options[i]);
                 }
                 Console.ResetColor();
             }
@@ -258,7 +276,7 @@ public class CLITest
                         case 3:
                             //CLIGameBackup.WriteBackup("s");
                             return;
-                            //break;
+                        //break;
                         case 4:
                             CLIConfig.optionsretun();
                             return;
@@ -309,7 +327,7 @@ public class CLITest
                         case 0:
                             CLISettings.Mcolor = ConsoleColor.Red;
                             CLISettings.Dmcolor = ConsoleColor.DarkRed;
-                           break;
+                            break;
                         case 1:
                             CLISettings.Mcolor = ConsoleColor.Magenta;
                             CLISettings.Dmcolor = ConsoleColor.DarkMagenta;

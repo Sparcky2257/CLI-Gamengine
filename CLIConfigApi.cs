@@ -4,6 +4,7 @@ public class CLIInt
 {
     public static void start()
     {
+        CLILogo.bootlogo2();
         CLILogo.logostart("Credits", 498);
         //cedites "CL" is uesd to chage colers "MC"and "DMC" are allso a way to chage the coller
         //ex: ClIMiscellaneous.Creditsdata.Add("CL");
@@ -33,6 +34,8 @@ public class CLIInt
         CLISpace.init();
         CLILogo.logostart("Audio", 498);
         CLIConfig.AudioStart();
+        CLILogo.logostart("File", 498);
+        CLIFile.load();
         //api
         CLIApi.codeaddonsstart();
         CLISpecieList.wrapup();

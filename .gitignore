@@ -3,5 +3,6 @@ bin/*
 obj/*
 saves/*
 out/*
+wip/*
 .DS_Store
 CLI-Gamengine.sln

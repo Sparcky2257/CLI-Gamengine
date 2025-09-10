@@ -92,7 +92,7 @@ public class CLIAudioLinux
         }
         else
         {
-            CLILogo.logostart("No supported Linux audio system found (PipeWire or PulseAudio missing).", 498);
+            CLILogo.logostart($"No supported Linux audio system found (PipeWire or PulseAudio missing). found = {selectedBackend}", 996);
         }
     }
 
